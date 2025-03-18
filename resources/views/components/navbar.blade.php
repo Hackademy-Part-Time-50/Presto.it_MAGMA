@@ -9,6 +9,8 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">Home</a>
         </li>
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -22,14 +24,11 @@
             </ul>
           </li>
         @else
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Benvenuto
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('login') }}">Accedi</a></li>
-              <li><a class="dropdown-item" href="{{ route('register') }}">Registrati</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Accedi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">Registrati</a>
           </li>
         @endauth
       </ul>
