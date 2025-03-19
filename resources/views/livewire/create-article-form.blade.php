@@ -1,0 +1,56 @@
+<form class="bg-white shadow-lg rounded-4 p-5 my-5 border" wire:submit="save">
+
+    <!-- Messaggio di successo -->
+    <x-success />
+
+    <h3 class="text-center mb-4">Crea un Nuovo Annuncio</h3>
+
+    <!-- Titolo -->
+    <div class="mb-3">
+        <label for="title" class="form-label fw-bold">Titolo:</label>
+        <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model.blur="title">
+        @error('title')
+            <p class="fst-italic text-danger">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <!-- Descrizione -->
+    <div class="mb-3">
+        <label for="description" class="form-label fw-bold">Descrizione:</label>
+        <textarea id="description" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror" wire:model.blur="description"></textarea>
+        @error('description')
+            <p class="fst-italic text-danger">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <!-- Prezzo -->
+    <div class="mb-3">
+        <label for="price" class="form-label fw-bold">Prezzo:</label>
+        <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" wire:model.blur="price">
+        @error('price')
+            <p class="fst-italic text-danger">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <!-- Categoria -->
+    <div class="mb-3">
+        <label for="category" class="form-label fw-bold">Categoria:</label>
+        <select id="category" class="form-select @error('category') is-invalid @enderror" wire:model.blur="category">
+            <option value="" disabled selected>Seleziona Una Categoria</option>
+            @foreach ($categories as $category)
+                <option value="{{ $category->id }}">{{ $category->name }}</option>
+            @endforeach
+        </select>
+        @error('category')
+            <p class="fst-italic text-danger">{{ $message }}</p>
+        @enderror
+    </div>
+
+    <!-- Pulsante di invio -->
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-dark px-4 py-2 fw-bold rounded-3 shadow-sm">
+            <i class="bi bi-check-circle"></i> Crea
+        </button>
+    </div>
+
+</form>

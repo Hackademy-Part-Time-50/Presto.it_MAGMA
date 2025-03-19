@@ -17,6 +17,7 @@
               {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea Annuncio</a></li>
               <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
                 Logout</a>
               </li>
