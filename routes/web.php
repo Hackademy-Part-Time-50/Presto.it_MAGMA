@@ -9,3 +9,8 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::middleware([RedirectIfNotAuthenticated::class])->group(function () {
     Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
 });
+
+
+
+
+Route::get('/show/article/{article}', [ArticleController::class, 'show'])->name('article.show');

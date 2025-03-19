@@ -1,5 +1,5 @@
 <x-layouts.layout>
-    <div class="container-fluid text center bg-body-tertiary">
+    <div class="container-fluid text-center bg-body-tertiary">
         <div class="row justify-content-center my-5">
             <div class="col-12 d-flex flex-column align-items-center">
                 <h1 class="display-4">Presto.it</h1>
