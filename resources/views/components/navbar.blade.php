@@ -9,6 +9,17 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="{{ route('homepage') }}">Home</a>
         </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+          <ul class="dropdown-menu">
+            @foreach ($categories as $category)
+              <li><a href="{{ $category->name }}" class="dropdown-item text-capitalize"></a></li>
+              @if (!$loop->last)
+                <hr class="dropdown-divider">
+              @endif
+            @endforeach
+          </ul>
+        </li>
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         @auth
