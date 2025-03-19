@@ -36,7 +36,7 @@
             </div>
             <div class="d-flex flex-column align-items-center mt-4">
                 <h6>Oppure</h6>
-                <p class="mt-2"><strong>Se possiedi già un account</strong><a class="ms-2" href="{{ route('login') }}">Accdi qui</a></p>
+                <p class="mt-2"><strong>Se possiedi già un account</strong><a class="ms-2" href="{{ route('login') }}">Accedi qui</a></p>
             </div>
         </div>
     </div>
