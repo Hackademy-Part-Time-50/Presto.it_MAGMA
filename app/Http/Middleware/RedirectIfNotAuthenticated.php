@@ -23,4 +23,4 @@ class RedirectIfNotAuthenticated
 
         return $next($request);        
     }
-}
+} 
