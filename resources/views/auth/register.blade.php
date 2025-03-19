@@ -12,22 +12,22 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome:</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control form-control @error('name') is-invalid @enderror" id="name" name="name">
                         @error('name') <span class="small text-danger">{{ $message }}</span> @enderror 
                     </div>
                     <div class="mb-3">
                         <label for="registerEmail" class="form-label">Indirizzo Email</label>
-                        <input type="email" class="form-control" id="registerEmail" name="email">
+                        <input type="email" class="form-control form-control @error('email') is-invalid @enderror" id="registerEmail" name="email">
                         @error('email') <span class="small text-danger">{{ $message }}</span> @enderror 
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control form-control @error('password') is-invalid @enderror" id="password" name="password">
                         @error('password') <span class="small text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="mb-3">
                         <label for="password_confirmation" class="form-label">Conferma Password</label>
-                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
+                        <input type="password" class="form-control form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation">
                     </div>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-dark">Registrati</button>
