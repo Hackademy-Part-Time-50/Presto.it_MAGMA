@@ -1,52 +1,33 @@
-/* vista singolo articolo */
-
-
-
-:root{
-
-    --colere-primario:#2ecc71;
-    --colore-secondario: #2c3e50;
-    --colore-terziario:#e67e22;
-
-
+.height-custom {
+    min-height: 45vh;
 }
 
-
-
-
-
-.carousel-inner img {
-    
-    object-fit: cover; 
+.card-w{
+    max-width: 38vh;
+    min-width: 35vh
 }
 
-/* Stile per il nome venditore */
-.vendor-name {
-    font-size: 14px;  
-    color: #6c757d;   
-    font-weight: normal; 
+.card {
+    border-radius: 10px; /* Angoli arrotondati per un design più morbido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
 }
 
-/* Stile per il titolo (h1) */
-.prodotto h1 {
-    font-size: 32px;
-    color:var(--colore-terziario);   
-    font-weight: bold; 
+.card-img-top {
+    object-fit: cover; /* Garantisce che l'immagine occupi tutto lo spazio */
+    height: 200px; /* Altezza fissa per uniformità tra le card */
 }
 
-/* Stile per la descrizione (paragrafo) */
-.prodotto p {
-    color: #000000; 
-    font-size: 16px;  
-    line-height: 1.5; 
-    max-height: 500px;
-    
+.card-title {
+    font-size: 1.2rem; /* Migliora la leggibilità del titolo */
+    font-weight: 600; /* Rende il titolo più evidente */
 }
 
-/* Stile per il prezzo */
-.prodotto .price {
-    font-size: 25px; 
-    color:var(--colore-terziario);  
-    font-weight: bold; 
-    margin-top: 10px;  
+.card-subtitle {
+    font-size: 1rem;
 }
+
+.card-text {
+    font-size: 0.85rem; /* Testo descrittivo più piccolo */
+    line-height: 1.4; /* Spaziatura per una migliore leggibilità */
+}
+
