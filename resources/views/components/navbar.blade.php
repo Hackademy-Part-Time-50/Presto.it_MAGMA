@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-custom w-100 top-0 start-0 fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top navbar_custom">
   <div class="container-fluid">
     <a class="navbar-brand text-white" href="{{ route('homepage') }}">Presto</a>
     <button class="navbar-toggler border-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

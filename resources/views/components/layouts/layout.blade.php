@@ -9,8 +9,8 @@
     <title>Presto</title>
 </head>
 
-<body class="@yield('body-class', 'body-class')">
-    <x-navbar />
+<body>
+    <x-navbar class="navbar_custom"/>
 
     <div class="min-vh-100" id="sfondo">
         {{ $slot }}
