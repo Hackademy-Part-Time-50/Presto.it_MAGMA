@@ -1,5 +1,9 @@
 .height-custom {
-    min-height: 45vh;
+    min-height: 30vh;
+}
+
+.height-custom-home{
+    min-height: 16vh;
 }
 
 .card-w{
