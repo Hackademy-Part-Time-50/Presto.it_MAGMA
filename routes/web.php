@@ -12,4 +12,4 @@ Route::middleware([RedirectIfNotAuthenticated::class])->group(function () {
 
 Route::get('/articles/index',[ArticleController::class, 'index'])->name('articles.index');
 Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('article.show');
-
+Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');

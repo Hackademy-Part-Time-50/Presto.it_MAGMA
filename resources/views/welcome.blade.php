@@ -20,9 +20,9 @@
                 </div>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center py-5">
+        <div class="row height-custom justify-content-start py-5">
             @forelse ($articles as $article)
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                     <x-card_home_announces :article="$article" />
                 </div>
             @empty
