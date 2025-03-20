@@ -35,8 +35,8 @@
     <!-- Categoria -->
     <div class="mb-3">
         <label for="category" class="form-label fw-bold">Categoria:</label>
-        <select id="category" class="form-select @error('category') is-invalid @enderror" wire:model.blur="category">
-            <option value="" disabled selected>Seleziona Una Categoria</option>
+        <select id="category_select" class="form-select @error('category_select') is-invalid @enderror" wire:model.blur="category">
+            <option value="" selected>Seleziona una categoria</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach

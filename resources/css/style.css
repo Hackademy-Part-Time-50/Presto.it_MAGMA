@@ -1,19 +1,13 @@
 
 /* vista singolo articolo */
 
-
-
 :root{
 
     --colere-primario:#2ecc71;
     --colore-secondario: #2c3e50;
-    --colore-terziario:#e67e22;
-
+    --colore-terziario:rgb(230, 126, 34);
 
 }
-
-
-
 
 .carousel-inner img {
     
@@ -88,4 +82,11 @@
     line-height: 1.4; /* Spaziatura per una migliore leggibilità */
 }
 
+.navbar_custom { 
+    background: rgb(230, 126, 34, 0.6)!important;
+}
+
+.my_btn {
+    color:var(--colere-primario);
+}
 
