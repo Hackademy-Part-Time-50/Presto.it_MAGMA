@@ -1,3 +1,4 @@
+
 /* vista singolo articolo */
 
 
@@ -50,3 +51,42 @@
     font-weight: bold; 
     margin-top: 10px;  
 }
+=======
+.height-custom {
+    min-height: 30vh;
+}
+
+.height-custom-home{
+    min-height: 16vh;
+}
+
+.card-w{
+    max-width: 38vh;
+    min-width: 35vh
+}
+
+.card {
+    border-radius: 10px; /* Angoli arrotondati per un design più morbido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+}
+
+.card-img-top {
+    object-fit: cover; /* Garantisce che l'immagine occupi tutto lo spazio */
+    height: 200px; /* Altezza fissa per uniformità tra le card */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Migliora la leggibilità del titolo */
+    font-weight: 600; /* Rende il titolo più evidente */
+}
+
+.card-subtitle {
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 0.85rem; /* Testo descrittivo più piccolo */
+    line-height: 1.4; /* Spaziatura per una migliore leggibilità */
+}
+
+
