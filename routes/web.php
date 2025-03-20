@@ -10,13 +10,10 @@ Route::middleware([RedirectIfNotAuthenticated::class])->group(function () {
     Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
 });
 
-<<<<<<< HEAD
 
 
 
 
-=======
 Route::get('/articles/index',[ArticleController::class, 'index'])->name('articles.index');
 Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('article.show');
 
->>>>>>> refs/remotes/origin/pagina-dettaglio-annuncio
