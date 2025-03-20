@@ -12,9 +12,9 @@
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('articles.index') }}">Tutti gli Articoli</a>
         </li>
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown ">
           <a href="#" class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu ">
             @foreach ($categories as $category)
               <li><a href="{{ route('byCategory', ['category' => $category]) }}" class="dropdown-item text-capitalize">{{ $category->name }}</a></li>
               @if (!$loop->last)
@@ -30,7 +30,7 @@
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               {{ Auth::user()->name }}
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea Annuncio</a></li>
               <li>
                 <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
