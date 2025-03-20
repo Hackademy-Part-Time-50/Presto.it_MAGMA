@@ -4,8 +4,8 @@
             <h5 class="card-title">{{ $article->title }}</h5>
             <h6 class="subtitle text-body-secondary">{{ $article->price }}</h6>
             <div class="d-flex justify-content-center align-items-end mt-5">
-                <a href="#" class="btn btn-primary mx-2">Dettagli</a>
-                <a href="#" class="btn btn-outline-info">{{ $article->category->name }}</a>
+                <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary mx-2">Dettagli</a>
+                <a href="{{ route('byCategory', $article->category->id) }}" class="btn btn-outline-info">{{ $article->category->name }}</a>
             </div>
         </div>
     </div>
