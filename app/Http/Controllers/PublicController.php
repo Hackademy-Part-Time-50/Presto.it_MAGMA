@@ -13,7 +13,5 @@ class PublicController extends Controller
         $articles = Article::take(6)->orderBy('created_at', 'desc')->get();
         return view('welcome', compact('articles'));
     }
-
-
 }
 
