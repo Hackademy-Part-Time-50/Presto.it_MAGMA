@@ -1,11 +1,4 @@
 <x-layouts.layout>
-
-
-
-
-
-
-
     <div class="container-fluid p-4 d-flex justify-content-center prodotto">
         <div class="row w-100 justify-content-center align-items-center">
             {{-- carosello --}}

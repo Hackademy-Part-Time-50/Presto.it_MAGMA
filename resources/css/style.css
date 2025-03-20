@@ -8,9 +8,25 @@
     --colere-primario:#2ecc71;
     --colore-secondario: #2c3e50;
     --colore-terziario:#e67e22;
+    --colore-sfondo:#fcbc58;
 
 
 }
+
+.body-class{
+    padding-top: 3rem;
+    background-color: var(--colore-sfondo) !important;
+}
+
+.bg-custom {
+    background-color: var(--colore-sfondo) !important;
+}
+
+.pt-custom {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem; /* Regola il valore a piacere */
+}
+
 
 .carousel-inner img {
     
@@ -47,7 +63,6 @@
     font-weight: bold; 
     margin-top: 10px;  
 }
-
 .height-custom {
     min-height: 45vh;
 }
@@ -80,4 +95,9 @@
     font-size: 0.85rem; /* Testo descrittivo più piccolo */
     line-height: 1.4; /* Spaziatura per una migliore leggibilità */
 }
+
+.navbar-custom {
+    background: transparent; /* Nero semi-trasparente */
+    /* backdrop-filter: blur(10px); Effetto sfocato */
+  }
 
