@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
+use App\Models\Category;
 
 class ArticleController extends Controller 
 {
@@ -22,4 +23,11 @@ class ArticleController extends Controller
     {
         return view('article.show', compact('article'));
     }
+
+    public function byCategory(Category $category) 
+    {
+        return view('articles.byCategory', [
+            'articles' => $category->articles, 'category' => $category
+        ]);
+    } 
 }
