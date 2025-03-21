@@ -5,9 +5,26 @@
 
     --colere-primario:#2ecc71;
     --colore-secondario: #2c3e50;
-    --colore-terziario:rgb(230, 126, 34);
+    --colore-terziario:#e67e22;
+    --colore-sfondo:#f1e3d3    ;
+
 
 }
+
+.body-class{
+    padding-top: 3rem;
+    background-color: var(--colore-sfondo) !important;
+}
+
+.bg-custom {
+    background-color: var(--colore-sfondo) !important;
+}
+
+.pt-custom {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem; 
+}
+
 
 .carousel-inner img {
     
@@ -45,7 +62,11 @@
     margin-top: 10px;  
 }
 .height-custom {
-    min-height: 45vh;
+    min-height: 30vh;
+}
+
+.height-custom-home{
+    min-height: 17vh;
 }
 
 .card-w{
@@ -55,7 +76,7 @@
 
 .card {
     border-radius: 10px; /* Angoli arrotondati per un design più morbido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra per dare profondità */
 }
 
 .card-img-top {
@@ -77,11 +98,37 @@
     line-height: 1.4; /* Spaziatura per una migliore leggibilità */
 }
 
-.navbar_custom { 
-    background: rgb(230, 126, 34, 0.6)!important;
+.navbar-custom {
+    background: transparent; /* Nero semi-trasparente */
+    backdrop-filter: blur(10px);
+    background-color: rgba(46, 204, 112, 0.637);
+  }
+
+.mask {
+    background-color: hsla(0, 0%, 0%, 0.5);    
+}
+
+.shadow_custom_home {
+    box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
 .my_btn {
-    color:var(--colere-primario);
+    color: white !important;
+    background-color:  var(--colore-secondario) !important;
 }
 
+.my_btn:hover {
+    color: var(--colore-secondario) !important;
+    background-color: white !important;
+    border-color: var(--colore-secondario) !important;
+}
+
+.my_btn_secondary {
+    color: var(--colore-terziario) !important;
+    border-color: var(--colore-terziario) !important;
+}
+
+.my_btn_secondary:hover {
+    color: var(--colore-secondario) !important;
+    background-color: var(--colore-terziario) !important;
+}

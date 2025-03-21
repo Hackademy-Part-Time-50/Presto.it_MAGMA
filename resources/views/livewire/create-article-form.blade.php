@@ -10,7 +10,7 @@
         <label for="title" class="form-label fw-bold">Titolo:</label>
         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" wire:model.blur="title">
         @error('title')
-            <p class="fst-italic text-danger">{{ $message }}</p>
+            <p class="small fst-italic text-danger">{{ $message }}</p>
         @enderror
     </div>
 
@@ -19,7 +19,7 @@
         <label for="description" class="form-label fw-bold">Descrizione:</label>
         <textarea id="description" cols="30" rows="5" class="form-control @error('description') is-invalid @enderror" wire:model.blur="description"></textarea>
         @error('description')
-            <p class="fst-italic text-danger">{{ $message }}</p>
+            <p class="small fst-italic text-danger">{{ $message }}</p>
         @enderror
     </div>
 
@@ -28,21 +28,21 @@
         <label for="price" class="form-label fw-bold">Prezzo:</label>
         <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" wire:model.blur="price">
         @error('price')
-            <p class="fst-italic text-danger">{{ $message }}</p>
+            <p class="small fst-italic text-danger">{{ $message }}</p>
         @enderror
     </div>
 
     <!-- Categoria -->
     <div class="mb-3">
-        <label for="category" class="form-label fw-bold">Categoria:</label>
+        <label for="category_select" class="form-label fw-bold">Categoria:</label>
         <select id="category_select" class="form-select @error('category_select') is-invalid @enderror" wire:model.blur="category">
             <option value="" selected>Seleziona una categoria</option>
             @foreach ($categories as $category)
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
-        @error('category')
-            <p class="fst-italic text-danger">{{ $message }}</p>
+        @error('category_select')
+            <p class="small fst-italic text-danger">{{ $message }}</p>
         @enderror
     </div>
 

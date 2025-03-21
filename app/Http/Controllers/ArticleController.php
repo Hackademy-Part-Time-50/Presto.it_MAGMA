@@ -14,7 +14,7 @@ class ArticleController extends Controller
 {
     public function create()
     {
-        return view('articles.create'); // Assicurati che esista la vista
+        return view('articles.create'); 
     }
 
 
