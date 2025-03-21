@@ -6,7 +6,7 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
-Route::middleware([RedirectIfNotAuthenticated::class])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
 });
 
