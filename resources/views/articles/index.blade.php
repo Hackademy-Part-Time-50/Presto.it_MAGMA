@@ -1,5 +1,5 @@
 <x-layouts.layout>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row jusify-content-center align-items-center text-center">
             <div class="col-12">
                 <h1 class="display-1 pt-custom">Tutti gli Articoli</h1>

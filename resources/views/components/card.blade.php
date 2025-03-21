@@ -4,8 +4,8 @@
         <h4 class="card-title">{{ $article->title}}</h4>
         <h6 class="card-subttitle text-body-secondary mb-3">{{ $article->price}}</h6>
         <div class="d-flex justify-content-around mt-auto ">
-            <a href="{{ route('articles.show', [$article->id]) }}" class="btn btn-primary btn-sm w-45 px-4">Dettaglio</a>
-            <a href="{{ route('byCategory', [$article->category->id]) }}" class="btn btn-outline-info btn-sm w-45 px-4">Categoria</a>
+            <a href="{{ route('articles.show', [$article->id]) }}" class="btn my_btn btn-sm w-45 px-4">Dettaglio</a>
+            <a href="{{ route('byCategory', [$article->category->id]) }}" class="btn my_btn_secondary btn-sm w-45 px-4">Categoria</a>
         </div>
     </div>
 </div>

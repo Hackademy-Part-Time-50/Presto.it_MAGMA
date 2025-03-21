@@ -6,7 +6,7 @@
     --colere-primario:#2ecc71;
     --colore-secondario: #2c3e50;
     --colore-terziario:#e67e22;
-    --colore-sfondo:#fcbc58;
+    --colore-sfondo:#f1e3d3    ;
 
 
 }
@@ -22,7 +22,7 @@
 
 .pt-custom {
     padding-bottom: 2rem;
-    margin-bottom: 1rem; /* Regola il valore a piacere */
+    margin-bottom: 1rem; 
 }
 
 
@@ -66,7 +66,7 @@
 }
 
 .height-custom-home{
-    min-height: 16vh;
+    min-height: 17vh;
 }
 
 .card-w{
@@ -76,7 +76,7 @@
 
 .card {
     border-radius: 10px; /* Angoli arrotondati per un design più morbido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra per dare profondità */
 }
 
 .card-img-top {
@@ -100,6 +100,35 @@
 
 .navbar-custom {
     background: transparent; /* Nero semi-trasparente */
-    /* backdrop-filter: blur(10px); Effetto sfocato */
+    backdrop-filter: blur(10px);
+    background-color: rgba(46, 204, 112, 0.637);
   }
 
+.mask {
+    background-color: hsla(0, 0%, 0%, 0.5);    
+}
+
+.shadow_custom_home {
+    box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.my_btn {
+    color: white !important;
+    background-color:  var(--colore-secondario) !important;
+}
+
+.my_btn:hover {
+    color: var(--colore-secondario) !important;
+    background-color: white !important;
+    border-color: var(--colore-secondario) !important;
+}
+
+.my_btn_secondary {
+    color: var(--colore-terziario) !important;
+    border-color: var(--colore-terziario) !important;
+}
+
+.my_btn_secondary:hover {
+    color: var(--colore-secondario) !important;
+    background-color: var(--colore-terziario) !important;
+}
