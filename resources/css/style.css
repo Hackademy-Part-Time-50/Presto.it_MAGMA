@@ -25,6 +25,7 @@
     margin-bottom: 1rem; /* Regola il valore a piacere */
 }
 
+
 .carousel-inner img {
     
     object-fit: cover; 
@@ -100,5 +101,5 @@
 .navbar-custom {
     background: transparent; /* Nero semi-trasparente */
     /* backdrop-filter: blur(10px); Effetto sfocato */
-}
+  }
 
