@@ -41,7 +41,7 @@
                 <option value="{{ $category->id }}">{{ $category->name }}</option>
             @endforeach
         </select>
-        @error('category_select')
+        @error('category')
             <p class="small fst-italic text-danger">{{ $message }}</p>
         @enderror
     </div>
