@@ -8,15 +8,17 @@
 
         <div class="row justify-content-center align-items-center">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{{ route('login') }}" class="bg-secodary-subtle shadow rounded p-5">
+                <form method="POST" action="{{ route('login') }}" class="bg-body-tertiary shadow rounded p-5">
                     @csrf
                     <div class="mb-3">
                         <label for="loginEmail" class="form-label">Indirizzo Email</label>
-                        <input type="email" class="form-control" id="loginEmail" name="email">
+                        <input type="email" class="form-control @error('email') is-invalid @enderror" id="loginEmail" name="email">
+                        @error('email') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror 
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
+                        @error('password') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-dark">Accedi</button>

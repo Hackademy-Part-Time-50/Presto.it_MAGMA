@@ -13,17 +13,17 @@
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome:</label>
                         <input type="text" class="form-control form-control @error('name') is-invalid @enderror" id="name" name="name">
-                        @error('name') <span class="small text-danger">{{ $message }}</span> @enderror 
+                        @error('name') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror 
                     </div>
                     <div class="mb-3">
                         <label for="registerEmail" class="form-label">Indirizzo Email</label>
                         <input type="email" class="form-control form-control @error('email') is-invalid @enderror" id="registerEmail" name="email">
-                        @error('email') <span class="small text-danger">{{ $message }}</span> @enderror 
+                        @error('email') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror 
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control form-control @error('password') is-invalid @enderror" id="password" name="password">
-                        @error('password') <span class="small text-danger">{{ $message }}</span> @enderror
+                        @error('password') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror
                     </div>
                     <div class="mb-3">
                         <label for="password_confirmation" class="form-label">Conferma Password</label>
