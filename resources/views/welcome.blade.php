@@ -2,7 +2,7 @@
     @section('body-class', 'pt-custom, bg-custom')
     <div class="container-fluid text-center">
         <div class="row justify-content-center">
-            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple pt-custom"
+            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple pt-custom mb-4"
                 data-mdb-ripple-color="light">
 
                 <!-- Immagine di sfondo -->
@@ -35,16 +35,18 @@
                 </div>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center text-center container">
-            @forelse ($articles as $article)
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                    <x-card_home_announces :article="$article" />
-                </div>
-            @empty
-                <div class="col-12">
-                    <h3>Non sono ancora stati creati annunci</h3>
-                </div>
-            @endforelse
+        <div class="container">
+            <div class="row mt-5 text-center container ">
+                @forelse ($articles as $article)
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <x-card_home_announces :article="$article" />
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <h3>Non sono ancora stati creati annunci</h3>
+                    </div>
+                @endforelse
+            </div>
         </div>
     </div>
 </x-layouts.layout>
