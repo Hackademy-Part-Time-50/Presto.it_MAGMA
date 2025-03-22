@@ -6,7 +6,7 @@
             </div>
         </div>
         
-        <div class="row justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center mt-5">
             <div class="col-12 col-md-6 mb-3">
                 <form method="POST" action="/register" class="bg-body-tertiary shadow rounded p-5">
                     @csrf
