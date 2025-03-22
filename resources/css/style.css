@@ -17,9 +17,6 @@
     background-color: var(--colore-sfondo) !important;
 }
 
-
-
-
 /* Stile Navbar */
 .navbar-custom {
     background: transparent;
@@ -266,26 +263,22 @@
     }
 }
 
-
-
-
-
 .img-full {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* L'immagine copre tutto lo spazio senza distorsioni */
-    display: block;  /* Evita spazi vuoti sotto l'immagine */
+    object-fit: cover; /* L'immagine copre tutto lo spazio senza distorsioni */
+    display: block; /* Evita spazi vuoti sotto l'immagine */
 }
 
 /* Se vuoi che l'immagine copra un contenitore specifico */
 .container-img {
-    width: 100%;  /* Contenitore che prende tutta la larghezza */
-    height: 350px;  /* Impostare un'altezza specifica per il contenitore (puoi cambiare questo valore) */
+    width: 100%; /* Contenitore che prende tutta la larghezza */
+    height: 350px; /* Impostare un'altezza specifica per il contenitore (puoi cambiare questo valore) */
     position: relative;
 }
 
 .container-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* Copre tutto il contenitore senza distorsioni */
+    object-fit: cover; /* Copre tutto il contenitore senza distorsioni */
 }

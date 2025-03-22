@@ -1,14 +1,14 @@
 <x-layouts.layout>
-    @section('body-class', 'pt-custom, bg-custom')
+@section('body-class', 'pt-custom, bg-custom')
     <div class="container-fluid text-center">
-        <div class="row justify-content-center">
-            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple pt-custom "
-                data-mdb-ripple-color="light">
+        <div class="row justify-content-center .pt-custom">
+            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple w-100 mb-4 p-0 shadow_custom_home"
+                data-mdb-ripple-color="light" style="max-height: 400px;">
 
-                <!-- Immagine di sfondo -->
-                <div class="container-img">
-                    <img src="http://picsum.photos/1000" alt="Immagine che occupa tutto lo spazio" class="img-full">
-                </div>
+                <!-- Immagine di sfondo -->  
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/053.webp"
+                class="w-100 h-100 object-fit-cover" />
+      
 
                 <!-- Maschera per migliorare leggibilità -->
                 <div class="mask position-absolute top-0 start-0 w-100 h-100"></div>
@@ -23,7 +23,7 @@
                                 <i class="bi bi-plus"></i> Crea Annuncio
                             </a>
                         @else
-                            <a href="{{ route('login') }}" class="btn my_btn px-4 py-2 fw-bold rounded-3 shadow-sm me-2">
+                            <a href="{{ route('login') }}" class="btn btn-outline-light px-4 py-2 fw-bold rounded-3 shadow-sm">
                                 <i class="bi bi-box-arrow-in-right"></i> Accedi
                             </a>
                             <a href="{{ route('register') }}"
@@ -35,16 +35,18 @@
                 </div>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center text-center">
-            @forelse ($articles as $article)
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                    <x-card_home_announces :article="$article" />
-                </div>
-            @empty
-                <div class="col-12">
-                    <h3>Non sono ancora stati creati annunci</h3>
-                </div>
-            @endforelse
+        <div class="container">
+            <div class="row justify-content-center">
+                @forelse ($articles as $article)
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <x-card_home_announces :article="$article" />
+                    </div>
+                @empty
+                    <div class="col-12">
+                        <h3>Non sono ancora stati creati annunci</h3>
+                    </div>
+                @endforelse
+            </div>
         </div>
     </div>
 </x-layouts.layout>
