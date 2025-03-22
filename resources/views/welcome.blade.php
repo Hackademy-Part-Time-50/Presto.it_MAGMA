@@ -2,7 +2,7 @@
     @section('body-class', 'pt-custom, bg-custom')
     <div class="container-fluid text-center">
         <div class="row justify-content-center">
-            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple pt-custom "
+            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple pt-custom"
                 data-mdb-ripple-color="light">
 
                 <!-- Immagine di sfondo -->
@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <div class="row height-custom justify-content-center align-items-center text-center">
+        <div class="row height-custom justify-content-center align-items-center text-center container">
             @forelse ($articles as $article)
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                     <x-card_home_announces :article="$article" />
