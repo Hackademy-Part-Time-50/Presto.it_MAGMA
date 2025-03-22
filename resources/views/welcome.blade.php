@@ -11,12 +11,11 @@
                 </div>
 
                 <!-- Maschera per migliorare leggibilità -->
-                <div class="mask position-absolute top-0 start-0 w-100 h-100"
-                    style="background-color: hsla(0, 0%, 0%, 0.5);"></div>
+                <div class="mask position-absolute top-0 start-0 w-100 h-100"></div>
 
                 <!-- Contenuto sopra l'immagine -->
                 <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
-                    <h1 class="display-4 fw-bold">Presto.it</h1>
+                    <h1 class="display-4 fw-bold">{{ config('app.name') }}</h1>
                     <div class="my-3">
                         @auth
                             <a href="{{ route('create.article') }}"
@@ -24,7 +23,7 @@
                                 <i class="bi bi-plus"></i> Crea Annuncio
                             </a>
                         @else
-                            <a href="{{ route('login') }}" class="btn btn-light px-4 py-2 fw-bold rounded-3 shadow-sm me-2">
+                            <a href="{{ route('login') }}" class="btn my_btn px-4 py-2 fw-bold rounded-3 shadow-sm me-2">
                                 <i class="bi bi-box-arrow-in-right"></i> Accedi
                             </a>
                             <a href="{{ route('register') }}"
