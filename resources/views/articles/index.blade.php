@@ -20,8 +20,9 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <div>
-            {{ $articles->links() }}
-        </div>
+    <div>
+        {{ $articles->links('pagination.custom') }}
     </div>
+</div>
+
 </x-layouts.layout>

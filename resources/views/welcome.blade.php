@@ -1,13 +1,14 @@
 <x-layouts.layout>
-@section('body-class', 'pt-custom, bg-custom')
+    @section('body-class', 'pt-custom, bg-custom')
     <div class="container-fluid text-center">
-        <div class="row justify-content-center .pt-custom">
-            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple w-100 mb-4"
-                data-mdb-ripple-color="light" style="max-height: 400px;">
+        <div class="row justify-content-center">
+            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple "
+                data-mdb-ripple-color="light">
 
                 <!-- Immagine di sfondo -->
-                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/053.webp"
-                    class="w-100 h-100 object-fit-cover" />
+                <div class="container-img">
+                    <img src="http://picsum.photos/1000" alt="Immagine che occupa tutto lo spazio" class="img-full">
+                </div>
 
                 <!-- Maschera per migliorare leggibilità -->
                 <div class="mask position-absolute top-0 start-0 w-100 h-100"
@@ -35,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div class="row height-custom justify-content-start">
+        <div class="row height-custom justify-content-center align-items-center text-center">
             @forelse ($articles as $article)
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                     <x-card_home_announces :article="$article" />

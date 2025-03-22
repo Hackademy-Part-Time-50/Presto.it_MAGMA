@@ -1,18 +1,15 @@
+/* Vista singolo articolo */
 
-/* vista singolo articolo */
-
-:root{
-
-    --colere-primario:#2ecc71;
+/* Root variables */
+:root {
+    --colere-primario: #2ecc71;
     --colore-secondario: #2c3e50;
-    --colore-terziario:#e67e22;
-    --colore-sfondo:#fcbc58;
-
-
+    --colore-terziario: #e67e22;
+    --colore-sfondo: #fcbc58;
 }
 
-.body-class{
-    padding-top: 3rem;
+.body-class {
+    padding-top: 6rem; /* Aumento il padding-top su schermi più piccoli */
     background-color: var(--colore-sfondo) !important;
 }
 
@@ -20,86 +17,273 @@
     background-color: var(--colore-sfondo) !important;
 }
 
-.pt-custom {
-    padding-bottom: 2rem;
-    margin-bottom: 1rem; /* Regola il valore a piacere */
+
+
+
+/* Stile Navbar */
+.navbar-custom {
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 14px 25px;
+    transition: all 0.3s ease-in-out;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
+.glass-effect {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
 
+.navbar-custom .nav-link {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #ff7300 !important;
+    transform: translateY(-2px);
+}
+
+.navbar-custom .dropdown-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(242, 255, 66, 0.15);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.futuristic-menu {
+    background: linear-gradient(135deg, #feeecb, #fed4b1);
+    color: white;
+    border: none;
+}
+
+.futuristic-menu .dropdown-item:hover {
+    background-color: #ffffff;
+    color: #1f4037;
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border-color: transparent;
+}
+
+.custom-toggler {
+    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="white"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+}
+
+@media (max-width: 991px) {
+    .navbar-custom {
+        background: transparent;
+    }
+}
+
+/* Padding e margine personalizzati */
+.pt-custom {
+    padding-top: 0rem;
+}
+
+/* Carousel */
 .carousel-inner img {
-    
-    object-fit: cover; 
+    object-fit: cover;
 }
 
 /* Stile per il nome venditore */
 .vendor-name {
-    font-size: 14px;  
-    color: #6c757d;   
-    font-weight: normal; 
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: normal;
 }
 
 /* Stile per il titolo (h1) */
 .prodotto h1 {
     font-size: 32px;
-    color:var(--colore-terziario);   
-    font-weight: bold; 
+    color: var(--colore-terziario);
+    font-weight: bold;
 }
 
 /* Stile per la descrizione (paragrafo) */
 .prodotto p {
-    color: #000000; 
-    font-size: 16px;  
-    line-height: 1.5; 
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.5;
     max-height: 500px;
-    
 }
 
 /* Stile per il prezzo */
 .prodotto .price {
-    font-size: 25px; 
-    color:var(--colore-terziario);  
-    font-weight: bold; 
-    margin-top: 10px;  
+    font-size: 25px;
+    color: var(--colore-terziario);
+    font-weight: bold;
+    margin-top: 10px;
 }
+
 .height-custom {
     min-height: 30vh;
 }
 
-.height-custom-home{
+.height-custom-home {
     min-height: 16vh;
 }
 
-.card-w{
-    max-width: 38vh;
-    min-width: 35vh
+/* Card */
+.card-w {
+    max-width: 280px;
+    min-width: 250px;
+    margin: 0 auto; /* Centra le card */
 }
 
 .card {
-    border-radius: 10px; /* Angoli arrotondati per un design più morbido */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombra per dare profondità */
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
 }
 
 .card-img-top {
-    object-fit: cover; /* Garantisce che l'immagine occupi tutto lo spazio */
-    height: 200px; /* Altezza fissa per uniformità tra le card */
+    object-fit: cover;
+    height: 180px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
 .card-title {
-    font-size: 1.2rem; /* Migliora la leggibilità del titolo */
-    font-weight: 600; /* Rende il titolo più evidente */
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .card-subtitle {
     font-size: 1rem;
+    color: #6c757d;
 }
 
-.card-text {
-    font-size: 0.85rem; /* Testo descrittivo più piccolo */
-    line-height: 1.4; /* Spaziatura per una migliore leggibilità */
+/* MEDIA QUERIES */
+
+/* Mobile */
+@media (max-width: 375px) {
+    .body-class {
+        padding-top: 8rem; /* Aumento padding-top per dispositivi piccoli */
+    }
+
+    .navbar-custom {
+        padding: 10px 20px;
+    }
+
+    .prodotto h1 {
+        font-size: 24px;
+    }
+
+    .prodotto p {
+        font-size: 14px;
+    }
+
+    .prodotto .price {
+        font-size: 20px;
+    }
+
+    .card-w {
+        max-width: 100%;
+        min-width: 100%;
+    }
 }
 
-.navbar-custom {
-    background: transparent; /* Nero semi-trasparente */
-    /* backdrop-filter: blur(10px); Effetto sfocato */
-  }
+/* Tablet */
+@media (max-width: 768px) {
+    .body-class {
+        padding-top: 6rem; /* Aumento padding-top per tablet */
+    }
 
+    .navbar-custom {
+        padding: 12px 22px;
+    }
+
+    .prodotto h1 {
+        font-size: 28px;
+    }
+
+    .prodotto p {
+        font-size: 15px;
+    }
+
+    .prodotto .price {
+        font-size: 22px;
+    }
+
+    .card-w {
+        max-width: 100%;
+        min-width: 100%;
+    }
+}
+
+/* Laptop */
+@media (max-width: 1366px) {
+    .navbar-custom {
+        padding: 14px 30px;
+    }
+
+    .prodotto h1 {
+        font-size: 30px;
+    }
+
+    .prodotto p {
+        font-size: 16px;
+    }
+
+    .prodotto .price {
+        font-size: 25px;
+    }
+
+    .card-w {
+        max-width: 320px;
+    }
+}
+
+/* Desktop (alta risoluzione) */
+@media (max-width: 1920px) {
+    .navbar-custom {
+        padding: 14px 35px;
+    }
+
+    .prodotto h1 {
+        font-size: 32px;
+    }
+
+    .prodotto p {
+        font-size: 16px;
+    }
+
+    .prodotto .price {
+        font-size: 25px;
+    }
+
+    .card-w {
+        max-width: 340px;
+    }
+}
+
+
+
+
+
+.img-full {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* L'immagine copre tutto lo spazio senza distorsioni */
+    display: block;  /* Evita spazi vuoti sotto l'immagine */
+}
+
+/* Se vuoi che l'immagine copra un contenitore specifico */
+.container-img {
+    width: 100%;  /* Contenitore che prende tutta la larghezza */
+    height: 350px;  /* Impostare un'altezza specifica per il contenitore (puoi cambiare questo valore) */
+    position: relative;
+}
+
+.container-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Copre tutto il contenitore senza distorsioni */
+}
