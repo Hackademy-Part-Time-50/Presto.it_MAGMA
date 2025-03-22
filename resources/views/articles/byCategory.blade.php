@@ -10,7 +10,7 @@
         <div class="row height-custom justify-content-center align-items-center py-5">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-3">
-                    <x-card :article="$article" />
+                    <x-card_category_announce :article="$article" />
                 </div>
             @empty
                 <div class="col-12 text-center">

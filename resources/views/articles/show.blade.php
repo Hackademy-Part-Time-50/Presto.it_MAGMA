@@ -1,5 +1,5 @@
 <x-layouts.layout>
-    <div class="container-fluid p-4 d-flex justify-content-center prodotto">
+    <div class="container vh-100 p-4 d-flex justify-content-center prodotto">
         <div class="row w-100 justify-content-center align-items-center">
             {{-- carosello --}}
             <div id="carouselExampleIndicators" class="carousel slide col-lg-6">
