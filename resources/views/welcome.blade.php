@@ -2,7 +2,7 @@
     @section('body-class', 'pt-custom, bg-custom')
     <div class="container-fluid text-center">
         <div class="row justify-content-center">
-            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple "
+            <div class="col-12 d-flex flex-column align-items-center position-relative overflow-hidden bg-image ripple pt-custom "
                 data-mdb-ripple-color="light">
 
                 <!-- Immagine di sfondo -->
