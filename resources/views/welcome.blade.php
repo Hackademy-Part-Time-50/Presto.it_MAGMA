@@ -31,6 +31,11 @@
         </div>
     </header>
 
+    @if (session()->has('errorMessage'))
+        <div class="alert alert-danger text-center shadow rounded w-50">
+            {{ session('errorMessage') }}
+        </div>
+    @endif
 
     <div class="container text-center">
         <div class="row">
@@ -45,11 +50,6 @@
             @endforelse
         </div>
     </div>
-  
-    
-
-
-
 
 
 
