@@ -18,7 +18,7 @@ return new class extends Migration
             $table->decimal('price', 8, places: 2);
             //Relazioni con Category
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            // $table->foreign('category_id')->references('id')->on('categories');
             //Relazioni con User
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
