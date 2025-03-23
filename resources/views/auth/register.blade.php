@@ -1,45 +1,60 @@
 <x-layouts.layout>
-@section('body-class', 'pt-custom, bg-custom')
+@section('body-class', 'pt-custom, bg-custom')  
+<section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-    <div class="container pt-3">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center">    
-                <h1 class="display-4 pt-5">Registrati</h1>
-            </div>
-        </div>
-        
-        <div class="row justify-content-center align-items-center mt-5">
-            <div class="col-12 col-md-6 mb-3">
-                <form method="POST" action="/register" class="bg-body-tertiary shadow rounded p-5">
+              <form method="POST" action="/register">
                     @csrf
-                    <div class="mb-3">
-                        <label for="name" class="form-label">Nome:</label>
-                        <input type="text" class="form-control form-control @error('name') is-invalid @enderror" id="name" name="name">
-                        @error('name') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror 
-                    </div>
-                    <div class="mb-3">
-                        <label for="registerEmail" class="form-label">Indirizzo Email</label>
-                        <input type="email" class="form-control form-control @error('email') is-invalid @enderror" id="registerEmail" name="email">
-                        @error('email') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror 
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control form-control @error('password') is-invalid @enderror" id="password" name="password">
-                        @error('password') <span class="small fst-italic text-danger">{{ $message }}</span> @enderror
-                    </div>
-                    <div class="mb-3">
-                        <label for="password_confirmation" class="form-label">Conferma Password</label>
-                        <input type="password" class="form-control form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation">
-                    </div>
-                    <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn btn-dark">Registrati</button>
-                    </div>
-                </form>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example1cg">Your Name</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example3cg">Your Email</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cg">Password</label>
+                </div>
+
+                <div data-mdb-input-init class="form-outline mb-4">
+                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+                </div>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <button  type="button" data-mdb-button-init
+                    data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                    class="fw-bold text-body"><u>Login here</u></a></p>
+
+              </form>
+
             </div>
-            <div class="d-flex flex-column align-items-center mt-4">
-                <h6>Oppure</h6>
-                <p class="mt-2"><strong>Se possiedi già un account</strong><a class="ms-2" href="{{ route('login') }}">Accedi qui</a></p>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 </x-layouts.layout>
