@@ -1,5 +1,7 @@
 <x-layouts.layout>
-    <div class="container mt-5">
+@section('body-class', 'pt-custom, bg-custom')
+
+    <div class="container mt-2">
         <div class="row justify-content-center">
             <div class="col-12 text-center">    
                 <h1 class="display-4 pt-5 mt-5">Accedi</h1>
