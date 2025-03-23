@@ -1,0 +1,123 @@
+.body-class{
+    padding-top: 3rem;
+    background-color: var(--colore-sfondo) !important;
+}
+
+.bg-custom {
+    background-color: var(--colore-sfondo) !important;
+}
+
+.pt-custom {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem; 
+}
+ 
+
+.carousel-inner img {
+    
+    object-fit: cover; 
+}
+
+/* Stile per il nome venditore */
+.vendor-name {
+    font-size: 14px;  
+    color: #6c757d;   
+    font-weight: normal; 
+}
+
+/* Stile per il titolo (h1) */
+.prodotto h1 {
+    font-size: 32px;
+    color:var(--colore-terziario);   
+    font-weight: bold; 
+}
+
+/* Stile per la descrizione (paragrafo) */
+.prodotto p {
+    color: #000000; 
+    font-size: 16px;  
+    line-height: 1.5; 
+    max-height: 500px;
+    
+}
+
+/* Stile per il prezzo */
+.prodotto .price {
+    font-size: 25px; 
+    color:var(--colore-terziario);  
+    font-weight: bold; 
+    margin-top: 10px;  
+}
+.height-custom {
+    min-height: 30vh;
+}
+
+.height-custom-home{
+    min-height: 17vh;
+}
+
+ .card-w{
+    max-width: 38vh;
+    min-width: 35vh
+}
+
+.card {
+    border-radius: 10px; /* Angoli arrotondati per un design più morbido */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ombra per dare profondità */
+}
+
+.card-img-top {
+    object-fit: cover; /* Garantisce che l'immagine occupi tutto lo spazio */
+    height: 200px; /* Altezza fissa per uniformità tra le card */
+}
+
+.card-title {
+    font-size: 1.2rem; /* Migliora la leggibilità del titolo */
+    font-weight: 600; /* Rende il titolo più evidente */
+}
+
+.card-subtitle {
+    font-size: 1rem;
+}
+
+.card-text {
+    font-size: 0.85rem; /* Testo descrittivo più piccolo */
+    line-height: 1.4; /* Spaziatura per una migliore leggibilità */
+}
+
+.navbar-custom {
+    background: transparent; /* Nero semi-trasparente */
+    backdrop-filter: blur(10px);
+    background-color: rgba(46, 204, 112, 0.637);
+  }
+
+.mask {
+    background-color: hsla(0, 0%, 0%, 0.5);    
+}
+
+.shadow_custom_home {
+    box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+.my_btn {
+    color: white !important;
+    background-color:  var(--colore-secondario) !important;
+}
+
+.my_btn:hover {
+    color: var(--colore-secondario) !important;
+    background-color: white !important;
+    border-color: var(--colore-secondario) !important;
+}
+
+.my_btn_secondary {
+    color: var(--colore-terziario) !important;
+    border-color: var(--colore-terziario) !important;
+}
+
+.my_btn_secondary:hover {
+    color: var(--colore-secondario) !important;
+    background-color: var(--colore-terziario) !important;
+} 
+
+ 
