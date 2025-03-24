@@ -25,6 +25,14 @@
         </li>
       </ul>
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <form action="{{ route('article.search') }}" class="d-flex" role="search" method="GET">
+          <div class="input-group">
+            <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+              <button type="submit" class="input-group-text btn btn_custom" id="basic-addon2">
+                Search
+              </button>
+          </div>
+        </form>
         @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -31,4 +31,10 @@ class ArticleController extends Controller
         $articles = $category->articles->where('is_accepted', true);
         return view('articles.byCategory', compact('articles', 'category'));
     } 
+
+    public function searchArticle(Request $request) {
+        $query = $request->input('query');
+        $articles = Article::search($query)->where('is_accepted', true)->paginate(10);
+        return view('articles.searched', compact('articles', 'query'));
+    }
 }
