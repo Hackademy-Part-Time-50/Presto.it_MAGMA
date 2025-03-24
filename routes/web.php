@@ -32,3 +32,5 @@ Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('a
 //logica di rifiuto articolo
 Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
 
+//annullare accettazione o rifiuto articolo
+Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middleware('isRevisor')->name('cancel.lastAction');
