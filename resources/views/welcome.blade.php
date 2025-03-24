@@ -37,7 +37,7 @@
         </div>
     @endif
 
-    <div class="container text-center">
+    <div class="container">
         <div class="row">
             @forelse ($articles as $article)
                 <div class="col-12 col-md-6 col-lg-4">
