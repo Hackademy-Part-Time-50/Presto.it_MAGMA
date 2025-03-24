@@ -20,7 +20,7 @@
                                 Accedi
                             </a>
                             <a href="{{ route('register') }}"
-                                class="btn btn-outline-light px-4 py-2 fw-bold rounded-3 shadow-sm">
+                                class="btn my_btn px-4 py-2 fw-bold rounded-3 shadow-sm">
                                 Registrati
                             </a>
                         @endauth
@@ -31,25 +31,25 @@
         </div>
     </header>
 
+    @if (session()->has('errorMessage'))
+        <div class="alert alert-danger text-center shadow rounded w-50">
+            {{ session('errorMessage') }}
+        </div>
+    @endif
 
-    <div class="container text-center">
+    <div class="container">
         <div class="row">
             @forelse ($articles as $article)
-                <div class="col">
+                <div class="col-12 col-md-6 col-lg-4">
                     <x-card_home_announces :article="$article" />
                 </div>
             @empty
-                <div class="col">
+                <div class="col-12">
                     <h3>Non sono ancora stati creati annunci</h3>
                 </div>
             @endforelse
         </div>
     </div>
-  
-    
-
-
-
 
 
 
