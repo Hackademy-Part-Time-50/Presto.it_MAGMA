@@ -22,6 +22,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/articles/index',[ArticleController::class, 'index'])->name('articles.index');
 Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('articles.show');
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+Route::get('/search/article', [ArticleController::class, 'searchArticle'])->name('article.search');
 
 //revisore
 Route::get('/revisor/index',[RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
