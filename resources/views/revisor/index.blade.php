@@ -9,6 +9,14 @@
             </div>
         @endif
 
+        @if (session()->has('errorMessage'))
+            <div class="row justify-content-center">
+                <div class="col-5 alert alert-danger text-center shadow rounded">
+                    {{ session('errorMessage') }}
+                </div>
+            </div>
+        @endif
+
         <div class="row">
             <div class="col-3">
                 <div class="rounded shadow bg-body-secondary">
@@ -64,6 +72,20 @@
                 </div>
             </div>
         @endif
+
+        @if (session()->has('lastAction'))
+        <!-- Pulsante per annullare l'ultima azione -->
+        <div class="row justify-content-center">
+            <div class="col-4 text-center">
+                <form action="{{ route('cancel.lastAction') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-warning py-2 px-5 fw-bold">Annulla Ultima Operazione</button>
+                </form>
+            </div>
+        </div>
+        @endif
     </div>
 </x-layouts.layout>
+
+
 

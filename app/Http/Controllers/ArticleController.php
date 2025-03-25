@@ -34,6 +34,11 @@ class ArticleController extends Controller
 
     public function searchArticle(Request $request) {
         $query = $request->input('query');
+
+        if($query === null) {
+            return redirect()->back()->with("error_search", "inserisci una parola da ricercare");
+        }
+
         $articles = Article::search($query)->where('is_accepted', true)->paginate(10);
         return view('articles.searched', compact('articles', 'query'));
     }

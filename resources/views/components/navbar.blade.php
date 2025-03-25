@@ -27,7 +27,11 @@
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <form action="{{ route('article.search') }}" class="d-flex" role="search" method="GET">
           <div class="input-group">
-            <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+            @if (session()->has('error_search'))
+              <input type="search" name="query" class="form-control is-invalid" placeholder="can't be empty" aria-label="search">
+            @else
+              <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+            @endif
               <button type="submit" class="input-group-text btn btn_custom" id="basic-addon2">
                 Search
               </button>
