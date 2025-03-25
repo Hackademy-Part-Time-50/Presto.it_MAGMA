@@ -1,33 +1,36 @@
 <x-layouts.layout>
-    <DIV>
-        <x-success />
-    </DIV>
-    <!-- @section('body-class', 'pt-custom, bg-custom') -->
+    @section('body-class', 'pt-custom, bg-custom')
 
     <head>
         <link rel="stylesheet" href="css/login.css">
     </head>
+
     <div class="container-auth">
         <div class="auth-form-box auth-login">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <h1>Login</h1>
+               
                 <div class="auth-input-box">
-                    <input type="email" placeholder="Email" value="{{ old('email') }}" required id="loginEmail"
-                        name="email">
+                    <input type="email" placeholder="Email" value="{{ old('email') }}" id="loginEmail" name="email"
+                        class="@error('email') error @enderror">
                     <i class='bx bxs-envelope'></i>
+                    @error('email')
+                    @enderror
+                </div>
+
+                <div class="auth-input-box">
+
+                    <input type="password" placeholder="Password" id="password" name="password"
+                        class="@error('email') error @enderror">
+                    <i class='bx bxs-lock-alt'></i>
                     @error('email')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="auth-input-box">
-                    <input type="password" placeholder="Password" value="{{ old('password') }}" required id="password"
-                        name="password">
-                    <i class='bx bxs-lock-alt'></i>
-                    @error('password')
-                        <span class="error-message">{{ $message }}</span>
-                    @enderror
-                </div>
+
+
+
                 <div class="auth-forgot-link">
                     <a href="#">Recupera Password</a>
                 </div>
@@ -101,10 +104,15 @@
         }
 
         .error-message {
+            position: absolute;
             color: red;
             font-size: 14px;
             margin-top: 5px;
             display: block;
+        }
+
+        .error {
+            border: 2px solid red !important;
         }
 
 
@@ -197,7 +205,7 @@
         }
 
         .auth-forgot-link {
-            margin: -15px 0 15px;
+            margin: 15px 0 15px;
         }
 
         .auth-forgot-link a {
