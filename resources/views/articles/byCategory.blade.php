@@ -1,5 +1,5 @@
 <x-layouts.layout>
-    <div class="container mt-5">
+    <div class="container custom-loyaut">
         <div class="row">
             <div class="col d-flex jusify-content-center">
                 <h1 class="display-2">Articoli della categotria <span class="fst-italic fw-bold">

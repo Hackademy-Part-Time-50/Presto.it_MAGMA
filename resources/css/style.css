@@ -10,29 +10,42 @@
 
 }
 
+/* bg custom loyaut */
+.bg-custom-loyaut {
+  background-color: var(--colore-sfondo);
+}
+
 /* NAV */
 
 .navbar-custom {
   background: transparent;
   /* Nero semi-trasparente */
   backdrop-filter: blur(10px);
-  background-color: rgba(242, 142, 49, 0.637);
+  background-color: rgba(246, 136, 33, 0.854);
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
 }
-
-
 /* FINE NAV */
 
 
+
+
 /* body */
-body {
-  background: wheat;
+.custom-loyaut {
+  margin-top: 100px;
 }
+
+body {
+  background-color: var(--colore-sfondo);
+}
+
 
 /* header home page */
 
 header {
   height: 75vh;
-  background: linear-gradient(rgb(250, 250, 250), rgba(250, 250, 250, 0.1)), url(../../storage/app/public/image/head1.jpg);
+  background: linear-gradient(rgb(250, 250, 250), rgba(250, 250, 250, 0.3)), url(../../storage/app/public/image/head1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -107,10 +120,10 @@ div .btn_custom {
 
 
 
+
 /* bg-info categorie car */
 .bg-custom {
-
-  background-color: var(--colore-terziario) !important;
+ background-color: var(--colore-terziario) !important;
 }
 
 
