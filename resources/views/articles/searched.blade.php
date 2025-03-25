@@ -1,10 +1,9 @@
 <x-layouts.layout>
+
     <div class="container mt-5">
         <div class="row">
             <div class="col d-flex jusify-content-center">
-                <h1 class="display-2">Articoli della categotria <span class="fst-italic fw-bold">
-                    {{ $category->name }}
-                </span></h1>
+                <h1 class="display-2">Risultati della ricerca "<span class="fst-italic">{{ $query }}</span>"</h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-center py-5">
@@ -14,12 +13,16 @@
                 </div>
             @empty
                 <div class="col-12 text-center">
-                    <h3>Non sono ancora stati creati articoli per questa categoria!</h3>
-                    @auth
-                        <a class="btn btn-dark my-5" href="{{ route('create.article') }}">Pubblica un annuncio</a>
-                    @endauth
+                    <h3>Nessun articolo corrisponde alla tua ricerca</h3>
                 </div>
             @endforelse
         </div>
     </div>
+    <div class="d-flex justify-content-center">
+        <div>
+            {{ $articles->links() }}
+        </div>
+    </div>
+
+
 </x-layouts.layout>

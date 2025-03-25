@@ -1,5 +1,5 @@
 <?php
-use App\Http\Middleware\RedirectIfNotAuthenticated;
+
 use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
@@ -22,7 +22,16 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/articles/index',[ArticleController::class, 'index'])->name('articles.index');
 Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('articles.show');
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
+Route::get('/search/article', [ArticleController::class, 'searchArticle'])->name('article.search');
 
-Route::get('/revisor/index',[RevisorController::class, 'index'])->name('revisor.index');
+//revisore
+Route::get('/revisor/index',[RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 
+//logica di accettazione articolo
+Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
 
+//logica di rifiuto articolo
+Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
+
+//annullare accettazione o rifiuto articolo
+Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middleware('isRevisor')->name('cancel.lastAction');

@@ -7,18 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='http://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+  <!-- Link a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Presto</title>
 </head>
 
-<body class="@yield('body-class', 'body-class')">
+<body>
+  
     <x-navbar />
+  
 
-    <div class="" id="sfondo">
+
+    <div class="">
         {{ $slot }}
     </div>
 
     <x-footer />
-
+    <!-- Link a Bootstrap JS e Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> 
 </body>
 
 </html>

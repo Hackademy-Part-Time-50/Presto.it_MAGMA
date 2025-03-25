@@ -1,5 +1,22 @@
 <x-layouts.layout>
     <div class="container-fluid pt-5">
+        <!-- messaggio di avvenuta accettazione o rifiuto -->
+        @if (session()->has('message'))
+            <div class="row justify-content-center">
+                <div class="col-5 alert alert-success text-center shadow rounded">
+                    {{ session('message') }}
+                </div>
+            </div>
+        @endif
+
+        @if (session()->has('errorMessage'))
+            <div class="row justify-content-center">
+                <div class="col-5 alert alert-danger text-center shadow rounded">
+                    {{ session('errorMessage') }}
+                </div>
+            </div>
+        @endif
+
         <div class="row">
             <div class="col-3">
                 <div class="rounded shadow bg-body-secondary">
@@ -32,12 +49,14 @@
                         <p class="h6">{{ $article_to_check->description }}</p>
                     </div>
                     <div class="d-flex pb-4 justify-content-around">
-                        <form action="" method="POST">
+                        <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
+                            @method('PATCH')
                             <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
                         </form>
-                        <form action="" method="POST">
+                        <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
+                            @method('PATCH')
                             <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
                         </form>
                     </div>
@@ -53,5 +72,20 @@
                 </div>
             </div>
         @endif
+
+        @if (session()->has('lastAction'))
+        <!-- Pulsante per annullare l'ultima azione -->
+        <div class="row justify-content-center">
+            <div class="col-4 text-center">
+                <form action="{{ route('cancel.lastAction') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-warning py-2 px-5 fw-bold">Annulla Ultima Operazione</button>
+                </form>
+            </div>
+        </div>
+        @endif
     </div>
 </x-layouts.layout>
+
+
+

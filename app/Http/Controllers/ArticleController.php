@@ -17,7 +17,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::orderBy('created_at','desc')->paginate(8);
+        $articles = Article::where('is_accepted', true)->orderBy('created_at','desc')->paginate(8);
         return view('articles.index', compact('articles'));
     }
 
@@ -27,9 +27,19 @@ class ArticleController extends Controller
     }
 
     public function byCategory(Category $category) 
-    {
-        return view('articles.byCategory', [
-            'articles' => $category->articles, 'category' => $category
-        ]);
+    {   
+        $articles = $category->articles->where('is_accepted', true);
+        return view('articles.byCategory', compact('articles', 'category'));
     } 
+
+    public function searchArticle(Request $request) {
+        $query = $request->input('query');
+
+        if($query === null) {
+            return redirect()->back()->with("error_search", "inserisci una parola da ricercare");
+        }
+
+        $articles = Article::search($query)->where('is_accepted', true)->paginate(10);
+        return view('articles.searched', compact('articles', 'query'));
+    }
 }

@@ -1,313 +1,119 @@
-/* Vista singolo articolo */
+/* COLORI DI BASE */
 
-/* Root variables */
 :root {
-    --colere-primario: #2ecc71;
-    --colore-secondario: #2c3e50;
-    --colore-terziario: #e67e22;
-    --colore-sfondo: #eed6b0;
+
+  --colere-primario: #2ecc71;
+  --text: #2c3e50;
+  --colore-terziario: #e67e22;
+  --colore-sfondo: #f1e3d3;
+
+
 }
 
-.body-class {
-    padding-top: 6rem; /* Aumento il padding-top su schermi più piccoli */
-    background-color: var(--colore-sfondo) !important;
-}
+/* NAV */
 
-.bg-custom {
-    background-color: var(--colore-sfondo) !important;
-}
-
-/* Stile Navbar */
 .navbar-custom {
-    background: transparent;
-    backdrop-filter: blur(10px);
-    padding: 14px 25px;
-    transition: all 0.3s ease-in-out;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  /* Nero semi-trasparente */
+  backdrop-filter: blur(10px);
+  background-color: rgba(242, 142, 49, 0.637);
 }
 
-.glass-effect {
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+
+/* FINE NAV */
+
+
+/* body */
+body {
+  background: wheat;
 }
 
-.navbar-custom .nav-link {
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+/* header home page */
+
+header {
+  height: 75vh;
+  background: linear-gradient(rgb(250, 250, 250), rgba(250, 250, 250, 0.1)), url(../../storage/app/public/image/header.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 0px;
 }
 
-.navbar-custom .nav-link:hover {
-    color: #ff7300 !important;
-    transform: translateY(-2px);
+
+.text-custom {
+  color: var(--text);
 }
 
-.navbar-custom .dropdown-menu {
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(242, 255, 66, 0.15);
-    transition: opacity 0.3s ease-in-out;
+/* fine header homepage */
+
+
+
+/* CARD CON EFFETTO BELLISSIMO */
+.product-card {
+  width: 250px;
+  /* Larghezza fissa per la card */
+  height: 360px;
+  /* Altezza fissa per la card */
+  border: 1px solid #fc7a39;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--colore-terziario) 0px 0px 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.futuristic-menu {
-    background: linear-gradient(135deg, #feeecb, #fed4b1);
-    color: white;
-    border: none;
+.product-card:hover {
+  transform: translateY(-10px);
 }
 
-.futuristic-menu .dropdown-item:hover {
-    background-color: #ffffff;
-    color: #1f4037;
-    border-radius: 5px;
+.product-card img {
+  width: 100%;
+  height: 200px;
+  /* Altezza fissa per l'immagine */
+  object-fit: cover;
 }
 
-.navbar-toggler {
-    border-color: transparent;
+.product-card-body {
+  padding: 15px;
+  flex-grow: 3;
+  /* Permette di espandere il corpo della card */
 }
 
-.custom-toggler {
-    background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="white"%3E%3Cpath stroke="rgba(255, 255, 255, 1)" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+.product-card-body h5 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--colore-terziario);
 }
 
-@media (max-width: 991px) {
-    .navbar-custom {
-        background: transparent;
-    }
+.product-card-body p {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 5px;
 }
 
-/* Padding e margine personalizzati */
-.pt-custom {
-    padding-top: 0rem !important;
-    padding-left: 0% !important;
-    padding-right: 0% !important;
+div .btn_custom {
+  width: 48%;
+  margin-top: 10px;
+  background-color: var(--colore-terziario) !important;
+  color: var(--colore-sfondo);
+
 }
 
-/* Carousel */
-.carousel-inner img {
-    object-fit: cover;
-}
+/* FINE CARD */
 
-/* Stile per il nome venditore */
-.vendor-name {
-    font-size: 14px;
-    color: #6c757d;
-    font-weight: normal;
-}
 
-/* Stile per il titolo (h1) */
-.prodotto h1 {
-    font-size: 32px;
-    color: var(--colore-terziario);
-    font-weight: bold;
-}
 
-/* Stile per la descrizione (paragrafo) */
-.prodotto p {
-    color: #000000;
-    font-size: 16px;
-    line-height: 1.5;
-    max-height: 500px;
-}
 
-/* Stile per il prezzo */
-.prodotto .price {
-    font-size: 25px;
-    color: var(--colore-terziario);
-    font-weight: bold;
-    margin-top: 10px;
-}
 
-.height-custom {
-    min-height: 30vh;
-}
+/* bg-info categorie car */
+.bg-custom {
 
-.height-custom-home {
-    min-height: 16vh;
-}
-
-/* Card */
-.card-w {
-    max-width: 280px;
-    min-width: 250px;
-    margin: 0 auto; /* Centra le card */
-}
-
-.card {
-    border-radius: 30px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out;
-}
-
-.card:hover {
-    transform: scale(1.03);
-}
-
-.card-img-top {
-    object-fit: cover;
-    height: 180px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-}
-
-.card-subtitle {
-    font-size: 1rem;
-    color: #6c757d;
+  background-color: var(--colore-terziario) !important;
 }
 
 
 
-/* MEDIA QUERIES */
 
-/* Mobile */
-@media (min-width: 375px) {
-    .body-class {
-        padding-top: 8rem; /* Aumento padding-top per dispositivi piccoli */
-    }
-
-    .navbar-custom {
-        padding: 10px 20px;
-    }
-
-    .prodotto h1 {
-        font-size: 24px;
-    }
-
-    .prodotto p {
-        font-size: 14px;
-    }
-
-    .prodotto .price {
-        font-size: 20px;
-    }
-
-    .card-w {
-        max-width: 100%;
-        min-width: 100%;
-    }
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-    .body-class {
-        padding-top: 6rem; /* Aumento padding-top per tablet */
-    }
-
-    .navbar-custom {
-        padding: 12px 22px;
-    }
-
-    .prodotto h1 {
-        font-size: 28px;
-    }
-
-    .prodotto p {
-        font-size: 15px;
-    }
-
-    .prodotto .price {
-        font-size: 22px;
-    }
-
-    .card-w {
-        max-width: 95%;
-        min-width: 95%;
-    }
-}
-
-/* Laptop */
-@media (min-width: 1366px) {
-    .navbar-custom {
-        padding: 14px 30px;
-    }
-
-    .prodotto h1 {
-        font-size: 30px;
-    }
-
-    .prodotto p {
-        font-size: 16px;
-    }
-
-    .prodotto .price {
-        font-size: 25px;
-    }
-
-    .card-w {
-        max-width: 100%;
-        min-width: 100%;
-    }
-}
-
-/* Desktop (alta risoluzione) */
-@media (min-width: 1920px) {
-    .navbar-custom {
-        padding: 14px 35px;
-    }
-
-    .prodotto h1 {
-        font-size: 32px;
-    }
-
-    .prodotto p {
-        font-size: 16px;
-    }
-
-    .prodotto .price {
-        font-size: 25px;
-    }
-
-    .card-w {
-        max-width: 95%;
-        min-width: 95%;
-    }
-}
-
-
-@media (min-width: 2560px) {
-    .navbar-custom {
-        padding: 14px 35px;
-    }
-
-    .prodotto h1 {
-        font-size: 32px;
-    }
-
-    .prodotto p {
-        font-size: 16px;
-    }
-
-    .prodotto .price {
-        font-size: 25px;
-    }
-
-    .card-w {
-        max-width: 95%;
-        min-width: 95%;
-    }
-}
-
-
-.img-full {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* L'immagine copre tutto lo spazio senza distorsioni */
-    display: block; /* Evita spazi vuoti sotto l'immagine */
-}
-
-/* Se vuoi che l'immagine copra un contenitore specifico */
-.container-img {
-    width: 100%; /* Contenitore che prende tutta la larghezza */
-    height: 350px; /* Impostare un'altezza specifica per il contenitore (puoi cambiare questo valore) */
-    position: relative;
-}
-
-.container-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Copre tutto il contenitore senza distorsioni */
-}
+/* bottoni card */

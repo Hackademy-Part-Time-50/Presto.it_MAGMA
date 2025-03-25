@@ -1,6 +1,19 @@
 <x-layouts.layout>
-    <div class="container vh-100 p-4 d-flex justify-content-center prodotto">
-        <div class="row w-100 justify-content-center align-items-center">
+
+
+    <div class="container fluid m-5">
+
+        <h1>{{ $article->title }}</h1>
+
+
+    <div class="container-fluid p-4 d-flex justify-content-center prodotto">
+
+
+    
+        <div class="row justify-content-center align-items-center">
+
+
+
             {{-- carosello --}}
             <div id="carouselExampleIndicators" class="carousel slide col-lg-6">
                 <div class="carousel-indicators">
@@ -27,15 +40,15 @@
                     <span class="visually-hidden">Avanti</span>
                 </button>
             </div>
-    
             {{-- parte descrittiva --}}
+
+
+            
            
         <div class="col-lg-6">
             <div class="container">
                 <!-- Nome Venditore con classe personalizzata -->
                 <p class="vendor-name"><strong>Nome venditore</strong></p>
-                <!-- Titolo con classe personalizzata -->
-                <h1>{{ $article->title }}</h1>
                 <!-- Descrizione con classe personalizzata -->
                 <p>{{ $article->description }}</p>
                 <!-- Prezzo con classe personalizzata -->
@@ -46,7 +59,7 @@
         </div>
     </div>
 </div>
-    
+</div>
     
 
 
