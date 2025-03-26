@@ -26,7 +26,6 @@
                         <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
-
                 <div class="auth-forgot-link">
                     <a href="{{ route('password.request') }}">Recupera Password?</a>
                 </div>
