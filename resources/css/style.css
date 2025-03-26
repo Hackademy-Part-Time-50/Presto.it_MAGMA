@@ -18,6 +18,9 @@
   backdrop-filter: blur(10px);
   background-color: rgba(242, 142, 49, 0.637);
 }
+.content {
+    padding-top: 70px; /* Deve essere almeno uguale all'altezza della navbar */
+}
 
 
 /* FINE NAV */

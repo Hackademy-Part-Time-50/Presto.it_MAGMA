@@ -35,3 +35,7 @@ Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('r
 
 //annullare accettazione o rifiuto articolo
 Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middleware('isRevisor')->name('cancel.lastAction');
+
+Route::get('revisor/request',[RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+
+Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
