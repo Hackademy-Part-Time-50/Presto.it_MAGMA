@@ -1,6 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-custom w-100 top-0 start-0 fixed-top shadow-lg glass-effect">
   <div class="container-fluid">
     <a class="navbar-brand text-white fw-bold fs-4" href="{{ route('homepage') }}">Presto</a>
+    <!-- scelta lingua -->
+    <x-_locale lang="it" />
+    <x-_locale lang="en" />
+    <x-_locale lang="es" />
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon custom-toggler"></span>
     </button>

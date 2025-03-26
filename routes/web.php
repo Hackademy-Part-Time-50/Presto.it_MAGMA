@@ -35,3 +35,6 @@ Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('r
 
 //annullare accettazione o rifiuto articolo
 Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middleware('isRevisor')->name('cancel.lastAction');
+
+//rotta per cambiare la lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
