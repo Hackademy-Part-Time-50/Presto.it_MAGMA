@@ -18,7 +18,7 @@
   
 
 
-    <div class="">
+    <div class="content">
         {{ $slot }}
     </div>
 

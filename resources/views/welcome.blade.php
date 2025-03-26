@@ -1,8 +1,8 @@
 <x-layouts.layout>
 
-
-
+<x-success />
     <header class="container-fluid">
+    
         <div class="row">
             <div class="col-12 col-md-6 ">
 
@@ -31,11 +31,6 @@
         </div>
     </header>
 
-    @if (session()->has('errorMessage'))
-        <div class="alert alert-danger text-center shadow rounded w-50">
-            {{ session('errorMessage') }}
-        </div>
-    @endif
 
     <div class="container">
         <div class="row">

@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Artisan;
 use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\BecomeRevisor;
+use App\Models\User;
 
 
 class RevisorController extends Controller
@@ -49,5 +54,19 @@ class RevisorController extends Controller
             }  
         }
         return redirect()->back()->with('errorMessage', "Nessuna operazione da annullare.");
+    }
+
+    public function becomeRevisor()
+    {
+        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
+        return redirect()->route('homepage')->with('message', 'Email di richiesta inviata. Riceverai al più presto una risposta.');
+    }
+
+    public function makeRevisor(User $user)
+    {
+        Artisan::call('app:make-user-revisor', [
+            'email' => $user->email,
+        ]);
+        return redirect()->back()->with('message', "L'utente $user->name è ora revisore");
     }
 }
