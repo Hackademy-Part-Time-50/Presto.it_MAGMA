@@ -38,3 +38,8 @@ Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middlewa
 
 //rotta per cambiare la lingua
 Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+Route::get('revisor/request',[RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+
+Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+

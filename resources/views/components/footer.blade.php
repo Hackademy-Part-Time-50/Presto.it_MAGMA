@@ -70,6 +70,12 @@
             <a href="#!" class="text-reset">Laravel</a>
           </p>
         </div>
+
+        <div>
+          <h5>Vuoi diventare revisore?</h5>
+          <p>Clicca il bottone sottostante farai richiesta al nostro admin</p>
+          <a href="{{ route('become.revisor') }}" class="btn btn-primary">Diventa Revisore</a>
+        </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
