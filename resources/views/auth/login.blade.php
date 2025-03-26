@@ -13,20 +13,17 @@
                 @csrf
                 <h1>Login</h1>
                 <div class="auth-input-box">
-                    <input type="email" placeholder="Email" value="{{ old('email') }}" required id="loginEmail"
-                        name="email">
+                    <input type="email" placeholder="@error('email') {{ $message }} @else Email @enderror" value="@error('email') {{ $message }} @else {{ old('email') }} @enderror" id="loginEmail"
+                        name="email" style="@error('email') border: 2px solid red; color: red; @enderror">
                     <i class='bx bxs-envelope'></i>
-                    @error('email')
-                        <span class="error-message">{{ $message }}</span>
-                    @enderror
                 </div>
                 <div class="auth-input-box">
-                    <input type="password" placeholder="Password" value="{{ old('password') }}" required id="password"
+                    <input type="password" placeholder="Password" value="{{ old('password') }}" id="password"
                         name="password">
-                    <i class='bx bxs-lock-alt'></i>
                     @error('password')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
+                    <i class='bx bxs-lock-alt'></i>
                 </div>
                 <div class="auth-forgot-link">
                     <a href="#">Recupera Password</a>
