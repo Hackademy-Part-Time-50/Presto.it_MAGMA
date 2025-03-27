@@ -16,6 +16,7 @@ return
         'become_revisor' => 'Become revisor!',
         'slogan_1' => 'Don\'t use it?',
         'slogan_2' => 'Put it up for Sale',
+        'featured_announces' => 'Featured Announces',
 
         // traduzione autenticazione
         'retrive_password' => 'Retrive Password',

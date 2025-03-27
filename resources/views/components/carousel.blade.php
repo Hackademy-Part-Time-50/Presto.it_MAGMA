@@ -10,7 +10,7 @@
         <div class="subcontainer">
             <div class="slider-wrapper">
                 <div>
-                    <h2>Annunci in evidenza</h2>
+                    <h2>{{__('ui.featured_announces')}}</h2>
                 </div>
                 <br>
                 <div class="my-slider">

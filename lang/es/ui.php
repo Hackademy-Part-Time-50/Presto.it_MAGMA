@@ -16,6 +16,7 @@ return
         'become_revisor' => 'Convertirse en Auditor!',
         'slogan_1' => '¿No lo usas?',
         'slogan_2' => 'Ponlo a la Venta',
+        'featured_announces' => 'Anuncios Destacados',
 
         // traduzione autenticazione
         'retrive_password' => 'Recuperar Contraseña',
