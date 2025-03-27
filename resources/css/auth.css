@@ -7,13 +7,13 @@
     font-family: "Poppis", sans-serif;
 }
 
-body {
+/* body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
     background-position: center;
-}
+} */
 
 .error-message {
     position: absolute;
@@ -72,12 +72,16 @@ body {
     visibility: visible;
 }
 
-form {
+#loginForm {
+    width: 100%;
+}
+
+#registerForm {
     width: 100%;
 }
 
 .container-auth h1 {
-    font-size: 36px;
+    font-size: 66px;
     margin: -10px 0;
 }
 
@@ -136,7 +140,7 @@ form {
 }
 
 .container-auth p {
-    font-size: 14.5px;
+    font-size: 20.5px;
     margin-top: 15px 0;
 }
 
