@@ -19,8 +19,8 @@
                             <x-card_home_announces :article="$article" />
                         </div>
                     @empty
-                        <div>
-                            <h3>Non sono ancora stati creati annunci</h3>
+                        <div class="col-12">
+                            <h3>{{__('ui.no_announces')}}</h3>
                         </div>
                     @endforelse
                 </div>
