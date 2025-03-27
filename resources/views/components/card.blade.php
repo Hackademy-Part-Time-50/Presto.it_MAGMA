@@ -12,7 +12,7 @@
 
 
               <div class="product-card-body ">
-                  <h5 class="card-title">{{ $article->title }}</h5>
+                  <h5 class="card-title text-truncate custom-card-title">{{ $article->title }}</h5>
                   <p class="card-text">{{ $article->price }}</p>
 
                   <div class="justify-content-center">
