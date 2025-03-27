@@ -5,7 +5,7 @@
             
                 <div class="row">
                     <div class="col d-flex jusify-content-center">
-                        <h1 class="display-2">Risultati della ricerca per "<span class="fst-italic">{{ $query }}</span>"</h1>
+                        <h1 class="display-2">{{__('ui.resaults_search')}} "<span class="fst-italic">{{ $query }}</span>"</h1>
                     </div>
                 </div>
                 <div class="row justify-content-center align-items-center py-5">
@@ -15,7 +15,7 @@
                         </div>
                     @empty
                         <div class="col-12 text-center">
-                            <h3>Nessun articolo corrisponde alla tua ricerca</h3>
+                            <h3>{{__('ui.no_announces_research')}}</h3>
                         </div>
                     @endforelse
                 </div>
@@ -26,7 +26,4 @@
                 </div>
             </div>
         </div>
-    </div>
-
-
 </x-layouts.layout>

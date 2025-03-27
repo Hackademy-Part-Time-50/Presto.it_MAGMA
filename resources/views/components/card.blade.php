@@ -4,9 +4,12 @@
           <div class="product-card">
               <div class="position-relative">
                   <img src="https://picsum.photos/1000/600" alt="Immagine prodotto">
+                  @php
+                      $announce_category = $article->category->name;
+                  @endphp
                   <a href="{{ route('byCategory', [$article->category->id]) }}"
                       class="badge bg-custom position-absolute bottom-0 start-0 m-2 text-white text-decoration-none text-uppercase">
-                      {{ $article->category->name }}
+                      {{ __("ui.$announce_category") }}
                   </a>
               </div>
 
@@ -17,7 +20,7 @@
 
                   <div class="justify-content-center">
 
-                      <a href="{{ route('articles.show', [$article->id]) }}" class="btn btn_custom">Dettagli</a>
+                      <a href="{{ route('articles.show', [$article->id]) }}" class="btn btn_custom">{{__('ui.details')}}</a>
 
                   </div>
               </div>

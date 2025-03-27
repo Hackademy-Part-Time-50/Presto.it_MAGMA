@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Artisan;
+use Illuminate\Support\Facades\Artisan;
+//use Artisan;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
