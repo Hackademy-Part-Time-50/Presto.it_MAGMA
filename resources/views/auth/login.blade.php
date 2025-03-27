@@ -5,7 +5,7 @@
 
     <div class="container-auth">
         <div class="auth-form-box auth-login">
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="{{ route('login') }}" id="loginForm">
                 @csrf
                 <h1 id="login-h1">Login</h1>
 
@@ -42,7 +42,7 @@
         </div>
 
         <div class="auth-form-box auth-register">
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('register') }}" id="registerForm">
                 @csrf
                 <h1>Registration</h1>
                 <div class="auth-input-box">
