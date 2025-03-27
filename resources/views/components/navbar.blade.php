@@ -80,6 +80,7 @@
 
             @if (session()->has('error_search'))
 <<<<<<< HEAD
+<<<<<<< HEAD
         <input type="search" name="query" class="form-control is-invalid" placeholder="Non può essere vuoto"
           aria-label="Search">
       @else
@@ -163,6 +164,8 @@
 
   @endauth
 =======
+=======
+>>>>>>> 65de757 (finishing translate)
               <input type="search" name="query" class="form-control is-invalid" placeholder="can't be empty" aria-label="search">
             @else
               <input type="search" name="query" class="form-control" placeholder="{{__('ui.nav_search')}}" aria-label="search">
