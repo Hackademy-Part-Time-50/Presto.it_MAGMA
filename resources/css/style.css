@@ -1,32 +1,84 @@
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+
 /* COLORI DI BASE */
 
-:root {
+/* :root {
 
   --colere-primario: #2ecc71;
   --text: #2c3e50;
-  --colore-terziario: #e67e22;
+  --principale: #e67e22;
   --colore-sfondo: #f1e3d3;
+  --footer: #ff8d3bd5;
+  --sfumatura:#e1a067;
+
+
+} */
+
+:root {
+
+  --navbar: rgba(178, 160, 157, 0.854);
+  --text: #b2a09d;
+  --principale: #b2a09d;
+  --colore-sfondo: #ece2e4;
+  --footer: rgba(178, 160, 157, 0.854);
+  --sfumatura:#ebd0bc;
+  --titolo:#deb1a1;
 
 
 }
+
+
+/* TESTO */
+
+body, p, div,li, a, .dropdown-item {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: "Roboto Serif", serif;
+}
+
+
 
 /* bg custom loyaut */
 .bg-custom-loyaut {
   background-color: var(--colore-sfondo);
 }
 
+
+/* footer bg-custom-footer */
+
+.bg-custom-footer{
+  
+  background-color: var(--navbar) !important;
+
+}
+/* fine bg-custom-footer */
+
+
+
 /* NAV */
 
 .navbar-custom {
-  background: transparent;
-  /* Nero semi-trasparente */
-  backdrop-filter: blur(10px);
-  background-color: rgba(246, 136, 33, 0.854);
+  background: transparent; /*Nero semi-trasparente */
+ backdrop-filter: blur(10px);
+  background-color: var(--navbar);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  text-transform: uppercase;
 
+}  
+.dropdown-menu,.dropdown-item {
+  
+  background-color: var(--navbar)!important;
+  text-transform: uppercase!important;
+  
 }
 /* FINE NAV */
+
+
 
 
 
@@ -51,6 +103,9 @@ header {
   background-repeat: no-repeat;
   margin-top: 0px;
 }
+.custom-header{
+  height: 75vh;
+}
 
 
 .text-custom {
@@ -61,7 +116,15 @@ header {
 
 
 
+
+
 /* CARD CON EFFETTO BELLISSIMO */
+.custom-card-title {
+  color: var(  --titolo) !important;
+}
+
+
+
 .product-card {
   width: 250px;
   /* Larghezza fissa per la card */
@@ -70,10 +133,11 @@ header {
   border: 1px solid #fc7a39;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: var(--colore-terziario) 0px 0px 10px;
+  box-shadow: var(--principale) 0px 0px 10px;
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
+  background-color: whitesmoke;
 }
 
 .product-card:hover {
@@ -89,15 +153,15 @@ header {
 
 .product-card-body {
   padding: 15px;
-  flex-grow: 3;
-  /* Permette di espandere il corpo della card */
+  flex-grow: 3; /* Permette di espandere il corpo della card */
+
 }
 
 .product-card-body h5 {
   font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 10px;
-  color: var(--colore-terziario);
+  color: var(--principale);
 }
 
 .product-card-body p {
@@ -109,7 +173,7 @@ header {
 div .btn_custom {
   width: 48%;
   margin-top: 10px;
-  background-color: var(--colore-terziario) !important;
+  background-color: var(--principale) !important;
   color: var(--colore-sfondo);
 
 }
@@ -119,14 +183,54 @@ div .btn_custom {
 
 
 
+/* BOTTONI OVUNQUE */
+
+
+.btn-custom-other{
+  background-color: var(--principale) !important;
+  color: var(--colore-sfondo) !important;
+  
+}
+
+.btn-custom-other:hover{
+  zoom: 1.1;
+  color: var(--text) !important;
+  
+}
+
+
+/* FINE BOTTONI OVUNQUE */
+
+
+
 
 
 /* bg-info categorie car */
 .bg-custom {
- background-color: var(--colore-terziario) !important;
+ background-color: var(--principale) !important;
+}
+
+
+/* img-revisore */
+.img-revisore{
+  height: 50vh;
+  background: url(../../storage/app/public/image/revisore.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-top: 0px;
+}
+/* fine img-revisore */
+
+
+/* index revisore */
+
+.custom-dash-revisore {
+  background-color: var(--sfumatura);
 }
 
 
 
 
-/* bottoni card */
+
+

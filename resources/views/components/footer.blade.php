@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
+<footer class="text-center text-lg-start bg-custom-footer text-muted">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
@@ -55,27 +55,27 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Products
+            Progetto realizzato da:
           </h6>
           <p>
-            <a href="#!" class="text-reset">Angular</a>
+            <a href="#!" class="text-reset">Alessandro </a>
           </p>
           <p>
-            <a href="#!" class="text-reset">React</a>
+            <a href="#!" class="text-reset">Mario</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Vue</a>
+            <a href="#!" class="text-reset">Alessio</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">Laravel</a>
+            <a href="#!" class="text-reset">Giorgia</a>
           </p>
         </div>
 
-        <div>
+        {{-- <div>
           <h5>Vuoi diventare revisore?</h5>
           <p>Clicca il bottone sottostante farai richiesta al nostro admin</p>
           <a href="{{ route('become.revisor') }}" class="btn btn-primary">Diventa Revisore</a>
-        </div>
+        </div> --}}
         <!-- Grid column -->
 
         <!-- Grid column -->
@@ -85,7 +85,7 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Pricing</a>
+            <a href="{{ route('become.revisor') }}" class="text-reset">Diventa revisore, premi qui.</a>
           </p>
           <p>
             <a href="#!" class="text-reset">Settings</a>
@@ -120,8 +120,8 @@
 
   <!-- Copyright -->
   <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright:
-    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+    © 2025 Copyright:
+    <a class="text-reset fw-bold" href="#">Nostro, e si vede</a>
   </div>
   <!-- Copyright -->
 </footer>
