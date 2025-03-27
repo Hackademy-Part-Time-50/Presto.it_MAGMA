@@ -14,13 +14,13 @@
           <a class="nav-link text-white" href="{{ route('homepage') }}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('articles.index') }}">Tutti gli Articoli</a>
+          <a class="nav-link text-white" href="{{ route('articles.index') }}">{{__('ui.allannounces')}}</a>
         </li>
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categorie</a>
+          <a href="#" class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.nav_category')}}</a>
           <ul class="dropdown-menu futuristic-menu">
             @foreach ($categories as $category)
-              <li><a href="{{ route('byCategory', ['category' => $category]) }}" class="dropdown-item text-capitalize">{{ $category->name }}</a></li>
+              <li><a href="{{ route('byCategory', ['category' => $category]) }}" class="dropdown-item text-capitalize">{{__("ui.$category->name")}}</a></li>
               @if (!$loop->last)
                 <hr class="dropdown-divider category-divider">
               @endif
@@ -34,10 +34,10 @@
             @if (session()->has('error_search'))
               <input type="search" name="query" class="form-control is-invalid" placeholder="can't be empty" aria-label="search">
             @else
-              <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+              <input type="search" name="query" class="form-control" placeholder="{{__('ui.nav_search')}}" aria-label="search">
             @endif
               <button type="submit" class="input-group-text btn btn_custom" id="basic-addon2">
-                Search
+              {{__('ui.nav_search')}}
               </button>
           </div>
         </form>
@@ -47,11 +47,11 @@
               {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end futuristic-menu">
-              <li><a class="dropdown-item" href="{{ route('create.article') }}">Crea Annuncio</a></li>
+              <li><a class="dropdown-item" href="{{ route('create.article') }}">{{__('ui.create_announce')}}</a></li>
               @if(Auth::user()->is_revisor)
                 <li class="nav-item"> 
                   <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
-                    href="{{ route('revisor.index') }}">Zona Revisore
+                    href="{{ route('revisor.index') }}">{{__('ui.revisor_zone')}}
                   <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                     {{ \App\Models\Article::toBeRevisedCount() }}
                   </span>
@@ -59,17 +59,17 @@
                 </li>
               @endif
               <li>
-                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
+                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{__('ui.logout')}}</a>
               </li>
               <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">@csrf</form>
             </ul>
           </li>
         @else
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('login') }}">Accedi</a>
+            <a class="nav-link text-white" href="{{ route('login') }}">{{__('ui.login')}}</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('register') }}">Registrati</a>
+            <a class="nav-link text-white" href="{{ route('register') }}">{{__('ui.signin')}}</a>
           </li>
         @endauth
       </ul>
