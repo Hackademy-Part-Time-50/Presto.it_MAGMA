@@ -1,5 +1,5 @@
 <x-layouts.layout>
-    <div class="container mt-5">
+    <div class="container custom-loyaut">
         <div class="row">
             <div class="col d-flex jusify-content-center">
                 <h1 class="display-3">{{__('ui.announce_category')}} <span class="fst-italic fw-bold">

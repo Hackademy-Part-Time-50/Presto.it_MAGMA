@@ -13,7 +13,7 @@
     <title>Presto</title>
 </head>
 
-<body>
+<body class="bg-custom-loyaut">
   
     <x-navbar />
   

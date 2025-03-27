@@ -1,21 +1,40 @@
 <nav class="navbar navbar-expand-lg navbar-custom w-100 top-0 start-0 fixed-top shadow-lg glass-effect">
+
   <div class="container-fluid">
-    <a class="navbar-brand text-white fw-bold fs-4" href="{{ route('homepage') }}">Presto</a>
-    <!-- scelta lingua -->
-    <x-_locale lang="it" />
-    <x-_locale lang="en" />
-    <x-_locale lang="es" />
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+
+
+    <a class="navbar-brand text-white fw-bold fs-4" href="{{ route('homepage') }}"><img
+        src="{{ Storage::url('image/icons.svg') }}" alt="Presto"></a>
+
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+
+
       <span class="navbar-toggler-icon custom-toggler"></span>
+
+
+
     </button>
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('homepage') }}">Home</a>
-        </li>
+
+
         <li class="nav-item">
           <a class="nav-link text-white" href="{{ route('articles.index') }}">{{__('ui.allannounces')}}</a>
         </li>
+
+
+
+
+
+
+
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.nav_category')}}</a>
           <ul class="dropdown-menu futuristic-menu">
@@ -26,12 +45,26 @@
               @endif
             @endforeach
           </ul>
+
+
+
+
+          
         </li>
       </ul>
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <form action="{{ route('article.search') }}" class="d-flex" role="search" method="GET">
-          <div class="input-group">
+
+      <ul class="navbar-nav">
+
+        {{-- ricerca --}}
+        <div class=" ">
+
+
+          <form action="{{ route('article.search') }}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"
+            method="GET">
+
+
             @if (session()->has('error_search'))
+<<<<<<< HEAD
               <input type="search" name="query" class="form-control is-invalid" placeholder="can't be empty" aria-label="search">
             @else
               <input type="search" name="query" class="form-control" placeholder="{{__('ui.nav_search')}}" aria-label="search">
@@ -76,6 +109,3 @@
     </div>
   </div>
 </nav>
-
-
-  

@@ -1,5 +1,5 @@
 <x-layouts.layout>
-    <div class="container mt-5">
+    <div class="container custom-loyaut pt-5">
         <div class="row">
             <div class="col d-flex jusify-content-center">
                 <h1 class="display-1 pt-custom">{{__('ui.allannounces')}}</h1>

@@ -1,33 +1,39 @@
 <x-layouts.layout>
 
-<x-success />
+
     <header class="container-fluid">
     
         <div class="row">
-            <div class="col-12 col-md-6 ">
-
-                <!-- Contenuto sopra l'immagine -->
-                <div class="position-absolute top-50 start-50 translate-middle text-center text-custom">
-                    <h1 class="">{{ config('app.name') }}</h1>
-                    
-                        @auth
-                            <a href="{{ route('create.article') }}"
-                                class="btn btn-light px-4 py-2 fw-bold rounded-3 shadow-sm">
-                                Crea Annuncio
-                            </a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn my_btn px-4 py-2 fw-bold rounded-3 shadow-sm me-2">
-                                Accedi
-                            </a>
-                            <a href="{{ route('register') }}"
-                                class="btn my_btn px-4 py-2 fw-bold rounded-3 shadow-sm">
-                                Registrati
-                            </a>
-                        @endauth
+                <div class="col-12 col-md-6 ">
                     
                 </div>
 
-            </div>
+
+                <div class="col-12 col-md-6 align-content-center text-center custom-header ">
+
+                    <!-- Contenuto sopra l'immagine -->
+                    
+                        <div class="text-custom">
+                            <p class="fs-3 text">Non lo usi?</p>
+                            <p class="fs-3 text">Mettilo in vendita,</p>
+                            <p class="fs-1 text fw-bold">{{ config('app.name') }}!</p>
+                            
+                                @auth
+                                    <a href="{{ route('create.article') }}" class="btn btn-custom-other">
+                                        Crea Annuncio
+                                    </a>
+                                {{-- @else
+                                    <a href="{{ route('login') }}" class="btn btn-custom-other">
+                                        Accedi
+                                    </a> --}}
+                                @endauth
+                            
+                        </div>
+                    
+
+                </div>
+
+
         </div>
     </header>
 
@@ -45,6 +51,34 @@
             @endforelse
         </div>
     </div>
+
+
+
+    <div class="container align-content-center my-5">
+        <div class="row">
+
+           
+
+
+
+            <div class="col-12 col-md-6 img-revisore">
+                
+                
+               
+              
+        </div>
+        
+            <div class="col-12 col-md-6 mt-3 align-content-center text-center">
+                
+                    <h5>Vuoi diventare revisore?</h5>
+                    <p>Clicca il bottone sottostante, farai richiesta al nostro admin!</p>
+                    <a href="{{ route('become.revisor') }}" class="btn btn-custom-other">Diventa revisore!</a>
+                  
+            </div>
+        </div>
+    </div>
+
+<x-success/>
 
 
 
