@@ -3,68 +3,91 @@
 
     <x-slot:head>@vite('resources/css/auth.css')</x-slot:head>
 
-    <div class="container-auth">
+    <div class="container-auth @if ($errors->any()) active @endif">
+        <!-- Form di Login (Non visibile se siamo nella vista di registrazione) -->
         <div class="auth-form-box auth-login">
             <form method="POST" action="{{ route('login') }}" id="loginForm">
                 @csrf
-                <h1 id="login-h1">{{__('ui.login')}}</h1>
+                <h1 id="login-h1">Login</h1>
 
                 <div class="auth-input-box">
                     <input type="email" placeholder="Email" value="{{ old('email') }}" id="loginEmail" name="email"
                         class="@error('email') error @enderror">
                     <i class='bx bxs-envelope'></i>
                     @error('email')
+                        <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="auth-input-box">
-
                     <input type="password" placeholder="Password" id="password" name="password"
-                        class="@error('email') error @enderror">
+                        class="@error('password') error @enderror">
                     <i class='bx bxs-lock-alt'></i>
+                    @error('password')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="auth-forgot-link">
+                    <a href="{{ route('password.request') }}">Recupera Password?</a>
+                </div>
+                <button type="submit" class="auth-btn">Accedi</button>
+                <p class="pt-2">Oppure Accedi con:</p>
+                <div class="auth-social-icons">
+                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-github'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </form>
+        </div>
+
+        <!-- Form di Registrazione -->
+        <div class="auth-form-box auth-register">
+            <form method="POST" action="{{ route('register') }}" id="registerForm">
+                @csrf
+                <h1>Registration</h1>
+
+                <!-- Nome -->
+                <div class="auth-input-box">
+                    <input type="text" placeholder="Nome" value="{{ old('name') }}" required id="name" name="name"
+                        class="@error('name') error @enderror">
+                    <i class='bx bxs-user'></i>
+                    @error('name')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <!-- Email -->
+                <div class="auth-input-box">
+                    <input type="email" placeholder="Email" value="{{ old('email') }}" required id="registerEmail"
+                        name="email" class="@error('email') error @enderror">
+                    <i class='bx bxs-envelope'></i>
                     @error('email')
                         <span class="error-message">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="auth-forgot-link">
-                    <a href="{{ route('password.request') }}">{{__('ui.retrive_password')}}?</a>
-                </div>
-                <button type="submit" class="auth-btn">{{__('ui.login')}}</button>
-                <p class="pt-2">{{__('ui.else_login')}}:</p>
-                <div class="auth-social-icons">
-                    <a href="#"><i class='bx bxl-google'></i></a>
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-github'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                </div>
-            </form>
-        </div>
 
-        <div class="auth-form-box auth-register">
-            <form method="POST" action="{{ route('register') }}" id="registerForm">
-                @csrf
-                <h1>{{__('ui.signin')}}</h1>
-                <div class="auth-input-box">
-                    <input type="text" placeholder="Nome" value="{{ old('name') }}" required id="name" name="name">
-                    <i class='bx bxs-user'></i>
-                </div>
-                <div class="auth-input-box">
-                    <input type="email" placeholder="Email" value="{{ old('email') }}" required id="registerEmail"
-                        name="email">
-                    <i class='bx bxs-envelope'></i>
-                </div>
+                <!-- Password -->
                 <div class="auth-input-box">
                     <input type="password" placeholder="Password" value="{{ old('password') }}" required id="password"
-                        name="password">
+                        name="password" class="@error('password') error @enderror">
                     <i class='bx bxs-lock-alt'></i>
+                    @error('password')
+                        <span class="error-message">{{ $message }}</span>
+                    @enderror
                 </div>
+
+                <!-- Password di conferma -->
                 <div class="auth-input-box">
-                    <input type="password" placeholder="Password Confirm" value="{{ old('password') }}" required
-                        id="password_confirmation" name="password_confirmation">
+                    <input type="password" placeholder="Password Confirm" value="{{ old('password_confirmation') }}"
+                        required id="password_confirmation" name="password_confirmation">
                     <i class='bx bxs-lock-alt'></i>
                 </div>
-                <button type="submit" class="auth-btn">{{__('ui.signin')}}</button>
-                <p class="pt-2">{{__('ui.else_signin')}}:</p>
+
+                <!-- Pulsante Registrazione -->
+                <button type="submit" class="auth-btn" id="registerSubmitBtn">Registrati</button>
+                <p class="pt-2">Oppure registrati con:</p>
                 <div class="auth-social-icons">
                     <a href="#"><i class='bx bxl-google'></i></a>
                     <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -74,33 +97,50 @@
             </form>
         </div>
 
+        <!-- Sezione di cambio vista -->
         <div class="auth-toggle-box">
             <div class="auth-toggle-panel auth-toggle-left">
-                <h1>{{__('ui.welcome')}}!</h1>
-                <p class="pt-2">{{__('ui.no_account')}}?</p>
-                <button class="auth-btn auth-register-btn">{{__('ui.signin')}}</button>
+                <h1>Ciao!</h1>
+                <p class="pt-2">Non sei ancora registrato?</p>
+                <button class="auth-btn auth-register-btn">Registrati</button>
             </div>
             <div class="auth-toggle-panel auth-toggle-right">
-                <h1>{{__('ui.welcome_back')}}!</h1>
-                <p>{{__('ui.already_account')}}?</p>
-                <button class="auth-btn auth-login-btn">{{__('ui.login')}}</button>
+                <h1>Welcome Back!</h1>
+                <p>Already have an account?</p>
+                <button class="auth-btn auth-login-btn">Login</button>
             </div>
         </div>
     </div>
 
-
     <script>
-        const container = document.querySelector('.container-auth');
-        const registerBtn = document.querySelector('.auth-register-btn');
-        const loginBtn = document.querySelector('.auth-login-btn');
+        document.addEventListener("DOMContentLoaded", function () {
+            const container = document.querySelector('.container-auth');
+            const registerBtn = document.querySelector('.auth-register-btn');
+            const loginBtn = document.querySelector('.auth-login-btn');
+            const errorMessages = document.querySelectorAll('.error-message');
+            const errorInputs = document.querySelectorAll('.auth-input-box input.error'); // Seleziona input con errori
 
-        registerBtn.addEventListener('click', () => {
-            container.classList.add('active');
+            // Se Laravel ha errori, mantieni la vista registrazione attiva
+            if ("{{ $errors->any() }}" == "1") {
+                container.classList.add('active');
+            }
+
+            // Bottone per mostrare il form di registrazione
+            registerBtn.addEventListener('click', () => {
+                container.classList.add('active');
+            });
+
+            // Bottone per mostrare il form di login e nascondere gli errori
+            loginBtn.addEventListener('click', () => {
+                container.classList.remove('active');
+
+                // Rimuove i messaggi di errore
+                errorMessages.forEach(error => error.remove());
+
+                // Rimuove il bordo rosso dagli input
+                errorInputs.forEach(input => input.classList.remove('error'));
+            });
         });
 
-        loginBtn.addEventListener('click', () => {
-            container.classList.remove('active');
-        });
     </script>
-
 </x-layouts.layout>
