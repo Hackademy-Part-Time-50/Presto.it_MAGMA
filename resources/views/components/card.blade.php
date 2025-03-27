@@ -17,7 +17,7 @@
 
                   <div class="justify-content-center">
 
-                      <a href="{{ route('articles.show', [$article->id]) }}" class="btn btn_custom">Dettagli</a>
+                      <a href="{{ route('articles.show', [$article->id]) }}" class="btn btn_custom">{{__('ui.details')}}</a>
 
                   </div>
               </div>

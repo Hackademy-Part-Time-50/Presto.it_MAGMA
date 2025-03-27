@@ -2,7 +2,7 @@
     <div class="container custom-loyaut pt-5">
         <div class="row">
             <div class="col d-flex jusify-content-center">
-                <h1 class="display-1 pt-custom">Tutti gli Articoli</h1>
+                <h1 class="display-1 pt-custom">{{__('ui.allannounces')}}</h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-center py-5">
@@ -13,7 +13,7 @@
             @empty
                 <div class="col-12">
                     <h3 class="text-center">
-                        Non ci sono articoli da mostrare
+                    {{__('ui.no_announces')}}
                     </h3>
                 </div>
             @endforelse

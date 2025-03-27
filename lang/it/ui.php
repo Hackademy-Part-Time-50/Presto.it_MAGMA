@@ -1,23 +1,66 @@
 <?php
 return
     [   // traduzione navbar
-        'allarticles' => 'Tutti gli articoli',
+        'allannounces' => 'Tutti gli Annunci',
         'nav_category' => 'Categorie',
-        'nav_search' => 'Search',
-        'create_announce' => 'Create Announce',
-        'revisor_zone' => 'Revisor Zone',
+        'nav_search' => 'Cerca',
+        'create_announce' => 'Crea un Annuncio',
+        'revisor_zone' => 'Zona Revisore',
+        'login' => 'Accedi',
+        'signin' => 'Registrati',
+        'logout' => 'Esci',
+
+        // traduzione autenticazione
+        'retrive_password' => 'Recupera Password',
+        'else_login' => 'Oppure Accedi con:',
+        'else_signin' => 'Oppure Registrati con:',
+        'welcome' => 'Benvenuto',
+        'no_account' => 'Non hai ancora un Account?',
+        'welcome_back' => 'Bentornato!',
+        'already_account' => 'Hai già un Account?',
+
+        // traduziuone card
+        'details' => 'Dettagli',
+
+        // traduzione crea annuncio
+        'title' => 'Titolo',
+        'description' => 'Descrizione',
+        'price' => 'Prezzo',
+        'category' => 'Categoria',
+        'select_category' => 'Seleziona una Categoria',
+        'create' => 'Crea',
+        'create_new' => 'Crea un Nuovo Annuncio',
         
 
-        // lista categorie
-        'elettronica' => 'Electronics',
-        'abbigliamento' => 'Clothing',
-        'salute e bellezza' => 'Health and Beauty',
-        'giocattoli' => 'Toys',
-        'sport' => 'Sport',
-        'animali domestici' => 'Pets',
-        'libri e riviste' => 'Books and Magazines',
-        'accessori' => 'Accessories',
-        'motori' => 'Vehicles',
+         // traduzione vista categorie
+         'announce_category' => 'Annunci della Categoria ',
+         'no_announces_already' => 'Non sono ancora stati creati articoli per questa categoria',
+         'publish_announce' => 'Pubblica Annuncio',
 
+         // traduzione vista tutti gli articoli
+         'no_announces' => 'Ancora nessun annuncio da mostrare',
+
+         // traduzione vista ricerca
+         'resaults_search' => 'Risultati della tua ricerca',
+         'no_announces_research' => 'Nessun annuncio corrisponde alla tua ricerca',
+ 
+        // lista categorie
+        'elettronica' => 'Elettronica',
+        'abbigliamento' => 'Abbigliamento',
+        'salute e bellezza' => 'Salute e Bellezza',
+        'giocattoli' => 'Giocattoli',
+        'sport' => 'Sport',
+        'animali domestici' => 'Animali Domestici',
+        'casa e giardinaggio' => 'Casa e Giardinaggio',
+        'libri e riviste' => 'Libri e Riviste',
+        'accessori' => 'Accessori',
+        'motori' => 'Motori',
+
+        // traduizione vista revisore
+        'no_announce_review' => 'Nessun annuncio da revisionare',
+        'accept' => 'Accetta',
+        'decline' => 'Rifiuta',
+        'author' => 'Autore',
+        'cancel_op' => 'Cancella ultima operazione',
 
     ];

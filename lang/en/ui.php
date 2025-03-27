@@ -8,6 +8,7 @@ return
         'revisor_zone' => 'Revisor Zone',
         'login' => 'Login',
         'signin' => 'Sign in',
+        'logout' => 'Logout',
 
         // traduzione autenticazione
         'retrive_password' => 'Retrive Password',
@@ -22,17 +23,18 @@ return
         'details' => 'details',
 
         // traduzione crea annuncio
-        'title' => 'Title:',
-        'description' => 'Description:',
-        'price' => 'Price:',
+        'title' => 'Title',
+        'description' => 'Description',
+        'price' => 'Price',
         'category' => 'Category',
         'select_category' => 'Select a category',
         'create' => 'Create',
+        'create_new' => 'Create new Announce',
 
          // traduzione vista categorie
          'announce_category' => 'Announces from Category ',
          'no_announces_already' => 'No announces have been created for this category yet',
-         'publish_announce' => 'Publish an Announce',
+         'publish_announce' => 'Publish Announce',
 
          // traduzione vista tutti gli articoli
          'no_announces' => 'No Announces to show',
@@ -48,6 +50,7 @@ return
         'giocattoli' => 'Toys',
         'sport' => 'Sport',
         'animali domestici' => 'Pets',
+        'casa e giardinaggio' => 'Home and Gardening',
         'libri e riviste' => 'Books and Magazines',
         'accessori' => 'Accessories',
         'motori' => 'Vehicles',

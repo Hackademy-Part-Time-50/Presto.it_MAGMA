@@ -2,8 +2,8 @@
     <div class="container custom-loyaut">
         <div class="row">
             <div class="col d-flex jusify-content-center">
-                <h1 class="display-2">Articoli della categotria <span class="fst-italic fw-bold">
-                    {{ $category->name }}
+                <h1 class="display-3">{{__('ui.announce_category')}} <span class="fst-italic fw-bold">
+                    {{ __("ui.$category->name") }}
                 </span></h1>
             </div>
         </div>
@@ -14,9 +14,9 @@
                 </div>
             @empty
                 <div class="col-12 text-center">
-                    <h3>Non sono ancora stati creati articoli per questa categoria!</h3>
+                    <h3>{{__('ui.no_announces_already')}}!</h3>
                     @auth
-                        <a class="btn btn-dark my-5" href="{{ route('create.article') }}">Pubblica un annuncio</a>
+                        <a class="btn btn-dark my-5" href="{{ route('create.article') }}">{{__('ui.publish_announce')}}</a>
                     @endauth
                 </div>
             @endforelse
