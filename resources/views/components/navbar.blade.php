@@ -5,6 +5,10 @@
     <a class="navbar-brand text-white fw-bold fs-4" href="{{ route('homepage') }}"><img
         src="{{ Storage::url('image/icons.svg') }}" alt="Presto"></a>
 
+    <x-_locale lang="it" />
+    <x-_locale lang="en" />
+    <x-_locale lang="es" />
+
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
       aria-label="Toggle navigation">
@@ -45,7 +49,7 @@
              <input type="search" name="query" class="form-control is-invalid" placeholder="Non può essere vuoto"
               aria-label="Search">
             @else
-              <input type="search" name="query" class="form-control" placeholder="Cerca" aria-label="Search">
+              <input type="search" name="query" class="form-control" placeholder="{{__('ui.nav_search')}}" aria-label="Search">
             @endif
           </form>
 

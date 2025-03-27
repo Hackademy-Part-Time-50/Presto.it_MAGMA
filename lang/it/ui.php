@@ -10,6 +10,11 @@ return
         'signin' => 'Registrati',
         'logout' => 'Esci',
 
+        // traduzione homepage
+        'want_become_revisor' => 'Vuoi diventare Revisore?',
+        'button_below' => 'Clicca il bottone sottostante, farai richiesta al nostro admin!',
+        'become_revisor' => 'Diventa Revisore!',
+
         // traduzione autenticazione
         'retrive_password' => 'Recupera Password',
         'else_login' => 'Oppure Accedi con:',
@@ -62,5 +67,7 @@ return
         'decline' => 'Rifiuta',
         'author' => 'Autore',
         'cancel_op' => 'Cancella ultima operazione',
+        'dashboard' => 'Dashboard Revisore',
+        'back_homepage' => 'Torna alla Homepage'
 
     ];

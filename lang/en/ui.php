@@ -10,6 +10,11 @@ return
         'signin' => 'Sign in',
         'logout' => 'Logout',
 
+        // traduzione homepage
+        'want_become_revisor' => 'Do you want to become a Revisor?',
+        'button_below' => 'Click the button below, you will request to our admin!',
+        'become_revisor' => 'Become revisor!',
+
         // traduzione autenticazione
         'retrive_password' => 'Retrive Password',
         'else_login' => 'Or Login with:',
@@ -20,7 +25,7 @@ return
         'already_account' => 'Already have an account?',
 
         // traduziuone card
-        'details' => 'details',
+        'details' => 'Details',
 
         // traduzione crea annuncio
         'title' => 'Title',
@@ -31,17 +36,17 @@ return
         'create' => 'Create',
         'create_new' => 'Create new Announce',
 
-         // traduzione vista categorie
-         'announce_category' => 'Announces from Category ',
-         'no_announces_already' => 'No announces have been created for this category yet',
-         'publish_announce' => 'Publish Announce',
+        // traduzione vista categorie
+        'announce_category' => 'Announces from Category ',
+        'no_announces_already' => 'No announces have been created for this category yet',
+        'publish_announce' => 'Publish Announce',
 
-         // traduzione vista tutti gli articoli
-         'no_announces' => 'No Announces to show',
+        // traduzione vista tutti gli articoli
+        'no_announces' => 'No Announces to show',
 
-         // traduzione vista ricerca
-         'resaults_search' => 'Resault from your reserach',
-         'no_announces_research' => 'No announce match your research',
+        // traduzione vista ricerca
+        'resaults_search' => 'Resault from your reserach',
+        'no_announces_research' => 'No announce match your research',
  
         // lista categorie
         'elettronica' => 'Electronics',
@@ -61,5 +66,7 @@ return
         'decline' => 'Decline',
         'author' => 'Author',
         'cancel_op' => 'Cancel last Operation',
+        'dashboard' => 'Dashboard Revisore',
+        'back_homepage' => 'Back to Homepage'
 
     ];

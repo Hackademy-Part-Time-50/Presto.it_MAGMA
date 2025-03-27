@@ -20,11 +20,11 @@
                             
                                 @auth
                                     <a href="{{ route('create.article') }}" class="btn btn-custom-other">
-                                        Crea Annuncio
+                                        {{__('ui.create_announce')}}
                                     </a>
                                 {{-- @else
                                     <a href="{{ route('login') }}" class="btn btn-custom-other">
-                                        Accedi
+                                        {{__('ui.login')}}
                                     </a> --}}
                                 @endauth
                             
@@ -46,7 +46,7 @@
                 </div>
             @empty
                 <div class="col-12">
-                    <h3>Non sono ancora stati creati annunci</h3>
+                    <h3>{{__('ui.no_announces')}}</h3>
                 </div>
             @endforelse
         </div>
@@ -70,9 +70,9 @@
         
             <div class="col-12 col-md-6 mt-3 align-content-center text-center">
                 
-                    <h5>Vuoi diventare revisore?</h5>
-                    <p>Clicca il bottone sottostante, farai richiesta al nostro admin!</p>
-                    <a href="{{ route('become.revisor') }}" class="btn btn-custom-other">Diventa revisore!</a>
+                    <h5>{{__('ui.want_become_revisor')}}</h5>
+                    <p>{{__('ui.button_below')}}</p>
+                    <a href="{{ route('become.revisor') }}" class="btn btn-custom-other">{{__('ui.become_revisor')}}</a>
                   
             </div>
         </div>

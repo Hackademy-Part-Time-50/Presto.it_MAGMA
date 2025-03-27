@@ -36,9 +36,9 @@
     <div class="mb-3">
         <label for="category_select" class="form-label fw-bold">{{__('ui.category')}}:</label>
         <select id="category_select" class="form-select @error('category_select') is-invalid @enderror" wire:model.blur="category">
-            <option value="" selected>{{__('ui.select_category')}}a</option>
+            <option value="" selected>{{__('ui.select_category')}}</option>
             @foreach ($categories as $category)
-                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                <option value="{{ $category->id }}">{{ __("ui.$category->name") }}</option>
             @endforeach
         </select>
         @error('category')
