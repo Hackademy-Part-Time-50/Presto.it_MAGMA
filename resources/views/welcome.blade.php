@@ -14,8 +14,8 @@
                     <!-- Contenuto sopra l'immagine -->
                     
                         <div class="text-custom">
-                            <p class="fs-3 text">Non lo usi?</p>
-                            <p class="fs-3 text">Mettilo in vendita,</p>
+                            <p class="fs-3 text">{{__('ui.slogan_1')}}</p>
+                            <p class="fs-3 text">{{__('ui.slogan_2')}},</p>
                             <p class="fs-1 text fw-bold">{{ config('app.name') }}!</p>
                             
                                 @auth

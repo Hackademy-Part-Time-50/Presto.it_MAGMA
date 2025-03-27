@@ -16,6 +16,7 @@ return
         'become_revisor' => 'Diventa Revisore!',
         'slogan_1' => 'Non lo usi?',
         'slogan_2' => 'Mettilo in vendita',
+        'featured_announces' => 'Annunci in Evidenza',
 
         // traduzione autenticazione
         'retrive_password' => 'Recupera Password',
