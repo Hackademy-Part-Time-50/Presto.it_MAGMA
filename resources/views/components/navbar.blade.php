@@ -81,10 +81,7 @@
           </li>
         @else
           <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('login') }}">{{__('ui.login')}}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('register') }}">{{__('ui.signin')}}</a>
+            <a class="nav-link text-white" href="{{ route('login') }}">Account</a>
           </li>
         @endauth
       </ul>
