@@ -17,6 +17,21 @@ Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
+    //revisore
+    Route::get('/revisor/index',[RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
+
+    //logica di accettazione articolo
+    Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+
+    //logica di rifiuto articolo
+    Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
+
+    //annullare accettazione o rifiuto articolo
+    Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middleware('isRevisor')->name('cancel.lastAction');
+
+    Route::get('revisor/request',[RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
+
+    Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 });
 
 Route::get('/articles/index',[ArticleController::class, 'index'])->name('articles.index');
@@ -24,18 +39,3 @@ Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 Route::get('/search/article', [ArticleController::class, 'searchArticle'])->name('article.search');
 
-//revisore
-Route::get('/revisor/index',[RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
-
-//logica di accettazione articolo
-Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
-
-//logica di rifiuto articolo
-Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
-
-//annullare accettazione o rifiuto articolo
-Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->middleware('isRevisor')->name('cancel.lastAction');
-
-Route::get('revisor/request',[RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
-
-Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');

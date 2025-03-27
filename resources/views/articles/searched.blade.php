@@ -13,7 +13,7 @@
                 </div>
             @empty
                 <div class="col-12 text-center">
-                    <h3>Nessun articolo corrisponde alla tua ricerca</h3>
+                    <h3>Nessun annuncio corrisponde alla tua ricerca</h3>
                 </div>
             @endforelse
         </div>
