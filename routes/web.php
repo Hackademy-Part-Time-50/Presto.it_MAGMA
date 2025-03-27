@@ -39,3 +39,11 @@ Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 Route::get('/search/article', [ArticleController::class, 'searchArticle'])->name('article.search');
 
+
+//rotta per cambiare la lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
+
+
+
+
