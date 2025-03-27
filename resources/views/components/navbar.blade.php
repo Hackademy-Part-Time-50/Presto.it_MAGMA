@@ -42,8 +42,6 @@
           <form action="{{ route('article.search') }}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"
             method="GET">
             @if (session()->has('error_search'))
-<<<<<<< HEAD
-
              <input type="search" name="query" class="form-control is-invalid" placeholder="Non può essere vuoto"
               aria-label="Search">
             @else
@@ -54,40 +52,6 @@
         </div>
         {{-- fine ricerca --}}
 
-        @auth
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        {{ Auth::user()->name }}
-        </a>
-        <ul class="dropdown-menu dropdown-menu-end futuristic-menu">
-        <li><a class="dropdown-item" href="{{ route('create.article') }}"> Crea Annuncio</a></li>
-        @if (Auth::user()->is_revisor)
-      <li class="nav-item">
-        <a class="nav-link btn btn-sm position-relative w-sm-25" href="{{ route('revisor.index') }}">Zona Revisore
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-        {{ \App\Models\Article::toBeRevisedCount() }}
-        </span>
-        </a>
-      </li>
-    @endif
-        <li>
-          <a class="dropdown-item" href="#"
-          onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a>
-        </li>
-        <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">@csrf
-=======
-<<<<<<< HEAD
-              <input type="search" name="query" class="form-control is-invalid" placeholder="can't be empty" aria-label="search">
-            @else
-              <input type="search" name="query" class="form-control" placeholder="{{__('ui.nav_search')}}" aria-label="search">
-            @endif
-              <button type="submit" class="input-group-text btn btn_custom" id="basic-addon2">
-              {{__('ui.nav_search')}}
-              </button>
-          </div>
->>>>>>> translating
-        </form>
         @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
