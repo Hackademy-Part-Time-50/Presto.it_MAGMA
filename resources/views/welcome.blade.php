@@ -38,7 +38,7 @@
     </header>
 
 
-    <div class="container">
+    <div class="container mt-5">
         <x-carousel :articles="$articles"/>
     </div>
 

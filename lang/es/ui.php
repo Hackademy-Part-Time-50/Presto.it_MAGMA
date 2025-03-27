@@ -14,6 +14,8 @@ return
         'want_become_revisor' => '¿Quieres convertirte en Auditor?',
         'button_below' => 'Haga clic en el botón a continuación, ¡hará una solicitud a nuestro administrador!',
         'become_revisor' => 'Convertirse en Auditor!',
+        'slogan_1' => '¿No lo usas?',
+        'slogan_2' => 'Ponlo a la Venta',
 
         // traduzione autenticazione
         'retrive_password' => 'Recuperar Contraseña',

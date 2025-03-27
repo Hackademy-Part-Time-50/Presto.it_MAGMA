@@ -14,6 +14,8 @@ return
         'want_become_revisor' => 'Vuoi diventare Revisore?',
         'button_below' => 'Clicca il bottone sottostante, farai richiesta al nostro admin!',
         'become_revisor' => 'Diventa Revisore!',
+        'slogan_1' => 'Non lo usi?',
+        'slogan_2' => 'Mettilo in vendita',
 
         // traduzione autenticazione
         'retrive_password' => 'Recupera Password',
