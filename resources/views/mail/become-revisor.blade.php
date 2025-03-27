@@ -1,20 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Presto.it</title>
-</head>
-<body>
-    <div>
-        <h1>Un utente ha chiesto di lavorare con noi</h1>
-        <h2>Ecco i suoi dati:</h2>
-        <p>Nome: {{ $user->name }}</p>
-        <p>Email: {{ $user->email }}</p>
-        <p>Se vuoi renderl* reviros, clicca qui:</p>
-        <a href="{{ route('make.revisor', compact('user')) }}">Rendi Revisore</a>
-    </div>
+    <title>Presto.it - Richiesta Revisore</title>
     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg">
+                    <div class="card-body">
+                        <h1 class="card-title text-center text-primary">Richiesta Revisore</h1>
+                        <h2 class="text-center">Ecco i suoi dati:</h2>
+                        <hr>
+                        <p><strong>Nome:</strong> {{ $user->name }}</p>
+                        <p><strong>Email:</strong> {{ $user->email }}</p>
+                        <div class="text-center mt-4">
+                            <a href="{{ route('make.revisor', compact('user')) }}" class="btn btn-primary">
+                                Rendi Revisore
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (opzionale) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
