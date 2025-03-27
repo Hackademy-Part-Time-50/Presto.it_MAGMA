@@ -1,7 +1,7 @@
 <?php
 return
     [   // traduzione navbar
-        'allarticles' => 'All the Announces',
+        'allannounces' => 'All the Announces',
         'nav_category' => 'Categories',
         'nav_search' => 'Search',
         'create_announce' => 'Create Announce',
