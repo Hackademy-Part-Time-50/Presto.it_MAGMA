@@ -2,7 +2,7 @@
   <div class="row">
       <div class="col d-flex justify-content-center">
           <div class="product-card">
-              <div class="position-relative">
+              <div class="">
                   <img src="https://picsum.photos/1000/600" alt="Immagine prodotto">
                   <a href="{{ route('byCategory', [$article->category->id]) }}"
                       class="badge bg-custom position-absolute bottom-0 start-0 m-2 text-white text-decoration-none text-uppercase">
