@@ -51,4 +51,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(Article::class);
     }
+
+    // Nel modello User
+public function revisoreRequest()
+{
+    return $this->hasOne(RevisoreRequest::class);
+}
+
+
+
 }

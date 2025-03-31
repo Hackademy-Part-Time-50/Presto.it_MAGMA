@@ -11,7 +11,7 @@
     <div class="col-lg-3">
       <h5>Link utili</h5>
       <ul class="nav flex-column">
-        <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Perchè diventare un revisore?</a></li>
+        <li class="nav-item mb-2"><a href="{{ route('revisore.info') }}" class="nav-link p-0 text-body-secondary">Perchè diventare un revisore?</a></li>
         
       </ul>
     </div>

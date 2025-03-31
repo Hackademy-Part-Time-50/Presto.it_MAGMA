@@ -22,8 +22,14 @@
                         <p><strong>Nome:</strong> {{ $user->name }}</p>
                         <p><strong>Email:</strong> {{ $user->email }}</p>
                         <div class="text-center mt-4">
+                            <!-- Bottone per accettare la richiesta -->
                             <a href="{{ route('make.revisor', compact('user')) }}" class="btn btn-primary">
                                 Rendi Revisore
+                            </a>
+
+                            <!-- Bottone per rifiutare la richiesta -->
+                            <a href="{{ route('reject.revisor', compact('user')) }}" class="btn btn-danger ms-3">
+                                Rifiuta Richiesta
                             </a>
                         </div>
                     </div>
