@@ -8,7 +8,7 @@
         <div class="auth-form-box auth-login">
             <form method="POST" action="{{ route('login') }}" id="loginForm">
                 @csrf
-                <h1 id="login-h1">Login</h1>
+                <h1 id="login-h1">{{__('ui.login')}}</h1>
 
                 <div class="auth-input-box">
                     <input type="email" placeholder="Email" value="{{ old('email') }}" id="loginEmail" name="email"
@@ -29,10 +29,10 @@
                 </div>
 
                 <div class="auth-forgot-link">
-                    <a href="{{ route('password.request') }}">Recupera Password?</a>
+                    <a href="{{ route('password.request') }}">{{__('ui.retrive_password')}}</a>
                 </div>
-                <button type="submit" class="auth-btn">Accedi</button>
-                <p class="pt-2">Oppure Accedi con:</p>
+                <button type="submit" class="auth-btn">{{__('ui.login')}}</button>
+                <p class="pt-2">{{__('ui.else_login')}}</p>
                 <div class="auth-social-icons">
                     <a href="#"><i class='bx bxl-google'></i></a>
                     <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -46,11 +46,11 @@
         <div class="auth-form-box auth-register">
             <form method="POST" action="{{ route('register') }}" id="registerForm">
                 @csrf
-                <h1>Registration</h1>
+                <h1>{{__('ui.signin')}}</h1>
 
                 <!-- Nome -->
                 <div class="auth-input-box">
-                    <input type="text" placeholder="Nome" value="{{ old('name') }}" required id="name" name="name"
+                    <input type="text" placeholder="{{__('ui.name')}}" value="{{ old('name') }}" required id="name" name="name"
                         class="@error('name') error @enderror">
                     <i class='bx bxs-user'></i>
                     @error('name')
@@ -80,14 +80,14 @@
 
                 <!-- Password di conferma -->
                 <div class="auth-input-box">
-                    <input type="password" placeholder="Password Confirm" value="{{ old('password_confirmation') }}"
+                    <input type="password" placeholder="{{__('ui.password_confirm')}}" value="{{ old('password_confirmation') }}"
                         required id="password_confirmation" name="password_confirmation">
                     <i class='bx bxs-lock-alt'></i>
                 </div>
 
                 <!-- Pulsante Registrazione -->
-                <button type="submit" class="auth-btn" id="registerSubmitBtn">Registrati</button>
-                <p class="pt-2">Oppure registrati con:</p>
+                <button type="submit" class="auth-btn" id="registerSubmitBtn">{{__('ui.signin')}}</button>
+                <p class="pt-2">{{__('ui.else_signin')}}</p>
                 <div class="auth-social-icons">
                     <a href="#"><i class='bx bxl-google'></i></a>
                     <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -100,14 +100,14 @@
         <!-- Sezione di cambio vista -->
         <div class="auth-toggle-box">
             <div class="auth-toggle-panel auth-toggle-left">
-                <h1>Ciao!</h1>
-                <p class="pt-2">Non sei ancora registrato?</p>
-                <button class="auth-btn auth-register-btn">Registrati</button>
+                <h1>{{__('ui.welcome')}}</h1>
+                <p class="pt-2">{{__('ui.no_account')}}</p>
+                <button class="auth-btn auth-register-btn">{{__('ui.signin')}}</button>
             </div>
             <div class="auth-toggle-panel auth-toggle-right">
-                <h1>Welcome Back!</h1>
-                <p>Already have an account?</p>
-                <button class="auth-btn auth-login-btn">Login</button>
+                <h1>{{__('ui.welcome_back')}}</h1>
+                <p>{{__('ui.already_account')}}</p>
+                <button class="auth-btn auth-login-btn">{{__('ui.login')}}</button>
             </div>
         </div>
     </div>

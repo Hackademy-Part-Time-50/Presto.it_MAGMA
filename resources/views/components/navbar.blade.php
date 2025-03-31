@@ -79,7 +79,7 @@
 
             {{-- lingue disponibili --}}
             <li class="submenu-wrapper">
-                <a href="#">Lingua<span class="span"> > </span>
+                <a href="#">{{__('ui.lang')}}<span class="span"> > </span>
                 </a>
                 <ul class="submenu">
                     <li><a href="#"> <x-_locale lang="it" /></a></li>
