@@ -178,6 +178,14 @@ div .btn_custom {
 
 }
 
+.img-preview{
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+}
+
 /* FINE CARD */
 
 
