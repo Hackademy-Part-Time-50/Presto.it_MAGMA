@@ -1,90 +1,136 @@
-<nav class="navbar navbar-expand-lg navbar-custom w-100 top-0 start-0 fixed-top shadow-lg glass-effect">
+<nav class="navbar justify-content-between text-center">
 
-  <div class="container-fluid">
-
-    <a class="navbar-brand text-white fw-bold fs-4" href="{{ route('homepage') }}"><img
-        src="{{ Storage::url('image/icons.svg') }}" alt="Presto"></a>
-
-    <x-_locale lang="it" />
-    <x-_locale lang="en" />
-    <x-_locale lang="es" />
-
-    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-
-      <span class="navbar-toggler-icon custom-toggler"></span>
-
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('articles.index') }}">{{__('ui.allannounces')}}</a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.nav_category')}}</a>
-          <ul class="dropdown-menu futuristic-menu">
-            @foreach ($categories as $category)
-              <li><a href="{{ route('byCategory', ['category' => $category]) }}" class="dropdown-item text-capitalize">{{__("ui.$category->name")}}</a></li>
-              @if (!$loop->last)
-                <hr class="dropdown-divider category-divider">
-              @endif
-            @endforeach
-          </ul>
-        </li>
-      </ul>
-
-      <ul class="navbar-nav">
-
-        {{-- ricerca --}}
-        <div class=" ">
-
-          <form action="{{ route('article.search') }}" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search"
-            method="GET">
-            @if (session()->has('error_search'))
-             <input type="search" name="query" class="form-control is-invalid" placeholder="Non può essere vuoto"
-              aria-label="Search">
-            @else
-              <input type="search" name="query" class="form-control" placeholder="{{__('ui.nav_search')}}" aria-label="Search">
-            @endif
-          </form>
-
-        </div>
-        {{-- fine ricerca --}}
-
-        @auth
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {{ Auth::user()->name }}
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end futuristic-menu">
-              <li><a class="dropdown-item" href="{{ route('create.article') }}">{{__('ui.create_announce')}}</a></li>
-              @if(Auth::user()->is_revisor)
-                <li class="nav-item"> 
-                  <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
-                    href="{{ route('revisor.index') }}">{{__('ui.revisor_zone')}}
-                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                    {{ \App\Models\Article::toBeRevisedCount() }}
-                  </span>
-                  </a>
-                </li>
-              @endif
-              <li>
-                <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{__('ui.logout')}}</a>
-              </li>
-              <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">@csrf</form>
-            </ul>
-          </li>
-        @else
-          <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('login') }}">Account</a>
-          </li>
-        @endauth
-      </ul>
+    {{-- logo --}}
+    <div class="logo">
+        <a href="{{ route('homepage') }}">
+            <img src="{{ Storage::url('image/icons.svg') }}" alt="Presto">
+        </a>
     </div>
-  </div>
+    {{-- fine logo --}}
+
+
+
+
+
+
+        <ul class="menu">
+            {{-- tutti gli annunci --}}
+            <li class="nav-item">
+                <a href="{{ route('articles.index') }}">{{ __('ui.allannounces') }}</a>
+            </li>
+            {{-- fine tutti annunci --}}
+        </ul>
+
+
+
+        {{-- form ricerca --}}
+
+        <ul>
+
+            <form action="{{ route('article.search') }}" role="search" method="GET">
+                @if (session()->has('error_search'))
+                    <input type="search" name="query" class="form-control is-invalid"
+                        placeholder="Non può essere vuoto" aria-label="Search">
+                @else
+                    <input type="search" name="query" class="form-control" placeholder="{{ __('ui.nav_search') }}"
+                        aria-label="Search">
+                @endif
+            </form>
+
+        </ul>
+
+
+        {{-- fine form ricerca --}}
+
+        {{-- hamburger menu --}}
+
+
+        <div class="toggle-btn">
+            <div class="icon">
+
+            </div>
+        </div>
+        {{-- fine hamburgermenu --}}
+
+
+        <ul class="menu">
+
+
+            {{-- categorie --}}
+            <li class="submenu-wrapper">
+                <a href="">
+                    {{ __('ui.nav_category') }}
+                    <span class="span"> > </span>
+                </a>
+                <ul class="submenu">
+                    @foreach ($categories as $category)
+                        <li><a href="{{ route('byCategory', ['category' => $category]) }}">
+                                {{ __("ui.$category->name") }}
+                            </a>
+                        </li>
+                        @if (!$loop->last)
+                            <hr class="dropdown-divider category-divider">
+                        @endif
+                    @endforeach
+                </ul>
+            </li>
+
+            {{-- fine categorie --}}
+
+            {{-- lingue disponibili --}}
+            <li class="submenu-wrapper">
+                <a href="#">{{__('ui.lang')}}<span class="span"> > </span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="#"> <x-_locale lang="it" /></a></li>
+                    <li><a href="#"> <x-_locale lang="en" /></a></li>
+                    <li><a href="#"> <x-_locale lang="es" /></a></li>
+                </ul>
+            </li>
+
+
+
+            {{-- fine lingue disponibili --}}
+
+
+
+
+            {{-- accesso autenticazione --}}
+
+            @auth
+                <li class="submenu-wrapper">
+                    <a href="#">
+                        {{ Auth::user()->name }}
+                        <span class="span"> > </span>
+                    </a>
+                    <ul class="submenu">
+                        <li>
+                            <a href="{{ route('create.article') }}">
+                                {{ __('ui.create_announce') }}
+                            </a>
+                        </li>
+                        @if (Auth::user()->is_revisor)
+                            <li>
+                                <a href="{{ route('revisor.index') }}">{{ __('ui.revisor_zone') }}
+                                    <span>{{ \App\Models\Article::toBeRevisedCount() }}</span>
+                                </a>
+                            </li>
+                        @endif
+                        <li>
+                            <a
+                                onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">{{ __('ui.logout') }}</a>
+                        </li>
+                        <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">@csrf
+                        </form>
+                    </ul>
+                @else
+                <li>
+                    <a href="{{ route('login') }}"> Account
+                    </a>
+                </li>
+
+            @endauth
+            {{-- fine accesso autenticazione --}}
+
+   
 </nav>

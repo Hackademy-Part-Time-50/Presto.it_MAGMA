@@ -9,6 +9,7 @@ return
         'login' => 'Acceso',
         'signin' => 'Registrarse',
         'logout' => 'Salir',
+        'lang' => 'Idiomas',
 
         // traduzione homepage
         'want_become_revisor' => '¿Quieres convertirte en Auditor?',
@@ -26,6 +27,9 @@ return
         'no_account' => '¿Aún no tienes una Cuenta?',
         'welcome_back' => 'Bienvenido de nuevo!',
         'already_account' => '¿Ya tienes una cuenta?',
+        'name' => 'Nombre',
+        'password_confirm' => 'Confirmar Contraseña',
+
 
         // traduziuone card
         'details' => 'Detalles',

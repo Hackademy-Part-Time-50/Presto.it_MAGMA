@@ -3,7 +3,8 @@
         <div class="col d-flex justify-content-center">
             <div class="product-card">
                 <div class="position-relative">
-                    <img src="https://picsum.photos/1000/600" alt="Immagine prodotto">
+                    <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200' }}" 
+                        class="card-img-top" alt="Immagine dell'articolo {{ $article->title }}">
                     @php
                         $announce_category = $article->category->name;
                     @endphp
