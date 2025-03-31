@@ -2,9 +2,10 @@
     @section('body-class', 'pt-custom, bg-custom')
 
     <x-slot:head>@vite('resources/css/auth.css')</x-slot:head>
+    <x-slot:script>@vite('resources/js/auth.js')</x-slot:script>
 
-    <div class="container-auth @if ($errors->any()) active @endif">
-        <!-- Form di Login (Non visibile se siamo nella vista di registrazione) -->
+    <div class="container-auth @if ($errors->has('name') || $errors->has('password_confirmation')) active @endif">
+    <!-- Form di Login (Non visibile se siamo nella vista di registrazione) -->
         <div class="auth-form-box auth-login">
             <form method="POST" action="{{ route('login') }}" id="loginForm">
                 @csrf
@@ -113,34 +114,42 @@
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const container = document.querySelector('.container-auth');
-            const registerBtn = document.querySelector('.auth-register-btn');
-            const loginBtn = document.querySelector('.auth-login-btn');
-            const errorMessages = document.querySelectorAll('.error-message');
-            const errorInputs = document.querySelectorAll('.auth-input-box input.error'); // Seleziona input con errori
+    document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector('.container-auth');
+        const registerBtn = document.querySelector('.auth-register-btn');
+        const loginBtn = document.querySelector('.auth-login-btn');
 
-            // Se Laravel ha errori, mantieni la vista registrazione attiva
-            if ("{{ $errors->any() }}" == "1") {
-                container.classList.add('active');
-            }
+        const loginErrors = "{{ $errors->has('email') || $errors->has('password') ? '1' : '0' }}";
+        const registerErrors = "{{ $errors->has('name') || $errors->has('password_confirmation') || ( $errors->has('email') && old('name') ) ? '1' : '0' }}";
 
-            // Bottone per mostrare il form di registrazione
-            registerBtn.addEventListener('click', () => {
-                container.classList.add('active');
-            });
+        // Se ci sono errori nel form di registrazione, rimani sulla schermata di registrazione
+        if (registerErrors === "1") {
+            container.classList.add('active');
+        } 
+        // Se ci sono errori nel form di login, rimani sulla schermata di login
+        else if (loginErrors === "1") {
+            container.classList.remove('active');
+        }
 
-            // Bottone per mostrare il form di login e nascondere gli errori
-            loginBtn.addEventListener('click', () => {
-                container.classList.remove('active');
-
-                // Rimuove i messaggi di errore
-                errorMessages.forEach(error => error.remove());
-
-                // Rimuove il bordo rosso dagli input
-                errorInputs.forEach(input => input.classList.remove('error'));
-            });
+        // Bottone per mostrare il form di registrazione e rimuovere errori
+        registerBtn.addEventListener('click', () => {
+            container.classList.add('active');
+            clearErrors();
         });
 
-    </script>
+        // Bottone per mostrare il form di login e rimuovere errori
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove('active');
+            clearErrors();
+        });
+
+        // Funzione per eliminare messaggi di errore e classi di errore
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(el => el.remove());
+            document.querySelectorAll('.auth-input-box input.error').forEach(el => el.classList.remove('error'));
+        }
+    });
+</script>
+
+
 </x-layouts.layout>
