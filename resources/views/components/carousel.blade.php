@@ -16,7 +16,7 @@
                 <div class="my-slider">
                     @forelse ($articles as $article)
                         <div class="slide">
-                            <x-card_home_announces :article="$article" />
+                            <x-card :article="$article" />
                         </div>
                     @empty
                         <div class="col-12">
