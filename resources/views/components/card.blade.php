@@ -3,7 +3,7 @@
       <div class="col d-flex justify-content-center">
           <div class="product-card">
               <div class="position-relative">
-              <img src="{{ $article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200' }}" 
+              <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(200, 200) : 'https://picsum.photos/200' }}" 
                 class="card-img-top" alt="Immagine dell'articolo {{ $article->title }}">
                   <a href="{{ route('byCategory', [$article->category->id]) }}"
                       class="badge bg-custom position-absolute bottom-0 start-0 m-2 text-white text-decoration-none text-uppercase">
