@@ -13,7 +13,7 @@
 
 
 
-        <ul class="menu">
+        <ul class="menu mb-0 me-auto">
             {{-- tutti gli annunci --}}
             <li class="nav-item">
                 <a href="{{ route('articles.index') }}">{{ __('ui.allannounces') }}</a>
@@ -25,7 +25,7 @@
 
         {{-- form ricerca --}}
 
-        <ul>
+        <ul class="mb-0">
 
             <form action="{{ route('article.search') }}" role="search" method="GET">
                 @if (session()->has('error_search'))
@@ -45,7 +45,7 @@
         {{-- hamburger menu --}}
 
 
-        <div class="toggle-btn">
+        <div class="toggle-btn me-2 ms-auto">
             <div class="icon">
 
             </div>
@@ -53,7 +53,7 @@
         {{-- fine hamburgermenu --}}
 
 
-        <ul class="menu">
+        <ul class="menu mb-0">
 
 
             {{-- categorie --}}

@@ -13,17 +13,21 @@
     <title>Presto</title>
 </head>
 
-<body class="bg-custom-loyaut">
+<body class="bg-custom-loyaut min-vh-100">
   
-    <x-navbar />
+    
   
 
+  <div class="d-flex flex-column justify-content-between vh-100">
+
+    <x-navbar />
 
     <div class="content">
         {{ $slot }}
     </div>
 
     <x-footer />
+  </div>
     <!-- Link a Bootstrap JS e Popper.js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> 
 </body>

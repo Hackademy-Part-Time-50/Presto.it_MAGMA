@@ -1,4 +1,4 @@
-<div class="container-fluid custom-footer p-5 mt-auto">
+<div class="custom-footer p-5">
   <footer class="row">
     <div class="col-lg-4">
       
