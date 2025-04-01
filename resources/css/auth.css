@@ -2,7 +2,7 @@
 
 :root {
     --btn-sfondo:rgba(178, 160, 157, 0.854);
-    --importante-colore:rgba(178, 160, 157, 0.854);
+    --importante-colore:rgb(179, 161, 158);
 }
 
 
@@ -37,7 +37,7 @@
 .container-auth {
     position: relative;
     width: auto;
-    height: 550px;
+    height: 700px;
     background: #fff; /*  sfondo della card  che era bianco*/
     border-radius: 30px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
@@ -65,6 +65,7 @@
     padding: 40px;
     z-index: 1;
     transition: 0.6s ease-in-out 1.2s, visibility 0s 1s;
+    
 }
 
 .container-auth.active .auth-form-box {
@@ -149,6 +150,7 @@
 .container-auth p {
     font-size: 20.5px;
     margin-top: 15px 0;
+    margin-bottom: auto;
 }
 
 .auth-social-icons {

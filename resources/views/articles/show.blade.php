@@ -41,7 +41,7 @@
                         <div class="col-lg-6">
                             <div class="container">
                                 <!-- Nome Venditore con classe personalizzata -->
-                                <p class="vendor-name"><strong>Nome venditore</strong></p>
+                                <p class="vendor-name"><strong>{{__('ui.author')}} : {{$article->user->name}}</strong></p>
                                 <!-- Descrizione con classe personalizzata -->
                                 <p>{{ $article->description }}</p>
                                 <!-- Prezzo con classe personalizzata -->
