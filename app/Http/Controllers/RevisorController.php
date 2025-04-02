@@ -62,18 +62,6 @@ class RevisorController extends Controller
         return back()->with('errorMessage', "Articolo non trovato.");
     }
 
-    /**
-     * Invia la richiesta di diventare revisore.
-     */
-    public function becomeRevisor()
-    {
-        Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
-        return redirect()->route('homepage')->with('message', 'Email di richiesta inviata. Riceverai al più presto una risposta.');
-    }
-
-    /**
-     * Rende un utente revisore tramite comando Artisan.
-     */
     // Nel RevisorController
 
     public function makeRevisor(User $user)
@@ -85,7 +73,6 @@ class RevisorController extends Controller
         }
 
         $user->update(['is_revisor' => true]);
-        dd($user->is_revisor);
         $revisoreRequest->update(['status' => 'approvato']);
 
         return redirect()->route('revisor.index')->with('message', 'L\'utente è ora un revisore.');

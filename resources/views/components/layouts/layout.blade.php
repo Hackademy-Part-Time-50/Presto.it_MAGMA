@@ -14,9 +14,6 @@
 </head>
 
 <body class="bg-custom-loyaut min-vh-100">
-  
-    
-  
 
   <div class="d-flex flex-column justify-content-between vh-100">
 
