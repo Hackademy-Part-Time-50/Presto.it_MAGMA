@@ -56,19 +56,17 @@
                 
                
               
-        </div>
+            </div>
         
-            <div class="col-12 col-md-6 mt-3 align-items-center text-center">
+            <div class="col-12 col-md-6 mt-3 d-flex flex-column align-items-center justify-content-center"> 
                 
                     <h5>{{__('ui.want_become_revisor')}}</h5>
                     <p>{{__('ui.button_below')}}</p>
                     @auth
-                    <div class="d-flex justify-content-center">
-                        <form action="{{ route('revisore.richiesta') }}" method="POST" class="w-50">
+                        <form action="{{ route('revisore.richiesta') }}" method="POST" class="w-100 text-center">
                         @csrf
-                            <button type="submit" class="btn btn-custom-other">Diventa un revisore</button>
+                            <button type="submit" class="btn btn-custom-other">{{__('ui.become_revisor')}}</button>
                         </form>
-                    </div>    
                     @else
                         <a href="{{ route('login') }}" class="btn btn-custom-other">{{__('ui.become_revisor')}}</a>
                     @endauth

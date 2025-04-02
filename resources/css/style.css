@@ -7,12 +7,12 @@
 
 :root {
 
-    --navbar: rgba(178, 160, 157, 0.854);
+    --navbar: rgb(194, 180, 176);
     --text: #0f0e0e;
     --text_hoover: #807c7c;
     --principale: rgb(178, 160, 157);
     --colore-sfondo: #ece2e4;
-    --footer: rgba(178, 160, 157, 0.854);
+    --footer: rgb(194, 180, 176);
     --sfumatura: #ebd0bc;
     --titolo: #131212;
     --text-nav: #f7f1f1;
@@ -188,7 +188,7 @@ header {
 }
 
 .menu li a:hover {
-    background: var(--principale);
+    /* background: var(--principale); */
 }
 
 .submenu {
@@ -302,13 +302,12 @@ header {
 .btn-custom-other {
     background-color: var(--sfumatura) !important;
     color: var(--text) !important;
-
+    transition: 200ms !important;
 }
 
 .btn-custom-other:hover {
-    zoom: 1.1;
+    font-size: large;
     color: var(--text_hoover) !important;
-
 }
 
 /* FINE BOTTONI OVUNQUE */
