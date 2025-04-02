@@ -85,6 +85,7 @@ class RevisorController extends Controller
         }
 
         $user->update(['is_revisor' => true]);
+        dd($user->is_revisor);
         $revisoreRequest->update(['status' => 'approvato']);
 
         return redirect()->route('revisor.index')->with('message', 'L\'utente è ora un revisore.');
