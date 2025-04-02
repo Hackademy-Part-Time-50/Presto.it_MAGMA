@@ -125,6 +125,7 @@
                     </ul>
                 @else
                 <li>
+                    
                     <a href="{{ route('login') }}"> Account
                     </a>
                 </li>
