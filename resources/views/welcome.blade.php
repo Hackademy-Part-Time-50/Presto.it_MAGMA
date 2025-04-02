@@ -58,11 +58,20 @@
               
         </div>
         
-            <div class="col-12 col-md-6 mt-3 align-content-center text-center">
+            <div class="col-12 col-md-6 mt-3 align-items-center text-center">
                 
                     <h5>{{__('ui.want_become_revisor')}}</h5>
                     <p>{{__('ui.button_below')}}</p>
-                    <a href="{{ route('become.revisor') }}" class="btn btn-custom-other">{{__('ui.become_revisor')}}</a>
+                    @auth
+                    <div class="d-flex justify-content-center">
+                        <form action="{{ route('revisore.richiesta') }}" method="POST" class="w-50">
+                        @csrf
+                            <button type="submit" class="btn btn-custom-other">Diventa un revisore</button>
+                        </form>
+                    </div>    
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-custom-other">{{__('ui.become_revisor')}}</a>
+                    @endauth
                   
             </div>
         </div>

@@ -23,7 +23,7 @@
                         <p><strong>Email:</strong> {{ $user->email }}</p>
                         <div class="text-center mt-4">
                             <!-- Bottone per accettare la richiesta -->
-                            <a href="{{ route('make.revisor', compact('user')) }}" class="btn btn-primary">
+                            <a href="{{ route('make.revisor', ['user' => $user]) }}" class="btn btn-primary">
                                 Rendi Revisore
                             </a>
 
