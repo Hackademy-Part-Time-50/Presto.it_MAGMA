@@ -1,6 +1,6 @@
 <div class="container my-5">
   <div class="row">
-      <div class="col d-flex justify-content-center">
+      <div class="col d-flex  justify-content-center">
           <div class="product-card">
               <div class="position-relative">
               <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(200, 200) : 'https://picsum.photos/200' }}" 
