@@ -197,6 +197,7 @@ header {
     background: var(--navbar);
     display: none;
     transition: all .3s ease-in-out;
+    z-index: 11111;
 }
 
 .submenu-wrapper:hover .submenu,
@@ -208,6 +209,7 @@ header {
     width: 100%;
     border-top: .1rem solid #7f7c75ee;
     list-style: none;
+    
 }
 
 /* Toggle button (per mobile) */
