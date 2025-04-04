@@ -26,8 +26,8 @@
             @endif
     
             <div class="row">
-                <div class="col-4">
-                    <div class="rounded shadow custom-dash-revisore">
+                <div class="col-12  img-revisore2">
+                    <div class="rounded shadow custom-dash-revisore align-item-center m-5">
                         <h1 class="display-5 text-center pb-2">
                             {{__('ui.dashboard')}}
                         </h1>
@@ -130,17 +130,18 @@
                     </div>
                 </div>
             @else
-                <div class="row justify-content-center align-items-center text-center height-custom-home">
+                <div class="row justify-content-center align-items-center text-center height-custom-home m-5">
                     <div class="col-12">
                         <h1 class="fst-italic display-4">
                         {{__('ui.no_announce_review')}}
                         </h1>
-                        <a href="{{ route('homepage') }}" class="mt-5 btn btn-success">{{__('ui.back_homepage')}}</a>
+                        <a href="{{ route('homepage') }}" class="mt-5 btn btn-custom-other">{{__('ui.back_homepage')}}</a>
                     </div>
                 </div>
             @endif
     
             @if (session()->has('lastAction'))
+
             <!-- Pulsante per annullare l'ultima azione -->
             <div class="row justify-content-center">
                 <div class="col-4 text-center">

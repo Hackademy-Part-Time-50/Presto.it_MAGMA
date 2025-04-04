@@ -4,12 +4,10 @@
     <header class="container-fluid">
     
         <div class="row">
-                <div class="col-12 col-md-6 ">
-                    
-                </div>
+               
 
 
-                <div class="col-12 col-md-6 align-content-center text-center custom-header ">
+                <div class="col-12 align-content-center text-center custom-header ">
 
                     <!-- Contenuto sopra l'immagine -->
                     
