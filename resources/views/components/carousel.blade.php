@@ -5,8 +5,8 @@
 
 
 
-<section id="slider">
-    <div class="container">
+<section id="slider bg-custom-loyaut">
+    <div class="container-fluid">
         <div class="subcontainer">
             <div class="slider-wrapper">
                 <div>
@@ -25,10 +25,10 @@
                     @endforelse
                 </div>
                 <!-- Frecce di navigazione -->
-                <div class="slider-nav">
+                {{-- <div class="slider-nav">
                     <button class="prev-slide">❮</button>
                     <button class="next-slide">❯</button>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

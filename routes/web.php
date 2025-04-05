@@ -1,10 +1,17 @@
 <?php
 
+
+use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\{PublicController, ArticleController, RevisorController};
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
+
 use App\Http\Controllers\Auth\GoogleController;
+
+use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+
 
 // Rotte per il reset della password
 Route::controller(PasswordResetLinkController::class)->group(function () {
@@ -16,6 +23,8 @@ Route::controller(PasswordResetLinkController::class)->group(function () {
 
 // Rotta homepage
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+// Rotta per il profilo utente
+Route::get('/profile', [PublicController::class, 'profile'])->name('profile');
 
 // Rotte protette per gli utenti autenticati
 Route::middleware(['auth'])->group(function () {
@@ -55,5 +64,11 @@ Route::get('/diventa-revisore', [RevisorController::class, 'info'])->name('revis
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
 
+
 Route::get('auth/google/login', [GoogleController::class, 'login'])->name('auth.google');
 Route::get('login/google/callback', [GoogleController::class, 'callback']);
+Route::get('profile', [PublicController::class, 'profile'])->name('profile');
+
+
+Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
+

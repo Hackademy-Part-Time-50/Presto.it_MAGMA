@@ -26,8 +26,8 @@
             @endif
     
             <div class="row">
-                <div class="col-4">
-                    <div class="rounded shadow custom-dash-revisore">
+                <div class="col-12  img-revisore2">
+                    <div class="rounded shadow custom-dash-revisore align-item-center m-5">
                         <h1 class="display-5 text-center pb-2">
                             {{__('ui.dashboard')}}
                         </h1>
@@ -43,6 +43,58 @@
                                     <div class="col-6 col-md-4 mb-4">
                                         <img src="{{ $image->getUrl(200, 200) }}" class="img-fluid rounded shadow" 
                                         alt="Immagine {{ $key +1 }} dell'articolo {{$article_to_check->title}}">
+                                    </div>
+                                    <div class="col-md-5 ps-3">
+                                        <div class="card-body">
+                                            <h5>Labels</h5>
+                                            @if ($image->labels)
+                                                @foreach ($image->labels as $label)
+                                                    #{{ $label }},
+                                                @endforeach
+                                            @else
+                                                <p class="fst-italic">No Labels</p>    
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="card-body">
+                                            <h5>Ratings<</h5>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->adult }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10">adult</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->violence }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10">violence</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->spoof }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10">spoof</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->racy }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10">racy</div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-2">
+                                                    <div class="text-center mx-auto {{ $image->medical }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-10">medical</div>
+                                            </div>
+                                        </div>
                                     </div>
                                 @endforeach
                             @else
@@ -78,17 +130,18 @@
                     </div>
                 </div>
             @else
-                <div class="row justify-content-center align-items-center text-center height-custom-home">
+                <div class="row justify-content-center align-items-center text-center height-custom-home m-5">
                     <div class="col-12">
                         <h1 class="fst-italic display-4">
                         {{__('ui.no_announce_review')}}
                         </h1>
-                        <a href="{{ route('homepage') }}" class="mt-5 btn btn-success">{{__('ui.back_homepage')}}</a>
+                        <a href="{{ route('homepage') }}" class="mt-5 btn btn-custom-other">{{__('ui.back_homepage')}}</a>
                     </div>
                 </div>
             @endif
     
             @if (session()->has('lastAction'))
+
             <!-- Pulsante per annullare l'ultima azione -->
             <div class="row justify-content-center">
                 <div class="col-4 text-center">

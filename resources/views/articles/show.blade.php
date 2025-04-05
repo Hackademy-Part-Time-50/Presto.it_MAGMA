@@ -1,14 +1,15 @@
 <x-layouts.layout>
-    <div class="custom-loyaut pt-5">
-        <div class="container">
+    <div class="text-center">
 
-            <h1>{{ $article->title }}</h1>
-            
-                <div class="container-fluid p-4 d-flex justify-content-center prodotto">
+        <h1>{{ $article->title }}</h1>
+
+        <div class="container m-5 d-flex justify-content-center">
+
+                <div class="container-fluid prodotto">
                     <div class="row justify-content-center align-items-center">
 
                         {{-- carosello per immagini--}}
-                        <div class="col-12 col-md-6 mb-3">
+                        <div class="col-lg-6 mb-3">
                             @if ($article->images->count() > 0)
                                 <div id="carouselExample" class="carousel slide">
                                     <div class="carousell-inner">
@@ -38,10 +39,10 @@
                         </div>
 
                         {{-- parte descrittiva --}}
-                        <div class="col-lg-6">
-                            <div class="container">
+                        <div class="col-lg-6 ">
+                            <div class="container text-start">
                                 <!-- Nome Venditore con classe personalizzata -->
-                                <p class="vendor-name"><strong>Nome venditore</strong></p>
+                                <p class="vendor-name"><strong>{{__('ui.author')}} : {{$article->user->name}}</strong></p>
                                 <!-- Descrizione con classe personalizzata -->
                                 <p>{{ $article->description }}</p>
                                 <!-- Prezzo con classe personalizzata -->

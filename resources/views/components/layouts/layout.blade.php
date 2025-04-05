@@ -10,20 +10,27 @@
     {{ $head ?? '' }}
   <!-- Link a Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  {{-- aos integrazioni --}}
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>Presto</title>
 </head>
 
-<body class="bg-custom-loyaut">
-  
-    <x-navbar />
-  
+<body class="bg-custom-loyaut min-vh-100">
 
+  <div class="d-flex flex-column justify-content-between vh-100">
+    <script>
+      AOS.init();
+    </script>
+
+    <x-navbar />
 
     <div class="content">
         {{ $slot }}
     </div>
 
     <x-footer />
+  </div>
     <!-- Link a Bootstrap JS e Popper.js -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script> 
 </body>

@@ -4,12 +4,10 @@
     <header class="container-fluid">
     
         <div class="row">
-                <div class="col-12 col-md-6 ">
-                    
-                </div>
+               
 
 
-                <div class="col-12 col-md-6 align-content-center text-center custom-header ">
+                <div class="col-12 align-content-center text-center custom-header ">
 
                     <!-- Contenuto sopra l'immagine -->
                     
@@ -56,13 +54,20 @@
                 
                
               
-        </div>
+            </div>
         
-            <div class="col-12 col-md-6 mt-3 align-content-center text-center">
+            <div class="col-12 col-md-6 mt-3 d-flex flex-column align-items-center justify-content-center"> 
                 
                     <h5>{{__('ui.want_become_revisor')}}</h5>
                     <p>{{__('ui.button_below')}}</p>
-                    <a href="{{ route('become.revisor') }}" class="btn btn-custom-other">{{__('ui.become_revisor')}}</a>
+                    @auth
+                        <form action="{{ route('revisore.richiesta') }}" method="POST" class="w-100 text-center">
+                        @csrf
+                            <button type="submit" class="btn btn-custom-other">{{__('ui.become_revisor')}}</button>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-custom-other">{{__('ui.become_revisor')}}</a>
+                    @endauth
                   
             </div>
         </div>

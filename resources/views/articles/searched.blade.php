@@ -1,7 +1,7 @@
 <x-layouts.layout>
 
     <div class="custom-loyaut">
-        <div class="container bg-custom-loyaut mt-5">
+        <div class="container">
             
                 <div class="row">
                     <div class="col d-flex jusify-content-center">
