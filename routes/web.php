@@ -13,6 +13,7 @@ use App\Http\Controllers\Auth\GoogleController;
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
 
 
+
 // Rotte per il reset della password
 Route::controller(PasswordResetLinkController::class)->group(function () {
     Route::get('forgot-password', 'create')->name('password.request');
@@ -72,3 +73,10 @@ Route::get('profile', [PublicController::class, 'profile'])->name('profile');
 
 Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
 
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+    Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    
+    Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
+});
