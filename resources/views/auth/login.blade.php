@@ -35,7 +35,7 @@
                 <button type="submit" class="auth-btn">{{__('ui.login')}}</button>
                 <p class="pt-2">{{__('ui.else_login')}}</p>
                 <div class="auth-social-icons">
-                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="{{ route('auth.google') }}"><i class='bx bxl-google'></i></a>
                     <a href="#"><i class='bx bxl-facebook'></i></a>
                     <a href="#"><i class='bx bxl-github'></i></a>
                     <a href="#"><i class='bx bxl-linkedin'></i></a>
@@ -90,7 +90,7 @@
                 <button type="submit" class="auth-btn" id="registerSubmitBtn">{{__('ui.signin')}}</button>
                 <p class="pt-2">{{__('ui.else_signin')}}</p>
                 <div class="auth-social-icons">
-                    <a href="#"><i class='bx bxl-google'></i></a>
+                    <a href="{{ route('auth.google') }}"><i class='bx bxl-google'></i></a>
                     <a href="#"><i class='bx bxl-facebook'></i></a>
                     <a href="#"><i class='bx bxl-github'></i></a>
                     <a href="#"><i class='bx bxl-linkedin'></i></a>

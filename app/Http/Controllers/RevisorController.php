@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\{Artisan, Mail, Auth, Session};
+use App\Mail\ConfirmRevisorRequest;
 use Illuminate\Http\Request;
 use App\Models\{Article, User, RevisoreRequest};
 use App\Mail\BecomeRevisor;
@@ -117,18 +118,24 @@ class RevisorController extends Controller
      * Gestisce la richiesta per diventare revisore.
      */
     public function richiedi(Request $request)
-    {
-        $user = Auth::user();
+{
+    $user = Auth::user();
 
-        if (RevisoreRequest::where('user_id', $user->id)->exists()) {
-            return redirect()->route('revisore.info')->with('error', 'Hai già inviato una richiesta.');
-        }
-
-        Mail::to('admin@presto.it')->send(new BecomeRevisor($user));
-        RevisoreRequest::create(['user_id' => $user->id, 'status' => 'in attesa']);
-
-        return redirect()->route('homepage')->with('message', 'Email di richiesta inviata. Riceverai al più presto una risposta.');
+    if (RevisoreRequest::where('user_id', $user->id)->exists()) {
+        return redirect()->route('revisore.info')->with('error', 'Hai già inviato una richiesta.');
     }
+
+    // Invio email all'admin
+    Mail::to('admin@presto.it')->send(new BecomeRevisor($user));
+
+    // Invio email di conferma all'utente
+    Mail::to($user->email)->send(new ConfirmRevisorRequest($user));
+
+    // Salvataggio richiesta nel database
+    RevisoreRequest::create(['user_id' => $user->id, 'status' => 'in attesa']);
+
+    return redirect()->route('homepage')->with('message', 'Email di richiesta inviata. Controlla la tua casella email per la conferma.');
+}
 
     /**
      * Salva l'ultima azione nella sessione.
