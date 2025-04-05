@@ -1,4 +1,5 @@
 <?php
+
 return
     [   // traduzione navbar
         'allannounces' => 'Todos los Anuncios',
@@ -30,7 +31,6 @@ return
         'name' => 'Nombre',
         'password_confirm' => 'Confirmar Contraseña',
 
-
         // traduziuone card
         'details' => 'Detalles',
 
@@ -54,7 +54,7 @@ return
         // traduzione vista ricerca
         'resaults_search' => 'Resultados de tu búsqueda',
         'no_announces_research' => 'Ningún anuncio coincide con tu búsqueda',
- 
+
         // lista categorie
         'elettronica' => 'Electrónica',
         'abbigliamento' => 'Ropa',
@@ -74,6 +74,6 @@ return
         'author' => 'Autor',
         'cancel_op' => 'Eliminar la última operación',
         'dashboard' => 'Dashboard Auditor',
-        'back_homepage' => 'Regresar a la Homepage'
+        'back_homepage' => 'Regresar a la Homepage',
 
     ];

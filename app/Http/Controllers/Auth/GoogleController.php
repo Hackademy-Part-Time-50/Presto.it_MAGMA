@@ -3,12 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Hash;
-use Illuminate\Http\Request;
-use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-
+use Hash;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller
 {
@@ -16,6 +14,7 @@ class GoogleController extends Controller
     {
         return Socialite::driver('google')->redirect();
     }
+
     public function callback()
     {
         $googleUser = Socialite::driver('google')->stateless()->user();
@@ -24,6 +23,7 @@ class GoogleController extends Controller
 
         if ($user) {
             Auth::login($user);
+
             return redirect()->route('homepage');
         } else {
             $user = User::create([
@@ -35,6 +35,7 @@ class GoogleController extends Controller
 
             if ($user) {
                 Auth::login($user);
+
                 return redirect()->route('homepage');
             } else {
                 return redirect()->route('homepage')->with('error', 'Errore durante la registrazione.');

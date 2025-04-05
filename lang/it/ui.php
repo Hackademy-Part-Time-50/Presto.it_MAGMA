@@ -1,4 +1,5 @@
 <?php
+
 return
     [   // traduzione navbar
         'allannounces' => 'Tutti gli Annunci',
@@ -30,7 +31,6 @@ return
         'name' => 'Nome',
         'password_confirm' => 'Conferma Password',
 
-
         // traduziuone card
         'details' => 'Dettagli',
 
@@ -42,20 +42,19 @@ return
         'select_category' => 'Seleziona una Categoria',
         'create' => 'Crea',
         'create_new' => 'Crea un Nuovo Annuncio',
-        
 
-         // traduzione vista categorie
-         'announce_category' => 'Annunci della Categoria ',
-         'no_announces_already' => 'Non sono ancora stati creati articoli per questa categoria',
-         'publish_announce' => 'Pubblica Annuncio',
+        // traduzione vista categorie
+        'announce_category' => 'Annunci della Categoria ',
+        'no_announces_already' => 'Non sono ancora stati creati articoli per questa categoria',
+        'publish_announce' => 'Pubblica Annuncio',
 
-         // traduzione vista tutti gli articoli
-         'no_announces' => 'Ancora nessun annuncio da mostrare',
+        // traduzione vista tutti gli articoli
+        'no_announces' => 'Ancora nessun annuncio da mostrare',
 
-         // traduzione vista ricerca
-         'resaults_search' => 'Risultati della tua ricerca',
-         'no_announces_research' => 'Nessun annuncio corrisponde alla tua ricerca',
- 
+        // traduzione vista ricerca
+        'resaults_search' => 'Risultati della tua ricerca',
+        'no_announces_research' => 'Nessun annuncio corrisponde alla tua ricerca',
+
         // lista categorie
         'elettronica' => 'Elettronica',
         'abbigliamento' => 'Abbigliamento',
@@ -75,6 +74,6 @@ return
         'author' => 'Autore',
         'cancel_op' => 'Cancella ultima operazione',
         'dashboard' => 'Dashboard Revisore',
-        'back_homepage' => 'Torna alla Homepage'
+        'back_homepage' => 'Torna alla Homepage',
 
     ];

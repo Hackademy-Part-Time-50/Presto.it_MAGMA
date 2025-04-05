@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\{Artisan, Mail, Auth, Session};
-use App\Mail\ConfirmRevisorRequest;
-use Illuminate\Http\Request;
-use App\Models\{Article, User, RevisoreRequest};
 use App\Mail\BecomeRevisor;
+use App\Mail\ConfirmRevisorRequest;
+use App\Models\Article;
+use App\Models\RevisoreRequest;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 
 class RevisorController extends Controller
 {
@@ -16,6 +20,7 @@ class RevisorController extends Controller
     public function index()
     {
         $article_to_check = Article::whereNull('is_accepted')->first();
+
         return view('revisor.index', compact('article_to_check'));
     }
 
@@ -48,8 +53,8 @@ class RevisorController extends Controller
     {
         $lastAction = Session::get('lastAction');
 
-        if (!$lastAction) {
-            return back()->with('errorMessage', "Nessuna operazione da annullare.");
+        if (! $lastAction) {
+            return back()->with('errorMessage', 'Nessuna operazione da annullare.');
         }
 
         $article = Article::find($lastAction['article_id']);
@@ -57,10 +62,11 @@ class RevisorController extends Controller
         if ($article) {
             $article->setAccepted(null);
             Session::forget('lastAction');
+
             return back()->with('message', "L'ultima operazione è stata annullata.");
         }
 
-        return back()->with('errorMessage', "Articolo non trovato.");
+        return back()->with('errorMessage', 'Articolo non trovato.');
     }
 
     // Nel RevisorController
@@ -79,20 +85,18 @@ class RevisorController extends Controller
         return redirect()->route('revisor.index')->with('message', 'L\'utente è ora un revisore.');
     }
 
-
     public function rejectRevisor(User $user)
     {
         $revisoreRequest = $user->revisoreRequest;
 
         if ($revisoreRequest) {
             $revisoreRequest->update(['status' => 'rifiutato']);
+
             return redirect()->route('homepage')->with('message', 'La richiesta è stata rifiutata.');
         }
 
         return redirect()->route('homepage')->with('error', 'Nessuna richiesta trovata per questo utente.');
     }
-
-
 
     /**
      * Mostra informazioni su come diventare revisore.
@@ -106,24 +110,24 @@ class RevisorController extends Controller
      * Gestisce la richiesta per diventare revisore.
      */
     public function richiedi(Request $request)
-{
-    $user = Auth::user();
+    {
+        $user = Auth::user();
 
-    if (RevisoreRequest::where('user_id', $user->id)->exists()) {
-        return redirect()->route('revisore.info')->with('error', 'Hai già inviato una richiesta.');
+        if (RevisoreRequest::where('user_id', $user->id)->exists()) {
+            return redirect()->route('revisore.info')->with('error', 'Hai già inviato una richiesta.');
+        }
+
+        // Invio email all'admin
+        Mail::to('admin@presto.it')->send(new BecomeRevisor($user));
+
+        // Invio email di conferma all'utente
+        Mail::to($user->email)->send(new ConfirmRevisorRequest($user));
+
+        // Salvataggio richiesta nel database
+        RevisoreRequest::create(['user_id' => $user->id, 'status' => 'in attesa']);
+
+        return redirect()->route('homepage')->with('message', 'Email di richiesta inviata. Controlla la tua casella email per la conferma.');
     }
-
-    // Invio email all'admin
-    Mail::to('admin@presto.it')->send(new BecomeRevisor($user));
-
-    // Invio email di conferma all'utente
-    Mail::to($user->email)->send(new ConfirmRevisorRequest($user));
-
-    // Salvataggio richiesta nel database
-    RevisoreRequest::create(['user_id' => $user->id, 'status' => 'in attesa']);
-
-    return redirect()->route('homepage')->with('message', 'Email di richiesta inviata. Controlla la tua casella email per la conferma.');
-}
 
     /**
      * Salva l'ultima azione nella sessione.
@@ -132,6 +136,4 @@ class RevisorController extends Controller
     {
         Session::put('lastAction', ['article_id' => $article->id]);
     }
-
-
 }

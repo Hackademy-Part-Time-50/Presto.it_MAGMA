@@ -1,4 +1,5 @@
 <?php
+
 return
     [   // traduzione navbar
         'allannounces' => 'All the Announces',
@@ -30,8 +31,6 @@ return
         'name' => 'Name',
         'password_confirm' => 'Password Confirm',
 
-
-
         // traduziuone card
         'details' => 'Details',
 
@@ -55,7 +54,7 @@ return
         // traduzione vista ricerca
         'resaults_search' => 'Resault from your reserach',
         'no_announces_research' => 'No announce match your research',
- 
+
         // lista categorie
         'elettronica' => 'Electronics',
         'abbigliamento' => 'Clothing',
@@ -75,6 +74,6 @@ return
         'author' => 'Author',
         'cancel_op' => 'Cancel last Operation',
         'dashboard' => 'Dashboard Revisore',
-        'back_homepage' => 'Back to Homepage'
+        'back_homepage' => 'Back to Homepage',
 
     ];
