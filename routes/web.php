@@ -7,7 +7,11 @@ use App\Http\Controllers\{PublicController, ArticleController, RevisorController
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Fortify;
+
+use App\Http\Controllers\Auth\GoogleController;
+
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+
 
 // Rotte per il reset della password
 Route::controller(PasswordResetLinkController::class)->group(function () {
@@ -59,7 +63,12 @@ Route::get('/diventa-revisore', [RevisorController::class, 'info'])->name('revis
 // Promozione a revisore da parte di un admin
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 
+
+
+Route::get('auth/google/login', [GoogleController::class, 'login'])->name('auth.google');
+Route::get('login/google/callback', [GoogleController::class, 'callback']);
 Route::get('profile', [PublicController::class, 'profile'])->name('profile');
 
 
 Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
+
