@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class SetLocaleMiddleware
 {
     /**
@@ -19,6 +18,7 @@ class SetLocaleMiddleware
     {
         $localeLanguage = session('locale', 'it');
         App::setlocale($localeLanguage);
+
         return $next($request);
     }
 }

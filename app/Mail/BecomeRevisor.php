@@ -2,19 +2,19 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
-use App\Models\User;
 
 class BecomeRevisor extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $user;
+
     /**
      * Create a new message instance.
      */
@@ -29,7 +29,7 @@ class BecomeRevisor extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: "Rendi revisore l'utente" . $this->user->name,
+            subject: "Rendi revisore l'utente".$this->user->name,
         );
     }
 

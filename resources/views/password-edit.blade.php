@@ -18,7 +18,7 @@
                             <div class="alert alert-danger">{{ session('error') }}</div>
                         @endif
 
-                        <form method="POST" action="{{ route('password.update-password') }}">
+                        <form method="POST" action="{{ route('password.update') }}">
                             @csrf
                             @method('PUT')
 
@@ -72,7 +72,14 @@
 
                         {{-- Link per reset password --}}
                         <div class="mt-3 text-center">
-                            <a href="{{ route('password.request') }}" class="btn btn-link">Hai dimenticato la tua password?</a>
+                            <a href="{{ route('forget.password') }}" class="btn btn-link">Hai dimenticato la tua password?</a>
+                        </div>
+
+                        {{-- Bottone per tornare al profilo --}}
+                        <div class="mt-3 text-center">
+                            <a href="{{ route('profile') }}" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left-circle me-1"></i> Torna al Profilo
+                            </a>
                         </div>
                     </div>
                 </div>

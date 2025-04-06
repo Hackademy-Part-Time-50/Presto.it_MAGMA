@@ -1,20 +1,23 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\{PublicController, ArticleController, RevisorController};
-use App\Http\Controllers\Auth\PasswordResetLinkController;
-use App\Http\Middleware\ThrottlePasswordAttempts;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\GoogleController;
-use Laravel\Fortify\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\ForgetPasswordManager;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RevisorController;
+use App\Http\Middleware\ThrottlePasswordAttempts;
 use Illuminate\Support\Facades\Route;
 
 // Rotte per il reset della password
-Route::controller(PasswordResetLinkController::class)->group(function () {
-    Route::get('forgot-password', 'create')->name('password.request');
-    Route::post('forgot-password', 'store')->name('password.email');
-    Route::get('reset-password/{token}', 'showResetForm')->name('password.reset');
-    Route::post('reset-password', 'reset')->name('password.update');
-});
+Route::get('/forget-password', [ForgetPasswordManager::class, 'forgetPassword'])
+    ->name('forget.password');
+Route::post('/forget-password', [ForgetPasswordManager::class, 'forgetPasswordPost'])
+    ->name('forget.password.post');
+Route::get('/reset-password/{token}', [ForgetPasswordManager::class, 'resetPassword'])
+    ->name('reset.password');
+Route::post('/reset-password', [ForgetPasswordManager::class, 'resetPasswordPost'])
+    ->name('reset.password.post');
 
 // Rotta homepage
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
@@ -47,11 +50,11 @@ Route::middleware(['auth'])->group(function () {
 
     // Modifica password
     Route::get('/profile/password', [ProfileController::class, 'editPassword'])->name('password.edit');
-    Route::middleware([ThrottlePasswordAttempts::class])->post('/profile/password', [ProfileController::class, 'updatePassword'])->name('password.update');
-    
+    Route::middleware([ThrottlePasswordAttempts::class])->put('/profile/password', [ProfileController::class, 'updatePassword'])->name('password.update');
+
     // Eliminazione account
     Route::post('/profile/delete', [ProfileController::class, 'deleteAccount'])->name('profile.delete');
-    
+
     // Rotta per creare un articolo
     Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
 });

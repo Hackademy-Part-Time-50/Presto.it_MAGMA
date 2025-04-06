@@ -6,15 +6,14 @@ use App\Actions\Fortify\CreateNewUser;
 use App\Actions\Fortify\ResetUserPassword;
 use App\Actions\Fortify\UpdateUserPassword;
 use App\Actions\Fortify\UpdateUserProfileInformation;
+use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -49,18 +48,18 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
-        
-          Fortify::authenticateUsing(function (Request $request) {
+
+        Fortify::authenticateUsing(function (Request $request) {
             $user = User::where('email', $request->email)->first();
-    
-            if (!$user) {
+
+            if (! $user) {
                 return null; // Questo farà scattare l'errore "Le credenziali non corrispondono ai nostri record."
             }
-    
-            if (!Hash::check($request->password, $user->password)) {
+
+            if (! Hash::check($request->password, $user->password)) {
                 return null; // Farà scattare l'errore di password errata
             }
-    
+
             return $user;
         });
     }

@@ -4,9 +4,9 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
@@ -49,17 +49,14 @@ class User extends Authenticatable
         ];
     }
 
-    public function articles() : HasMany
+    public function articles(): HasMany
     {
         return $this->hasMany(Article::class);
     }
 
     // Nel modello User
-public function revisoreRequest()
-{
-    return $this->hasOne(RevisoreRequest::class);
-}
-
-
-
+    public function revisoreRequest()
+    {
+        return $this->hasOne(RevisoreRequest::class);
+    }
 }

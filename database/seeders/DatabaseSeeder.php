@@ -1,9 +1,8 @@
 <?php
 
 namespace Database\Seeders;
-use App\Models\Article;
+
 use App\Models\Category;
-use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -19,15 +18,14 @@ class DatabaseSeeder extends Seeder
         'animali domestici',
         'libri e riviste',
         'accessori',
-        'motori'
+        'motori',
     ];
-
 
     public function run(): void
     {
         foreach ($this->categories as $category) {
             Category::create([
-                'name' => $category
+                'name' => $category,
             ]);
         }
     }

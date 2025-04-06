@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Validation\Rules\Password;
-use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -29,41 +29,51 @@ class ProfileController extends Controller
         // Validazione dei dati
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'surname' => 'nullable|string|max:255', // Validazione per il cognome
-            'gender' => 'nullable|in:male,female,other', // Validazione per il sesso
-            'birth_date' => 'nullable|date', // Validazione per la data di nascita
-            'email' => 'required|email|max:255|unique:users,email,' . $user->id,
+            'surname' => 'nullable|string|max:255',
+            'gender' => 'nullable|in:male,female,other',
+            'birth_date' => 'nullable|date',
+            'email' => 'required|email|max:255|unique:users,email,'.$user->id,
             'profile_image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // Nuovi campi
+            'phone' => 'nullable|string|max:15', // Numero di telefono
+            'biography' => 'nullable|string|max:1000', // Biografia
+            'linkedin' => 'nullable|url|max:255', // URL LinkedIn
+            'twitter' => 'nullable|url|max:255', // URL Twitter
+            'website' => 'nullable|url|max:255', // URL del sito web
         ]);
 
-        // Aggiornamento del nome, cognome, sesso, e data di nascita
+        // Aggiornamento dei dati dell'utente
         $user->name = $validated['name'];
-        $user->surname = $validated['surname'] ?? null; // Aggiunto campo cognome
-        $user->gender = $validated['gender'] ?? null;   // Aggiunto campo sesso
-        $user->birth_date = $validated['birth_date'] ?? null; // Aggiunto campo data di nascita
+        $user->surname = $validated['surname'] ?? null;
+        $user->gender = $validated['gender'] ?? null;
+        $user->birth_date = $validated['birth_date'] ?? null;
         $user->email = $validated['email'];
 
-        // Se è presente un'immagine di profilo
+        // Se è presente un'immagine di profilo, aggiorna il campo
         if ($request->hasFile('profile_image')) {
-            // Elimina la vecchia immagine se esiste
+            // Elimina la vecchia immagine, se esiste
             if ($user->profile_image) {
-                Storage::delete('public/' . $user->profile_image);
+                Storage::delete('public/'.$user->profile_image);
             }
 
             // Carica la nuova immagine
             $imagePath = $request->file('profile_image')->store('profile_images', 'public');
-
-            // Salva il percorso dell'immagine nel campo profile_image del database
             $user->profile_image = $imagePath;
         }
 
-        // Salva le modifiche
+        // Aggiornamento dei nuovi campi
+        $user->phone = $validated['phone'] ?? null;
+        $user->biography = $validated['biography'] ?? null;
+        $user->linkedin = $validated['linkedin'] ?? null;
+        $user->twitter = $validated['twitter'] ?? null;
+        $user->website = $validated['website'] ?? null;
+
+        // Salva le modifiche nel database
         $user->save();
 
+        // Redirige con un messaggio di successo
         return redirect()->route('profile')->with('success', 'Profilo aggiornato con successo!');
     }
-
-
 
     // Visualizza la pagina per creare un nuovo articolo
     public function createArticle()
@@ -80,7 +90,7 @@ class ProfileController extends Controller
         ]);
 
         $user = Auth::user();
-        $article = new Article();
+        $article = new Article;
         $article->user_id = $user->id;
         $article->title = $validated['title'];
         $article->content = $validated['content'];
@@ -126,7 +136,7 @@ class ProfileController extends Controller
         ]);
 
         // Verifica la password attuale
-        if (!Hash::check($validated['current_password'], $user->password)) {
+        if (! Hash::check($validated['current_password'], $user->password)) {
             // Decrementa i tentativi rimanenti e salvalo nella sessione
             session(['remaining_attempts' => $remainingAttempts - 1]);
 
@@ -150,7 +160,6 @@ class ProfileController extends Controller
         return redirect()->route('profile')->with('status', 'Password aggiornata con successo!');
     }
 
-
     public function deleteAccount(Request $request)
     {
         // Conferma che l'utente ha effettuato l'accesso
@@ -170,5 +179,4 @@ class ProfileController extends Controller
         // In caso di errore, rimanda all'home
         return redirect()->route('homepage')->with('error', __('ui.error_deleting_account'));
     }
-
 }

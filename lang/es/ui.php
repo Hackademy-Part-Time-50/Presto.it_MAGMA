@@ -1,4 +1,5 @@
 <?php
+
 return
     [   // traduzione navbar
         'allannounces' => 'Todos los Anuncios',
@@ -29,7 +30,6 @@ return
         'already_account' => '¿Ya tienes una cuenta?',
         'name' => 'Nombre',
         'password_confirm' => 'Confirmar Contraseña',
-
 
         // traduziuone card
         'details' => 'Detalles',
@@ -77,12 +77,12 @@ return
         'back_homepage' => 'Regresar a la Homepage',
 
         // traduzione vista profilo
-        'welcome_profile' => 'Bienvenido a tu perfil',
-        'revisor_badge' => 'Revisor',
-        'not_revisor_badge' => 'No eres un revisor',
+        'profile_welcome' => 'Bienvenido a tu perfil',
+        'revisor' => 'Revisor',
+        'not_revisor' => 'No eres un revisor',
         'home' => 'Inicio',
         'logout_button' => 'Cerrar sesión',
-        'profile_info' => 'Información del Perfil',
+        'profile' => 'Información del Perfil',
         'surname' => 'Apellido',
         'gender' => 'Género',
         'select_gender' => 'Selecciona el género',
@@ -91,11 +91,20 @@ return
         'other' => 'Otro',
         'birth_date' => 'Fecha de Nacimiento',
         'email' => 'Correo Electrónico',
+        'phone' => 'Teléfono',
+        'biography' => 'Biografía',
+        'linkedin' => 'LinkedIn',
+        'twitter' => 'Twitter',
+        'website' => 'Sitio Web',
         'profile_image' => 'Imagen de Perfil',
-        'edit_password' => 'Cambiar Contraseña',
+        'change_password' => 'Cambiar Contraseña',
         'edit_profile' => 'Editar Perfil',
         'save_changes' => 'Guardar Cambios',
         'create_article' => 'Crear Nuevo Artículo',
         'no_articles' => 'Aún no has publicado artículos.',
+        'delete_account' => 'Eliminar cuenta',
+        'confirm_delete_account' => '¿Estás seguro de que deseas eliminar tu cuenta?',
+        'confirm_delete_message' => 'Una vez que elimines tu cuenta, no podrás recuperarla. Todos tus datos se eliminarán permanentemente.',
+        'cancel' => 'Cancelar',
 
     ];

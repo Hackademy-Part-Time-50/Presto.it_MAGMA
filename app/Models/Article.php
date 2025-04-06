@@ -4,10 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
-use App\Models\Image;
 
 class Article extends Model
 {
@@ -36,6 +34,7 @@ class Article extends Model
     {
         $this->is_accepted = $value;
         $this->save();
+
         return true;
     }
 
@@ -47,10 +46,10 @@ class Article extends Model
     public function toSearchableArray()
     {
         return [
-            'id'=>$this->id,
-            'title'=>$this->title,
-            'description'=>$this->description,
-            'category'=>$this->category
+            'id' => $this->id,
+            'title' => $this->title,
+            'description' => $this->description,
+            'category' => $this->category,
         ];
     }
 

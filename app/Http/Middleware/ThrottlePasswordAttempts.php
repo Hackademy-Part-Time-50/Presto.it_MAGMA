@@ -4,9 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Illuminate\Support\Facades\RateLimiter;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Cache;
 
 class ThrottlePasswordAttempts
@@ -35,7 +32,7 @@ class ThrottlePasswordAttempts
         Cache::increment($key);
 
         // Imposta il blocco dei tentativi
-        if (!Cache::has($key)) {
+        if (! Cache::has($key)) {
             Cache::put($key, 1, now()->addMinutes($decayMinutes));
         }
 
@@ -44,6 +41,6 @@ class ThrottlePasswordAttempts
 
     protected function throttleKey(Request $request)
     {
-        return 'password_attempts:' . $request->ip(); // Identifica l'utente tramite IP
+        return 'password_attempts:'.$request->ip(); // Identifica l'utente tramite IP
     }
 }

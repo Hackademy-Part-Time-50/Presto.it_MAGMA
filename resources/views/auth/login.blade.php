@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="auth-forgot-link">
-                        <a href="{{ route('password.request') }}">{{ __('ui.retrive_password') }}</a>
+                        <a href="{{ route('forget.password') }}">{{ __('ui.retrive_password') }}</a>
                     </div>
 
                     <button type="submit" class="auth-btn">{{ __('ui.login') }}</button>

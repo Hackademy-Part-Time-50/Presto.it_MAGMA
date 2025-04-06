@@ -1,4 +1,5 @@
 <?php
+
 return
     [   // traduzione navbar
         'allannounces' => 'Tutti gli Annunci',
@@ -30,7 +31,6 @@ return
         'name' => 'Nome',
         'password_confirm' => 'Conferma Password',
 
-
         // traduziuone card
         'details' => 'Dettagli',
 
@@ -42,7 +42,6 @@ return
         'select_category' => 'Seleziona una Categoria',
         'create' => 'Crea',
         'create_new' => 'Crea un Nuovo Annuncio',
-
 
         // traduzione vista categorie
         'announce_category' => 'Annunci della Categoria ',
@@ -78,12 +77,12 @@ return
         'back_homepage' => 'Torna alla Homepage',
 
         // traduzione vista profilo
-        'welcome_profile' => 'Benvenuto nel tuo profilo',
-        'revisor_badge' => 'Revisore',
-        'not_revisor_badge' => 'Non sei un revisore',
+        'profile_welcome' => 'Benvenuto nel tuo profilo',
+        'revisor' => 'Revisore',
+        'not_revisor' => 'Non sei un revisore',
         'home' => 'Home',
         'logout_button' => 'Logout',
-        'profile_info' => 'Informazioni del Profilo',
+        'profile' => 'Informazioni del Profilo',
         'surname' => 'Cognome',
         'gender' => 'Sesso',
         'select_gender' => 'Seleziona il sesso',
@@ -92,13 +91,17 @@ return
         'other' => 'Altro',
         'birth_date' => 'Data di Nascita',
         'email' => 'Email',
+        'phone' => 'Telefono',
+        'biography' => 'Biografia',
+        'linkedin' => 'LinkedIn',
+        'twitter' => 'Twitter',
+        'website' => 'Sito Web',
         'profile_image' => 'Immagine Profilo',
-        'edit_password' => 'Modifica Password',
+        'change_password' => 'Modifica Password',
         'edit_profile' => 'Modifica Profilo',
         'save_changes' => 'Salva Modifiche',
         'create_article' => 'Crea Nuovo Articolo',
         'no_articles' => 'Non hai ancora pubblicato articoli.',
-
         'delete_account' => 'Elimina account',
         'confirm_delete_account' => 'Sei sicuro di voler eliminare il tuo account? Questa azione è irreversibile.',
         'confirm_delete_message' => 'Tutti i tuoi dati saranno cancellati permanentemente.',

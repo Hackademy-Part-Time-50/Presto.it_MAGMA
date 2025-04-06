@@ -1,4 +1,5 @@
 <?php
+
 return
     [   // traduzione navbar
         'allannounces' => 'All the Announces',
@@ -29,8 +30,6 @@ return
         'already_account' => 'Already have an account?',
         'name' => 'Name',
         'password_confirm' => 'Password Confirm',
-
-
 
         // traduziuone card
         'details' => 'Details',
@@ -78,12 +77,12 @@ return
         'back_homepage' => 'Back to Homepage',
 
         // traduzione vista profilo
-        'welcome_profile' => 'Welcome to your profile',
-        'revisor_badge' => 'Revisor',
-        'not_revisor_badge' => 'You are not a revisor',
+        'profile_welcome' => 'Welcome to your profile',
+        'revisor' => 'Revisor',
+        'not_revisor' => 'You are not a revisor',
         'home' => 'Home',
         'logout_button' => 'Logout',
-        'profile_info' => 'Profile Information',
+        'profile' => 'Profile Information',
         'surname' => 'Last Name',
         'gender' => 'Gender',
         'select_gender' => 'Select gender',
@@ -92,10 +91,19 @@ return
         'other' => 'Other',
         'birth_date' => 'Date of Birth',
         'email' => 'Email',
+        'phone' => 'Phone',
+        'biography' => 'Biography',
+        'linkedin' => 'LinkedIn',
+        'twitter' => 'Twitter',
+        'website' => 'Website',
         'profile_image' => 'Profile Image',
-        'edit_password' => 'Change Password',
+        'change_password' => 'Change Password',
         'edit_profile' => 'Edit Profile',
         'save_changes' => 'Save Changes',
         'create_article' => 'Create New Article',
         'no_articles' => 'You have not published any articles yet.',
+        'delete_account' => 'Delete account',
+        'confirm_delete_account' => 'Do you really want to delete your account?',
+        'confirm_delete_message' => 'This operation is irreversible, are you sure?',
+        'cancel' => 'Cancel',
     ];
