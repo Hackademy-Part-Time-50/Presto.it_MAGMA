@@ -1,18 +1,12 @@
 <?php
 
-
 use App\Http\Controllers\ProfileController;
-
 use App\Http\Controllers\{PublicController, ArticleController, RevisorController};
 use App\Http\Controllers\Auth\PasswordResetLinkController;
-use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Fortify;
-
+use App\Http\Middleware\ThrottlePasswordAttempts;
 use App\Http\Controllers\Auth\GoogleController;
-
 use Laravel\Fortify\Http\Controllers\RegisteredUserController;
-
-
+use Illuminate\Support\Facades\Route;
 
 // Rotte per il reset della password
 Route::controller(PasswordResetLinkController::class)->group(function () {
@@ -24,30 +18,21 @@ Route::controller(PasswordResetLinkController::class)->group(function () {
 
 // Rotta homepage
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
+
 // Rotta per il profilo utente
 Route::get('/profile', [PublicController::class, 'profile'])->name('profile');
 
-// Rotte protette per gli utenti autenticati
-Route::middleware(['auth'])->group(function () {
-    Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
+// Cambia lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
 
-    // Rotte per il revisore
-    Route::prefix('revisor')->middleware('isRevisor')->group(function () {
-        Route::get('/index', [RevisorController::class, 'index'])->name('revisor.index');
-        Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
-        Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
-        Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->name('cancel.lastAction');
-    });
+// Informazioni su come diventare revisore
+Route::get('/diventa-revisore', [RevisorController::class, 'info'])->name('revisore.info');
 
-    // Richiesta per diventare revisore
-    Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
-    Route::patch('/make/revisor/{revisoreRequest}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
-    Route::get('/revisor/reject/{user}', [RevisorController::class, 'rejectRevisor'])->name('reject.revisor');
+// Rotte per Google login
+Route::get('auth/google/login', [GoogleController::class, 'login'])->name('auth.google');
+Route::get('login/google/callback', [GoogleController::class, 'callback']);
 
-    Route::post('/richiesta-revisore', [RevisorController::class, 'richiedi'])->name('revisore.richiesta');
-});
-
-// Rotte pubbliche per articoli
+// Rotte per articoli pubblici
 Route::prefix('articles')->group(function () {
     Route::get('/index', [ArticleController::class, 'index'])->name('articles.index');
     Route::get('/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
@@ -55,28 +40,32 @@ Route::prefix('articles')->group(function () {
     Route::get('/search', [ArticleController::class, 'searchArticle'])->name('article.search');
 });
 
-// Rotta per cambiare la lingua
-Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
-
-// Informazioni su come diventare revisore
-Route::get('/diventa-revisore', [RevisorController::class, 'info'])->name('revisore.info');
-
-// Promozione a revisore da parte di un admin
-Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
-
-
-
-Route::get('auth/google/login', [GoogleController::class, 'login'])->name('auth.google');
-Route::get('login/google/callback', [GoogleController::class, 'callback']);
-Route::get('profile', [PublicController::class, 'profile'])->name('profile');
-
-
-Route::get('/profile', [ProfileController::class, 'profile'])->middleware('auth')->name('profile');
-
-
+// Rotte protette per utenti autenticati
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
     Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update');
+
+    // Modifica password
+    Route::get('/profile/password', [ProfileController::class, 'editPassword'])->name('password.edit');
+    Route::middleware([ThrottlePasswordAttempts::class])->post('/profile/password', [ProfileController::class, 'updatePassword'])->name('password.update');
     
+    // Eliminazione account
+    Route::post('/profile/delete', [ProfileController::class, 'deleteAccount'])->name('profile.delete');
+    
+    // Rotta per creare un articolo
     Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
 });
+
+// Rotte per il revisore
+Route::prefix('revisor')->middleware('isRevisor')->group(function () {
+    Route::get('/index', [RevisorController::class, 'index'])->name('revisor.index');
+    Route::patch('/accept/{article}', [RevisorController::class, 'accept'])->name('accept');
+    Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('reject');
+    Route::post('/cancel', [RevisorController::class, 'cancelLastAction'])->name('cancel.lastAction');
+});
+
+// Richieste per diventare revisore
+Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
+Route::patch('/make/revisor/{revisoreRequest}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::get('/revisor/reject/{user}', [RevisorController::class, 'rejectRevisor'])->name('reject.revisor');
+Route::post('/richiesta-revisore', [RevisorController::class, 'richiedi'])->name('revisore.richiesta');

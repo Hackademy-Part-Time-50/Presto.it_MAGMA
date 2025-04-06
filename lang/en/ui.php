@@ -55,7 +55,7 @@ return
         // traduzione vista ricerca
         'resaults_search' => 'Resault from your reserach',
         'no_announces_research' => 'No announce match your research',
- 
+
         // lista categorie
         'elettronica' => 'Electronics',
         'abbigliamento' => 'Clothing',
@@ -75,6 +75,27 @@ return
         'author' => 'Author',
         'cancel_op' => 'Cancel last Operation',
         'dashboard' => 'Dashboard Revisore',
-        'back_homepage' => 'Back to Homepage'
+        'back_homepage' => 'Back to Homepage',
 
+        // traduzione vista profilo
+        'welcome_profile' => 'Welcome to your profile',
+        'revisor_badge' => 'Revisor',
+        'not_revisor_badge' => 'You are not a revisor',
+        'home' => 'Home',
+        'logout_button' => 'Logout',
+        'profile_info' => 'Profile Information',
+        'surname' => 'Last Name',
+        'gender' => 'Gender',
+        'select_gender' => 'Select gender',
+        'male' => 'Male',
+        'female' => 'Female',
+        'other' => 'Other',
+        'birth_date' => 'Date of Birth',
+        'email' => 'Email',
+        'profile_image' => 'Profile Image',
+        'edit_password' => 'Change Password',
+        'edit_profile' => 'Edit Profile',
+        'save_changes' => 'Save Changes',
+        'create_article' => 'Create New Article',
+        'no_articles' => 'You have not published any articles yet.',
     ];

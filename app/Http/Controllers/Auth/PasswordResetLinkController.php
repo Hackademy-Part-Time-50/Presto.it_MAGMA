@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 class PasswordResetLinkController extends Controller
 {
@@ -27,11 +28,14 @@ class PasswordResetLinkController extends Controller
             $request->only('email')
         );
 
+        // Messaggio di successo o errore
         if ($status == Password::RESET_LINK_SENT) {
-            return back()->with('status', __($status));
+            // Successo
+            return back()->with('status', __('Password reset link sent.'));
         }
 
-        return back()->withErrors(['email' => __($status)]);
+        // Errore
+        return back()->withErrors(['email' => __('We can\'t find a user with that email address.')]);
     }
 
     // Mostra il modulo per il reset effettivo della password
@@ -59,10 +63,13 @@ class PasswordResetLinkController extends Controller
             }
         );
 
+        // Messaggio di successo o errore
         if ($status == Password::PASSWORD_RESET) {
-            return redirect()->route('login')->with('status', __($status));
+            // Successo
+            return redirect()->route('login')->with('status', __('Your password has been reset! You can now login.'));
         }
 
-        return back()->withErrors(['email' => [__($status)]]);
+        // Errore
+        return back()->withErrors(['email' => __('The provided token is invalid or expired.')]);
     }
 }
