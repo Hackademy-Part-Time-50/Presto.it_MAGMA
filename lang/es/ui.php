@@ -1,5 +1,6 @@
 <?php
 
+
 return
     [   // traduzione navbar
         'allannounces' => 'Todos los Anuncios',
@@ -55,6 +56,7 @@ return
         'resaults_search' => 'Resultados de tu búsqueda',
         'no_announces_research' => 'Ningún anuncio coincide con tu búsqueda',
 
+
         // lista categorie
         'elettronica' => 'Electrónica',
         'abbigliamento' => 'Ropa',
@@ -108,3 +110,4 @@ return
         'cancel' => 'Cancelar',
 
     ];
+

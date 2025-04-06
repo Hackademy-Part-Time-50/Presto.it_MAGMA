@@ -1,5 +1,6 @@
 <?php
 
+
 return
     [   // traduzione navbar
         'allannounces' => 'All the Announces',
@@ -54,6 +55,7 @@ return
         // traduzione vista ricerca
         'resaults_search' => 'Resault from your reserach',
         'no_announces_research' => 'No announce match your research',
+
 
         // lista categorie
         'elettronica' => 'Electronics',

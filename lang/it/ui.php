@@ -1,5 +1,6 @@
 <?php
 
+
 return
     [   // traduzione navbar
         'allannounces' => 'Tutti gli Annunci',
@@ -47,9 +48,19 @@ return
         'announce_category' => 'Annunci della Categoria ',
         'no_announces_already' => 'Non sono ancora stati creati articoli per questa categoria',
         'publish_announce' => 'Pubblica Annuncio',
+        // traduzione vista categorie
+        'announce_category' => 'Annunci della Categoria ',
+        'no_announces_already' => 'Non sono ancora stati creati articoli per questa categoria',
+        'publish_announce' => 'Pubblica Annuncio',
 
         // traduzione vista tutti gli articoli
         'no_announces' => 'Ancora nessun annuncio da mostrare',
+        // traduzione vista tutti gli articoli
+        'no_announces' => 'Ancora nessun annuncio da mostrare',
+
+        // traduzione vista ricerca
+        'resaults_search' => 'Risultati della tua ricerca',
+        'no_announces_research' => 'Nessun annuncio corrisponde alla tua ricerca',
 
         // traduzione vista ricerca
         'resaults_search' => 'Risultati della tua ricerca',
@@ -110,3 +121,4 @@ return
         'error_deleting_account' => 'Si è verificato un errore durante la cancellazione del tuo account.',
 
     ];
+
