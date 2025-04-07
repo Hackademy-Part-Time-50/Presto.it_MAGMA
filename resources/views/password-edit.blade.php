@@ -4,16 +4,16 @@
             <div class="col-md-8">
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-primary text-white">
-                        <h4 class="mb-0 text-center">Cambia la tua Password</h4>
+                        <h4 class="mb-0 text-center">{{ __('ui.change_password_title') }}</h4>
                     </div>
 
                     <div class="card-body">
-                        {{-- Successo --}}
+                        {{-- Success --}}
                         @if(session('success'))
                             <div class="alert alert-success">{{ session('success') }}</div>
                         @endif
 
-                        {{-- Errore --}}
+                        {{-- Error --}}
                         @if(session('error'))
                             <div class="alert alert-danger">{{ session('error') }}</div>
                         @endif
@@ -22,9 +22,9 @@
                             @csrf
                             @method('PUT')
 
-                            {{-- Password attuale --}}
+                            {{-- Current password --}}
                             <div class="mb-3">
-                                <label for="current_password" class="form-label">Password attuale</label>
+                                <label for="current_password" class="form-label">{{ __('ui.current_password') }}</label>
                                 <input type="password" name="current_password" id="current_password"
                                     class="form-control" required>
                                 @error('current_password')
@@ -32,9 +32,9 @@
                                 @enderror
                             </div>
 
-                            {{-- Nuova password --}}
+                            {{-- New password --}}
                             <div class="mb-3">
-                                <label for="new_password" class="form-label">Nuova Password</label>
+                                <label for="new_password" class="form-label">{{ __('ui.new_password') }}</label>
                                 <input type="password" name="new_password" id="new_password" class="form-control"
                                     required oninput="checkPasswordStrength()">
                                 <div id="password-strength" class="mt-2 small fw-bold"></div>
@@ -43,10 +43,9 @@
                                 @enderror
                             </div>
 
-                            {{-- Conferma nuova password --}}
+                            {{-- Confirm new password --}}
                             <div class="mb-3">
-                                <label for="new_password_confirmation" class="form-label">Conferma Nuova
-                                    Password</label>
+                                <label for="new_password_confirmation" class="form-label">{{ __('ui.confirm_new_password') }}</label>
                                 <input type="password" name="new_password_confirmation" id="new_password_confirmation"
                                     class="form-control" required>
                                 @error('new_password_confirmation')
@@ -54,31 +53,33 @@
                                 @enderror
                             </div>
 
-                            {{-- Tentativi rimanenti --}}
+                            {{-- Remaining attempts --}}
                             <div class="mb-4">
                                 <p class="mb-0 text-muted">
-                                    Tentativi rimanenti: <strong
-                                        class="text-danger">{{ session('remaining_attempts', 3) }}</strong>
+                                    {{ __('ui.remaining_attempts') }}: 
+                                    <strong class="text-danger">{{ session('remaining_attempts', 3) }}</strong>
                                 </p>
                             </div>
 
-                            {{-- Pulsante Submit --}}
+                            {{-- Submit button --}}
                             <div class="text-center">
                                 <button type="submit" class="btn btn-success px-4">
-                                    <i class="bi bi-shield-lock-fill me-1"></i> Aggiorna Password
+                                    <i class="bi bi-shield-lock-fill me-1"></i> {{ __('ui.update_password_button') }}
                                 </button>
                             </div>
                         </form>
 
-                        {{-- Link per reset password --}}
+                        {{-- Forgot password link --}}
                         <div class="mt-3 text-center">
-                            <a href="{{ route('forget.password') }}" class="btn btn-link">Hai dimenticato la tua password?</a>
+                            <a href="{{ route('forget.password') }}" class="btn btn-link">
+                                {{ __('ui.forgot_password') }}
+                            </a>
                         </div>
 
-                        {{-- Bottone per tornare al profilo --}}
+                        {{-- Back to profile --}}
                         <div class="mt-3 text-center">
                             <a href="{{ route('profile') }}" class="btn btn-outline-secondary">
-                                <i class="bi bi-arrow-left-circle me-1"></i> Torna al Profilo
+                                <i class="bi bi-arrow-left-circle me-1"></i> {{ __('ui.back_to_profile') }}
                             </a>
                         </div>
                     </div>
@@ -86,7 +87,7 @@
             </div>
         </div>
 
-        {{-- Script per verifica forza password --}}
+        {{-- Password strength script --}}
         <script>
             function checkPasswordStrength() {
                 const password = document.getElementById('new_password').value;
@@ -100,11 +101,11 @@
                 if (/[^A-Za-z0-9]/.test(password)) score++;
 
                 const messages = [
-                    { text: 'Password troppo debole', color: 'danger' },
-                    { text: 'Password debole', color: 'warning' },
-                    { text: 'Password media', color: 'info' },
-                    { text: 'Password forte', color: 'primary' },
-                    { text: 'Password molto forte', color: 'success' }
+                    { text: '{{ __("ui.strength_0") }}', color: 'danger' },
+                    { text: '{{ __("ui.strength_1") }}', color: 'warning' },
+                    { text: '{{ __("ui.strength_2") }}', color: 'info' },
+                    { text: '{{ __("ui.strength_3") }}', color: 'primary' },
+                    { text: '{{ __("ui.strength_4") }}', color: 'success' }
                 ];
 
                 const msg = messages[Math.min(score, messages.length - 1)];

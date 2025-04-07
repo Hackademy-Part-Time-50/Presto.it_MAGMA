@@ -32,16 +32,22 @@
                 </a>
                 <ul class="submenu">
                     @foreach ($categories as $category)
-                        <li><a href="{{ route('byCategory', ['category' => $category]) }}">
-                                {{ __("ui.$category->name") }}
-                            </a>
-                        </li>
-                        @if (!$loop->last)
-                            <hr class="dropdown-divider category-divider">
-                        @endif
+                                        @php
+                                            // Recupera la traduzione del nome della categoria
+                                            $categoryTranslation = __("ui.{$category->name}");
+                                        @endphp
+                                        <li><a href="{{ route('byCategory', ['category' => $category]) }}">
+                                                {{ $categoryTranslation ?: $category->name }}
+                                                <!-- Usa la traduzione se esiste, altrimenti il nome originale -->
+                                            </a>
+                                        </li>
+                                        @if (!$loop->last)
+                                            <hr class="dropdown-divider category-divider">
+                                        @endif
                     @endforeach
                 </ul>
             </li>
+
             {{-- fine categorie --}}
 
 
@@ -57,8 +63,8 @@
 
             <form action="{{ route('article.search') }}" role="search" method="GET">
                 @if (session()->has('error_search'))
-                    <input type="search" name="query" class="form-control is-invalid"
-                        placeholder="Non può essere vuoto" aria-label="Search">
+                    <input type="search" name="query" class="form-control is-invalid" placeholder="Non può essere vuoto"
+                        aria-label="Search">
                 @else
                     <input type="search" name="query" class="form-control" placeholder="{{ __('ui.nav_search') }}"
                         aria-label="Search">
@@ -91,6 +97,25 @@
                     <li><a href="#"> <x-_locale lang="it" /></a></li>
                     <li><a href="#"> <x-_locale lang="en" /></a></li>
                     <li><a href="#"> <x-_locale lang="es" /></a></li>
+                    <li><a href="#"> <x-_locale lang="fr" /></a></li>
+                    <li><a href="#"> <x-_locale lang="de" /></a></li>
+                    <li><a href="#"> <x-_locale lang="pt" /></a></li>
+                    <li><a href="#"> <x-_locale lang="ru" /></a></li>
+                    <li><a href="#"> <x-_locale lang="zh" /></a></li>
+                    <li><a href="#"> <x-_locale lang="ja" /> </a></li> <!-- Giapponese -->
+                    <li><a href="#"> <x-_locale lang="ko" /> </a></li> <!-- Coreano -->
+                    <li><a href="#"> <x-_locale lang="ar" /> </a></li> <!-- Arabo -->
+                    <li><a href="#"> <x-_locale lang="tr" /> </a></li> <!-- Turco -->
+                    <li><a href="#"> <x-_locale lang="pl" /> </a></li> <!-- Polacco -->
+                    <li><a href="#"> <x-_locale lang="nl" /> </a></li> <!-- Olandese -->
+                    <li><a href="#"> <x-_locale lang="sv" /> </a></li> <!-- Svedese -->
+                    <li><a href="#"> <x-_locale lang="fi" /> </a></li> <!-- Finlandese -->
+                    <li><a href="#"> <x-_locale lang="no" /> </a></li> <!-- Norvegese -->
+                    <li><a href="#"> <x-_locale lang="uk" /> </a></li> <!-- Ucraino -->
+                    <li><a href="#"> <x-_locale lang="ro" /> </a></li> <!-- Romeno -->
+                    <li><a href="#"> <x-_locale lang="cs" /> </a></li> <!-- Ceco -->
+                    <li><a href="#"> <x-_locale lang="el" /> </a></li> <!-- Greco -->
+
                 </ul>
             </li>
             {{-- fine lingue disponibili --}}
@@ -127,7 +152,7 @@
                         <form action="{{ route('logout') }}" method="POST" class="d-none" id="form-logout">@csrf
                         </form>
                     </ul>
-                @else
+            @else
                 <li>
                     <a href="{{ route('login') }}"> Account
                     </a>

@@ -28,5 +28,5 @@ class AppServiceProvider extends ServiceProvider
         }
 
         Paginator::useBootstrap();
-    }
+}
 }

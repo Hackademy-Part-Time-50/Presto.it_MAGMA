@@ -72,3 +72,20 @@ Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->nam
 Route::patch('/make/revisor/{revisoreRequest}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 Route::get('/revisor/reject/{user}', [RevisorController::class, 'rejectRevisor'])->name('reject.revisor');
 Route::post('/richiesta-revisore', [RevisorController::class, 'richiedi'])->name('revisore.richiesta');
+
+
+Route::get('language/{lang}', function ($lang) {
+    // Definisci un array di lingue supportate
+    $availableLanguages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'zh', 'ja', 'ko', 'ar', 'tr', 'pl', 'nl', 'sv', 'fi', 'no', 'uk', 'ro', 'cs', 'el'];
+
+    if (in_array($lang, $availableLanguages)) {
+        // Imposta la lingua nella sessione
+        session(['locale' => $lang]);
+
+        // Imposta la lingua dell'app
+        App::setLocale($lang);
+    }
+
+    // Reindirizza alla pagina precedente
+    return back();
+})->name('change.language');
