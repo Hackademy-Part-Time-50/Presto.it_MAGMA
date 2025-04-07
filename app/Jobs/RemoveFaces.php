@@ -4,10 +4,11 @@ namespace App\Jobs;
 
 use App\Models\Image;
 use App\Models\Image as SpatieImage;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient;
-use Illuminate\Console\Concerns\InteractsWithQueue;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Spatie\Image\Enums\AlignPosition;
 use Spatie\Image\Enums\Fit;
