@@ -8,29 +8,22 @@
     <div class="my-auto">
         <div class="container-auth @if ($errors->has('name') || $errors->has('password_confirmation')) active @endif my-100">
         
-            <!-- Form di Login -->
         
             <!-- Form di Login -->
             <div class="auth-form-box auth-login">
                 <form method="POST" action="{{ route('login') }}" id="loginForm">
                     @csrf
                     <h1 id="login-h1">{{ __('ui.login') }}</h1>
-                    <h1 id="login-h1">{{ __('ui.login') }}</h1>
 
                     <div class="auth-input-box">
-                        <input type="email" placeholder="Email" value="{{ old('email') }}" id="loginEmail" name="email" class="@error('email') error @enderror">
                         <input type="email" placeholder="Email" value="{{ old('email') }}" id="loginEmail" name="email" class="@error('email') error @enderror">
                         <i class='bx bxs-envelope'></i>
                         @error('email')
                             <span class="error-message">{{ $message }}</span>
                         @enderror
                     </div>
-
-                    <!-- Campo Password -->
                     <!-- Campo Password -->
                     <div class="auth-input-box">
-                        <input type="password" placeholder="Password" id="loginPassword" name="password" class="@error('password') error @enderror">
-                        <i id="togglePassword" class="bx bxs-show"></i> <!-- Icona per alternare visibilità -->
                         <input type="password" placeholder="Password" id="loginPassword" name="password" class="@error('password') error @enderror">
                         <i id="togglePassword" class="bx bxs-show"></i> <!-- Icona per alternare visibilità -->
                         @error('password')
@@ -45,10 +38,6 @@
                     <button type="submit" class="auth-btn">{{ __('ui.login') }}</button>
                     <p class="pt-2">{{ __('ui.else_login') }}</p>
 
-
-                    <button type="submit" class="auth-btn">{{ __('ui.login') }}</button>
-                    <p class="pt-2">{{ __('ui.else_login') }}</p>
-
                     <div class="auth-social-icons">
                         <a href="{{ route('auth.google') }}"><i class='bx bxl-google'></i></a>
                         <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -57,32 +46,13 @@
                     </div>
                 </form>
             </div>
-                        <a href="{{ route('auth.google') }}"><i class='bx bxl-google'></i></a>
-                        <a href="#"><i class='bx bxl-facebook'></i></a>
-                        <a href="#"><i class='bx bxl-github'></i></a>
-                        <a href="#"><i class='bx bxl-linkedin'></i></a>
-                    </div>
-                </form>
-            </div>
 
             <!-- Form di Registrazione -->
             <div class="auth-form-box auth-register">
                 <form method="POST" action="{{ route('register') }}" id="registerForm">
                     @csrf
                     <h1>{{ __('ui.signin') }}</h1>
-            <!-- Form di Registrazione -->
-            <div class="auth-form-box auth-register">
-                <form method="POST" action="{{ route('register') }}" id="registerForm">
-                    @csrf
-                    <h1>{{ __('ui.signin') }}</h1>
 
-                    <div class="auth-input-box">
-                        <input type="text" placeholder="{{ __('ui.name') }}" value="{{ old('name') }}" required id="name" name="name" class="@error('name') error @enderror">
-                        <i class='bx bxs-user'></i>
-                        @error('name')
-                            <span class="error-message">{{ $message }}</span>
-                        @enderror
-                    </div>
                     <div class="auth-input-box">
                         <input type="text" placeholder="{{ __('ui.name') }}" value="{{ old('name') }}" required id="name" name="name" class="@error('name') error @enderror">
                         <i class='bx bxs-user'></i>
@@ -98,19 +68,8 @@
                             <span class="error-message">{{ $message }}</span>
                         @enderror
                     </div>
-                    <div class="auth-input-box">
-                        <input type="email" placeholder="Email" value="{{ old('email') }}" required id="registerEmail" name="email" class="@error('email') error @enderror">
-                        <i class='bx bxs-envelope'></i>
-                        @error('email')
-                            <span class="error-message">{{ $message }}</span>
-                        @enderror
-                    </div>
-
-                    <!-- Campo Password -->
                     <!-- Campo Password -->
                     <div class="auth-input-box">
-                        <input type="password" placeholder="Password" value="{{ old('password') }}" required id="password" name="password" class="@error('password') error @enderror">
-                        <i id="togglePasswordRegister" class="bx bxs-show"></i> <!-- Icona per alternare visibilità -->
                         <input type="password" placeholder="Password" value="{{ old('password') }}" required id="password" name="password" class="@error('password') error @enderror">
                         <i id="togglePasswordRegister" class="bx bxs-show"></i> <!-- Icona per alternare visibilità -->
                         @error('password')
@@ -119,20 +78,13 @@
                     </div>
 
                     <!-- Conferma Password -->
-                    <!-- Conferma Password -->
                     <div class="auth-input-box">
-                        <input type="password" placeholder="{{ __('ui.password_confirm') }}" value="{{ old('password_confirmation') }}" required id="password_confirmation" name="password_confirmation">
-                        <i id="togglePasswordRegister" class="bx bxs-show"></i>
                         <input type="password" placeholder="{{ __('ui.password_confirm') }}" value="{{ old('password_confirmation') }}" required id="password_confirmation" name="password_confirmation">
                         <i id="togglePasswordRegister" class="bx bxs-show"></i>
                     </div>
 
                     <button type="submit" class="auth-btn" id="registerSubmitBtn">{{ __('ui.signin') }}</button>
                     <p class="pt-2">{{ __('ui.else_signin') }}</p>
-
-                    <button type="submit" class="auth-btn" id="registerSubmitBtn">{{ __('ui.signin') }}</button>
-                    <p class="pt-2">{{ __('ui.else_signin') }}</p>
-
                     <div class="auth-social-icons">
                         <a href="#"><i class='bx bxl-google'></i></a>
                         <a href="#"><i class='bx bxl-facebook'></i></a>
@@ -148,14 +100,8 @@
                     <h1>{{ __('ui.welcome') }}</h1>
                     <p class="pt-2">{{ __('ui.no_account') }}</p>
                     <button class="auth-btn auth-register-btn">{{ __('ui.signin') }}</button>
-                    <h1>{{ __('ui.welcome') }}</h1>
-                    <p class="pt-2">{{ __('ui.no_account') }}</p>
-                    <button class="auth-btn auth-register-btn">{{ __('ui.signin') }}</button>
                 </div>
                 <div class="auth-toggle-panel auth-toggle-right">
-                    <h1>{{ __('ui.welcome_back') }}</h1>
-                    <p>{{ __('ui.already_account') }}</p>
-                    <button class="auth-btn auth-login-btn">{{ __('ui.login') }}</button>
                     <h1>{{ __('ui.welcome_back') }}</h1>
                     <p>{{ __('ui.already_account') }}</p>
                     <button class="auth-btn auth-login-btn">{{ __('ui.login') }}</button>
@@ -183,28 +129,6 @@
             togglePassword.classList.toggle('bxs-hide');
         });
 
-        // Gestisci visibilità della password per registrazione
-        const togglePasswordRegister = document.getElementById('togglePasswordRegister');
-        const registerPassword = document.getElementById('password');
-        togglePasswordRegister.addEventListener('click', () => {
-            const type = registerPassword.type === 'password' ? 'text' : 'password';
-            registerPassword.type = type;
-            togglePasswordRegister.classList.toggle('bxs-show');
-            togglePasswordRegister.classList.toggle('bxs-hide');
-        });
-
-        // Se ci sono errori nei form
-        // Gestisci visibilità della password per login
-        const togglePassword = document.getElementById('togglePassword');
-        const loginPassword = document.getElementById('loginPassword');
-        togglePassword.addEventListener('click', () => {
-            const type = loginPassword.type === 'password' ? 'text' : 'password';
-            loginPassword.type = type;
-            togglePassword.classList.toggle('bxs-show');
-            togglePassword.classList.toggle('bxs-hide');
-        });
-
-        // Gestisci visibilità della password per registrazione
         const togglePasswordRegister = document.getElementById('togglePasswordRegister');
         const registerPassword = document.getElementById('password');
         togglePasswordRegister.addEventListener('click', () => {
