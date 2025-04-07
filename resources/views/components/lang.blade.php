@@ -8,7 +8,7 @@
         'fr' => 'fr',     // 🇫🇷 Français
         'de' => 'de',     // 🇩🇪 Deutsch
         'pt' => 'pt',     // 🇵🇹 Português
-        'ru' => 'ru',     // 🇷🇺 Русский
+        'ro' => 'ro',     // 🇷o Rumeno
         'zh' => 'cn',     // 🇨🇳 中文 (Cina)
         'ja' => 'jp',     // 🇯🇵 日本語
         'ko' => 'kr',     // 🇰🇷 한국어
@@ -62,7 +62,7 @@
               <!-- Colonna 2: Lingue extra -->
               <div class="col-md-6">
                 <ul class="list-unstyled">
-                  <li><a class="dropdown-item" href="{{ route('change.language', ['lang' => 'ru']) }}"><x-_locale
+                  <li><a class="dropdown-item" href="{{ route('change.language', ['lang' => 'ro']) }}"><x-_locale
                         lang="ru" /> Русский</a></li>
                   <li><a class="dropdown-item" href="{{ route('change.language', ['lang' => 'zh']) }}"><x-_locale
                         lang="zh" /> 中文</a></li>

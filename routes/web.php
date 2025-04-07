@@ -74,6 +74,7 @@ Route::get('/revisor/reject/{user}', [RevisorController::class, 'rejectRevisor']
 Route::post('/richiesta-revisore', [RevisorController::class, 'richiedi'])->name('revisore.richiesta');
 
 
+// Aggiungi una rotta per gestire il cambio lingua
 Route::get('language/{lang}', function ($lang) {
     // Definisci un array di lingue supportate
     $availableLanguages = ['en', 'it', 'es', 'fr', 'de', 'pt', 'ru', 'zh', 'ja', 'ko', 'ar', 'tr', 'pl', 'nl', 'sv', 'fi', 'no', 'uk', 'ro', 'cs', 'el'];

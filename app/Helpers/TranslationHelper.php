@@ -41,11 +41,17 @@ class TranslationHelper
             // Traduci solo le chiavi mancanti
             foreach ($sourceStrings as $key => $value) {
                 if (!isset($targetStrings[$key])) {
-                    // Traduzione automatica
-                    $translatedValue = $tr->translate($value);
-                    $targetStrings[$key] = $translatedValue;
+                    if (is_array($value)) {
+                        // Se il valore è un array, traduci i suoi elementi ricorsivamente
+                        $targetStrings[$key] = self::translateArray($value, $tr);
+                    } else {
+                        // Traduci la stringa
+                        $translatedValue = $tr->translate($value);
+                        $targetStrings[$key] = $translatedValue;
+                    }
 
-                    echo "[{$filename}] Tradotto '$key' ➜ $translatedValue\n";
+                    // Stampa la traduzione
+                    echo "[{$filename}] Tradotto '$key' ➜ " . (is_array($targetStrings[$key]) ? json_encode($targetStrings[$key]) : $targetStrings[$key]) . "\n";
                 }
             }
 
@@ -54,5 +60,28 @@ class TranslationHelper
         }
 
         echo "✅ Traduzioni completate per la lingua: $locale\n";
+    }
+
+    /**
+     * Traduzione ricorsiva per array multidimensionali.
+     */
+    private static function translateArray(array $array, GoogleTranslate $tr): array
+    {
+        $translated = [];
+
+        foreach ($array as $key => $value) {
+            if (is_array($value)) {
+                // Traduci ricorsivamente gli array
+                $translated[$key] = self::translateArray($value, $tr);
+            } elseif (is_string($value)) {
+                // Traduci solo le stringhe
+                $translated[$key] = $tr->translate($value);
+            } else {
+                // Lascia inalterato il valore se non è una stringa
+                $translated[$key] = $value;
+            }
+        }
+
+        return $translated;
     }
 }

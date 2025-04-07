@@ -1,4 +1,4 @@
-<?php return [
+<?php return array (
   'allannounces' => 'Alle Ankündigungen',
   'nav_category' => 'Kategorien',
   'nav_search' => 'Suchen',
@@ -83,4 +83,17 @@
   'confirm_delete_account' => 'Möchten Sie Ihr Konto wirklich löschen?',
   'confirm_delete_message' => 'Diese Operation ist irreversibel, sind Sie sicher?',
   'cancel' => 'Stornieren',
-];
+  'change_password_title' => 'Ändern Sie Ihr Passwort',
+  'current_password' => 'Aktuelles Passwort',
+  'new_password' => 'Neues Passwort',
+  'confirm_new_password' => 'Neues Passwort bestätigen',
+  'remaining_attempts' => 'Verbleibende Versuche',
+  'update_password_button' => 'Passwort aktualisieren',
+  'forgot_password' => 'Ihr Passwort vergessen?',
+  'back_to_profile' => 'Zurück zum Profil',
+  'strength_0' => 'Passwort zu schwach',
+  'strength_1' => 'Schwaches Passwort',
+  'strength_2' => 'Mittleres Passwort',
+  'strength_3' => 'Starkes Passwort',
+  'strength_4' => 'Sehr starkes Passwort',
+);
