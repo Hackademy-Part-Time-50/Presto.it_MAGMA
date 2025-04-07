@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->decimal('price', 8, places: 2);
-            //Relazioni con Category
+            // Relazioni con Category
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories');
-            //Relazioni con User
+            // Relazioni con User
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

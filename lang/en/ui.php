@@ -1,4 +1,6 @@
 <?php
+
+
 return
     [   // traduzione navbar
         'allannounces' => 'All the Announces',
@@ -30,8 +32,6 @@ return
         'name' => 'Name',
         'password_confirm' => 'Password Confirm',
 
-
-
         // traduziuone card
         'details' => 'Details',
 
@@ -55,7 +55,8 @@ return
         // traduzione vista ricerca
         'resaults_search' => 'Resault from your reserach',
         'no_announces_research' => 'No announce match your research',
- 
+
+
         // lista categorie
         'elettronica' => 'Electronics',
         'abbigliamento' => 'Clothing',
@@ -75,6 +76,36 @@ return
         'author' => 'Author',
         'cancel_op' => 'Cancel last Operation',
         'dashboard' => 'Dashboard Revisore',
-        'back_homepage' => 'Back to Homepage'
+        'back_homepage' => 'Back to Homepage',
 
+        // traduzione vista profilo
+        'profile_welcome' => 'Welcome to your profile',
+        'revisor' => 'Revisor',
+        'not_revisor' => 'You are not a revisor',
+        'home' => 'Home',
+        'logout_button' => 'Logout',
+        'profile' => 'Profile Information',
+        'surname' => 'Last Name',
+        'gender' => 'Gender',
+        'select_gender' => 'Select gender',
+        'male' => 'Male',
+        'female' => 'Female',
+        'other' => 'Other',
+        'birth_date' => 'Date of Birth',
+        'email' => 'Email',
+        'phone' => 'Phone',
+        'biography' => 'Biography',
+        'linkedin' => 'LinkedIn',
+        'twitter' => 'Twitter',
+        'website' => 'Website',
+        'profile_image' => 'Profile Image',
+        'change_password' => 'Change Password',
+        'edit_profile' => 'Edit Profile',
+        'save_changes' => 'Save Changes',
+        'create_article' => 'Create New Article',
+        'no_articles' => 'You have not published any articles yet.',
+        'delete_account' => 'Delete account',
+        'confirm_delete_account' => 'Do you really want to delete your account?',
+        'confirm_delete_message' => 'This operation is irreversible, are you sure?',
+        'cancel' => 'Cancel',
     ];

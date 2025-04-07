@@ -18,15 +18,14 @@ return [
 
     'driver' => env('SCOUT_DRIVER', 'tntsearch'),
 
-    
     'tntsearch' => [
-        'storage'  => storage_path(), //place where the index files will be stored
+        'storage' => storage_path(), // place where the index files will be stored
         'fuzziness' => env('TNTSEARCH_FUZZINESS', false),
         'fuzzy' => [
             'prefix_length' => 2,
             'max_expansions' => 50,
             'distance' => 2,
-        'no_limit' => true
+            'no_limit' => true,
         ],
         'asYouType' => false,
         'searchBoolean' => env('TNTSEARCH_BOOLEAN', false),
