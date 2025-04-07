@@ -69,7 +69,7 @@ Route::prefix('revisor')->middleware('isRevisor')->group(function () {
 
 // Richieste per diventare revisore
 Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->name('become.revisor');
-Route::patch('/make/revisor/{revisoreRequest}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
+Route::patch('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 Route::get('/revisor/reject/{user}', [RevisorController::class, 'rejectRevisor'])->name('reject.revisor');
 Route::post('/richiesta-revisore', [RevisorController::class, 'richiedi'])->name('revisore.richiesta');
 

@@ -96,4 +96,35 @@
   'strength_2' => 'Medium password',
   'strength_3' => 'Strong password',
   'strength_4' => 'Very strong password',
+
+  'language_modal_title' => 'Select Language',
+    'choose_language_button' => 'Choose Language', // Nuovo nome
+    'english' => 'English',
+    'italian' => 'Italian',
+    'spanish' => 'Spanish',
+    'french' => 'French',
+    'german' => 'German',
+    'portuguese' => 'Portuguese',
+    'romanian' => 'Romanian',
+    'chinese' => 'Chinese',
+    'japanese' => 'Japanese',
+    'korean' => 'Korean',
+    'arabic' => 'Arabic',
+    'turkish' => 'Turkish',
+
+
+    'footer_copyright' => '© 2025',
+    'footer_useful_links' => 'Useful Links',
+    'footer_become_revisor' => 'Why become a reviewer?',
+    'footer_created_by' => 'Created by',
+    'footer_alessandro' => 'Alessandro',
+    'footer_mario' => 'Mario',
+    'footer_alessio' => 'Alessio',
+    'footer_giorgia' => 'Giorgia',
+
+
+    'become_revisor_title' => 'Why become a reviewer?',
+    'become_revisor_text' => 'Becoming a reviewer is a unique opportunity to actively contribute to our community. You can also help others find what they need in a safe and reliable way. Your experience and critical eye will be essential to maintain the quality of published ads.',
+    'become_revisor_button' => 'Become a reviewer',
+    'login_button' => 'Login to request',
 );

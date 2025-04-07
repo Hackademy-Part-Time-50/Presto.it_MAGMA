@@ -90,7 +90,7 @@
         <ul class="menu mb-0">
 
             {{-- lingue disponibili --}}
-            <li class="submenu-wrapper">
+            <!-- <li class="submenu-wrapper">
                 <a href="#">{{ __('ui.lang') }}<span class="span"> > </span>
                 </a>
                 <ul class="submenu">
@@ -102,22 +102,22 @@
                     <li><a href="#"> <x-_locale lang="pt" /></a></li>
                     <li><a href="#"> <x-_locale lang="ru" /></a></li>
                     <li><a href="#"> <x-_locale lang="zh" /></a></li>
-                    <li><a href="#"> <x-_locale lang="ja" /> </a></li> <!-- Giapponese -->
-                    <li><a href="#"> <x-_locale lang="ko" /> </a></li> <!-- Coreano -->
-                    <li><a href="#"> <x-_locale lang="ar" /> </a></li> <!-- Arabo -->
-                    <li><a href="#"> <x-_locale lang="tr" /> </a></li> <!-- Turco -->
-                    <li><a href="#"> <x-_locale lang="pl" /> </a></li> <!-- Polacco -->
-                    <li><a href="#"> <x-_locale lang="nl" /> </a></li> <!-- Olandese -->
-                    <li><a href="#"> <x-_locale lang="sv" /> </a></li> <!-- Svedese -->
-                    <li><a href="#"> <x-_locale lang="fi" /> </a></li> <!-- Finlandese -->
-                    <li><a href="#"> <x-_locale lang="no" /> </a></li> <!-- Norvegese -->
-                    <li><a href="#"> <x-_locale lang="uk" /> </a></li> <!-- Ucraino -->
-                    <li><a href="#"> <x-_locale lang="ro" /> </a></li> <!-- Romeno -->
-                    <li><a href="#"> <x-_locale lang="cs" /> </a></li> <!-- Ceco -->
-                    <li><a href="#"> <x-_locale lang="el" /> </a></li> <!-- Greco -->
+                    <li><a href="#"> <x-_locale lang="ja" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="ko" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="ar" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="tr" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="pl" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="nl" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="sv" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="fi" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="no" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="uk" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="ro" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="cs" /> </a></li> 
+                    <li><a href="#"> <x-_locale lang="el" /> </a></li>
 
                 </ul>
-            </li>
+            </li> -->
             {{-- fine lingue disponibili --}}
 
 

@@ -3,43 +3,28 @@
         {{-- titolo --}}
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center fs-1">Perché diventare un revisore?</h1>
+                <h1 class="text-center fs-1">{{ __('ui.become_revisor_title') }}</h1>
             </div>
         </div>
 
         {{-- prima row con immagine --}}
         <div class="row justify-content-center align-items-center g-2 m-5">
-
-
             <div class="col-12 col-md-6 img-lavoraconnoi" data-aos="fade-right" data-aos-duration="1000">
-
             </div>
 
-
-
-
-
             <div class="col-12 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-
-
-                <p class=" fs-3 text-muted text-center">
-                    Diventare un revisore è un’opportunità unica per contribuire attivamente alla nostra comunità.
-
-                   
-                    
-                    Potrai anche aiutare gli altri a trovare ciò di cui hanno bisogno in modo sicuro e affidabile. La tua esperienza e il tuo occhio
-                    critico saranno fondamentali per mantenere alta la qualità degli annunci pubblicati.
+                <p class="fs-3 text-muted text-center">
+                    {{ __('ui.become_revisor_text') }}
                 </p>
 
                 <div class="d-flex justify-content-center mt-4">
                     @auth
                         <form action="{{ route('revisore.richiesta') }}" method="POST" class="w-50">
                             @csrf
-                            <button type="submit" class="btn btn-custom-other w-100">Diventa un revisore</button>
+                            <button type="submit" class="btn btn-custom-other w-100">{{ __('ui.become_revisor_button') }}</button>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-custom-other w-50 text-center">Accedi per fare
-                            richiesta</a>
+                        <a href="{{ route('login') }}" class="btn btn-custom-other w-50 text-center">{{ __('ui.login_button') }}</a>
                     @endauth
                 </div>
 
@@ -51,11 +36,6 @@
                     <div class="alert alert-danger mt-3 text-center">{{ session('error') }}</div>
                 @endif
             </div>
-
         </div>
-
-        
-
     </div>
-
 </x-layouts.layout>
