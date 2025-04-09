@@ -13,7 +13,7 @@
             </div>
 
             <div class="col-12 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-                <p class="fs-3 text-muted text-center">
+                <p class="fs-4 text-muted text-center">
                     {{ __('ui.become_revisor_text') }}
                 </p>
 

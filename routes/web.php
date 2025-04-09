@@ -8,6 +8,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\RevisorController;
 use App\Http\Middleware\ThrottlePasswordAttempts;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\App;
 
 // Rotte per il reset della password
 Route::get('/forget-password', [ForgetPasswordManager::class, 'forgetPassword'])

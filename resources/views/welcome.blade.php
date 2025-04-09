@@ -11,22 +11,7 @@
 
                     <!-- Contenuto sopra l'immagine -->
                     
-                        <div class="text-custom">
-                            <p class="fs-3 text">{{__('ui.slogan_1')}}</p>
-                            <p class="fs-3 text">{{__('ui.slogan_2')}},</p>
-                            <p class="fs-1 text fw-bold">{{ config('app.name') }}!</p>
-                            
-                                @auth
-                                    <a href="{{ route('create.article') }}" class="btn btn-custom-other">
-                                        {{__('ui.create_announce')}}
-                                    </a>
-                                {{-- @else
-                                    <a href="{{ route('login') }}" class="btn btn-custom-other">
-                                        {{__('ui.login')}}
-                                    </a> --}}
-                                @endauth
-                            
-                        </div>
+                        
                     
 
                 </div>
@@ -35,6 +20,31 @@
         </div>
     </header>
 
+<div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5">
+    <x-success/>
+</div>
+   
+
+
+    <div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5">
+        <div class="text-custom">
+            <p class="fs-3 text">{{__('ui.slogan_1')}}</p>
+            <p class="fs-3 text">{{__('ui.slogan_2')}},</p>
+            <p class="fs-1 text fw-bold">{{ config('app.name') }}!</p>
+            
+                @auth
+                    <a href="{{ route('create.article') }}" class="btn btn-custom-other">
+                        {{__('ui.create_announce')}}
+                    </a>
+                {{-- @else
+                    <a href="{{ route('login') }}" class="btn btn-custom-other">
+                        {{__('ui.login')}}
+                    </a> --}}
+                @endauth
+            
+        </div>
+    </div>
+
 
     <div class="container mt-5">
         <x-carousel :articles="$articles"/>
@@ -42,7 +52,7 @@
 
 
 
-    <div class="container align-content-center my-5">
+    {{-- <div class="container align-content-center my-5">
         <div class="row">
 
            
@@ -71,9 +81,9 @@
                   
             </div>
         </div>
-    </div>
+    </div> --}}
 
-<x-success/>
+
 
 
 

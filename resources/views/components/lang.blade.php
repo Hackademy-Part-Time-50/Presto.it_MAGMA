@@ -79,9 +79,7 @@
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{{ __('ui.choose_language_button') }}</button>
-      </div>
+      
     </div>
   </div>
 </div>
