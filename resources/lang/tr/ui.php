@@ -122,4 +122,5 @@
   'become_revisor_text' => 'Gözden geçiren olmak, topluluğumuza aktif olarak katkıda bulunmak için eşsiz bir fırsattır. Ayrıca başkalarının ihtiyaç duyduklarını güvenli ve güvenilir bir şekilde bulmasına yardımcı olabilirsiniz. Yayınlanmış reklamların kalitesini korumak için deneyiminiz ve eleştirel gözünüz gerekli olacaktır.',
   'become_revisor_button' => 'Gözden geçiren ol',
   'login_button' => 'Talep için giriş yapın',
+  'russian' => 'Rusça',
 );

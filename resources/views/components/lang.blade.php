@@ -64,7 +64,7 @@
           <div class="col-md-6">
             <ul class="list-unstyled">
               <li><a class="dropdown-item" href="{{ route('change.language', ['lang' => 'ru']) }}">
-                  <x-_locale lang="ru" /> {{ __('ui.romanian') }}</a></li>
+                  <x-_locale lang="ru" /> {{ __('ui.russian') }}</a></li>
               <li><a class="dropdown-item" href="{{ route('change.language', ['lang' => 'zh']) }}">
                   <x-_locale lang="zh" /> {{ __('ui.chinese') }}</a></li>
               <li><a class="dropdown-item" href="{{ route('change.language', ['lang' => 'ja']) }}">

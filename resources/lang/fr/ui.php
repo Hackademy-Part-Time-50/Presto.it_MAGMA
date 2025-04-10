@@ -122,4 +122,5 @@
   'become_revisor_text' => 'Devenir examinateur est une occasion unique de contribuer activement à notre communauté. Vous pouvez également aider les autres à trouver ce dont ils ont besoin de manière sûre et fiable. Votre expérience et votre œil critique seront essentiels pour maintenir la qualité des annonces publiées.',
   'become_revisor_button' => 'Devenir réviseur',
   'login_button' => 'Connectez-vous pour demander',
+  'russian' => 'russe',
 );

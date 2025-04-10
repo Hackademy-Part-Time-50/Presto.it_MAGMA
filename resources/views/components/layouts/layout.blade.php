@@ -24,7 +24,7 @@
       AOS.init();
     </script>
 
-    <x-navbar />
+    <x-navbar1 />
 
     <div class="content">
       {{ $slot }}

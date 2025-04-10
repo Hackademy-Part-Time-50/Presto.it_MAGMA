@@ -122,4 +122,5 @@
   'become_revisor_text' => 'Diventare un revisore è un\'opportunità unica per contribuire attivamente alla nostra comunità. Puoi anche aiutare gli altri a trovare ciò di cui hanno bisogno in modo sicuro e affidabile. La tua esperienza e occhio critico saranno essenziali per mantenere la qualità degli annunci pubblicati.',
   'become_revisor_button' => 'Diventa un recensore',
   'login_button' => 'Accedi alla richiesta',
+  'russian' => 'russo',
 );

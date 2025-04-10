@@ -122,4 +122,5 @@
   'become_revisor_text' => 'Convertirse en un revisor es una oportunidad única para contribuir activamente a nuestra comunidad. También puede ayudar a otros a encontrar lo que necesitan de una manera segura y confiable. Su experiencia y ojo crítico serán esenciales para mantener la calidad de los anuncios publicados.',
   'become_revisor_button' => 'Conviértete en un revisor',
   'login_button' => 'Iniciar sesión para solicitar',
+  'russian' => 'ruso',
 );
