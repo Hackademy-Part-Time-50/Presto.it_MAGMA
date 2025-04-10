@@ -1,4 +1,4 @@
-<div>
+
     <nav class="navbar justify-content-between text-center">
 
         {{-- logo --}}
@@ -163,4 +163,3 @@
 
 
     </nav>
-</div>
