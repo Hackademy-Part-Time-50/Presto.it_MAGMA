@@ -6,7 +6,7 @@
                     <img src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(500, 500) : 'https://picsum.photos/200' }}"
                         class="" alt="Immagine dell'articolo {{ $article->title }}">
                     <a href="{{ route('byCategory', [$article->category->id]) }}"
-                        class="badge bg-custom position-absolute bottom-0 start-0 m-2 text-warning text-decoration-none text-uppercase">
+                        class="badge bg-custom position-absolute bottom-0 start-0 m-2 text-white text-decoration-none text-uppercase">
                         {{ __("ui.{$article->category->name}") }}
                     </a>
 

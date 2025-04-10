@@ -26,7 +26,7 @@
    
 
 
-    <div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5">
+    <div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5 " data-aos="flip-left">
         <div class="text-custom">
             <p class="fs-3 text">{{__('ui.slogan_1')}}</p>
             <p class="fs-3 text">{{__('ui.slogan_2')}},</p>

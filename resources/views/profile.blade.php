@@ -4,23 +4,23 @@
         <x-success />
 
         {{-- Intestazione profilo --}}
-        <div class="card shadow-sm mb-5 border-0">
+        <div class="card shadow-sm mb-5 border-0 profile-bg-custom">
             <div class="card-body text-center">
                 @if($user->profile_image)
                     <img src="{{ asset('storage/' . $user->profile_image) }}" alt="{{ __('ui.profile_image') }}"
                          class="rounded-circle shadow mb-3" style="width: 120px; height: 120px; object-fit: cover;">
                 @endif
-                <h2 class="fw-bold text-primary">{{ $user->name }}</h2>
+                <h2 class="fw-bold profile-name">{{ $user->name }}</h2>
                 <p class="text-muted">{{ __('ui.profile_welcome') }}</p>
 
                 @if($user->is_revisor)
-                    <span class="badge bg-success">{{ __('ui.revisor') }}</span>
+                    <span class="badge bg-custom">{{ __('ui.revisor') }}</span>
                 @else
                     <span class="badge bg-secondary">{{ __('ui.not_revisor') }}</span>
                 @endif
 
                 <div class="mt-3 d-flex justify-content-center gap-3">
-                    <a href="{{ route('homepage') }}" class="btn btn-outline-primary">
+                    <a href="{{ route('homepage') }}" class="btn btn-custom-other">
                         <i class="bi bi-house-door-fill me-1"></i> {{ __('ui.home') }}
                     </a>
                     <a href="{{ route('logout') }}" class="btn btn-outline-danger">
@@ -31,9 +31,9 @@
         </div>
 
         {{-- Form Modifica Profilo --}}
-        <section class="profile-section mb-5">
-            <div class="card shadow-lg border-0">
-                <div class="card-header bg-primary text-white">
+        <section class="profile-section mb-5 ">
+            <div class="card shadow-lg border-0 profile-bg-custom">
+                <div class="card-header bg-custom text-white">
                     <h4 class="mb-0">{{ __('ui.profile') }}</h4>
                 </div>
                 <div class="card-body">
@@ -131,7 +131,7 @@
                             <a href="{{ route('password.edit') }}" class="btn btn-outline-secondary">
                                 <i class="bi bi-key-fill me-1"></i> {{ __('ui.change_password') }}
                             </a>
-                            <button type="button" id="editProfileButton" class="btn btn-warning">
+                            <button type="button" id="editProfileButton" class="btn btn-custom-other">
                                 <i class="bi bi-pencil-fill me-1"></i> {{ __('ui.edit_profile') }}
                             </button>
                             <button type="button" id="cancelEditButton" class="btn btn-secondary" style="display: none;">

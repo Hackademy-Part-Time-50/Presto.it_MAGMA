@@ -545,4 +545,11 @@ div .btn_custom {
     border-color: #007bff;
 }
 
-  
+  .profile-name{
+    color:#ff7300dc;
+  }
+
+
+  .profile-bg-custom{
+    background-color: #f8c79207!important;
+  }
