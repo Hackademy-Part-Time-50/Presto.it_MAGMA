@@ -105,7 +105,7 @@
     'french' => 'French',
     'german' => 'German',
     'portuguese' => 'Portuguese',
-    'romanian' => 'Romanian',
+    'russian' => 'Russian',
     'chinese' => 'Chinese',
     'japanese' => 'Japanese',
     'korean' => 'Korean',

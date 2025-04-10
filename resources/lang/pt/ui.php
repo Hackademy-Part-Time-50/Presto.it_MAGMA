@@ -122,4 +122,5 @@
   'become_revisor_text' => 'Tornar -se um revisor é uma oportunidade única de contribuir ativamente para a nossa comunidade. Você também pode ajudar outras pessoas a encontrar o que precisam de uma maneira segura e confiável. Sua experiência e olho crítico serão essenciais para manter a qualidade dos anúncios publicados.',
   'become_revisor_button' => 'Torne -se um revisor',
   'login_button' => 'Login para solicitar',
+  'russian' => 'russo',
 );
