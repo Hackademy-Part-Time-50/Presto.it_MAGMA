@@ -111,6 +111,7 @@
     'korean' => 'Korean',
     'arabic' => 'Arabic',
     'turkish' => 'Turkish',
+    'russian' => 'Russian',
 
 
     'footer_copyright' => '© 2025',

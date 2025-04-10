@@ -122,4 +122,5 @@
   'become_revisor_text' => 'Ein Rezensent zu werden ist eine einzigartige Gelegenheit, aktiv zu unserer Community beizutragen. Sie können auch anderen helfen, auf sichere und zuverlässige Weise zu finden, was sie brauchen. Ihre Erfahrung und Ihr kritisches Auge sind wichtig, um die Qualität der veröffentlichten Anzeigen aufrechtzuerhalten.',
   'become_revisor_button' => 'Rezensent werden',
   'login_button' => 'Login an Anfrage anmelden',
+  'russian' => 'Russisch',
 );
