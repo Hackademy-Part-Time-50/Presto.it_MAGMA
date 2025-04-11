@@ -123,4 +123,5 @@
   'become_revisor_button' => 'Gözden geçiren ol',
   'login_button' => 'Talep için giriş yapın',
   'russian' => 'Rusça',
+  'btn_back' => 'Önceki sayfa',
 );

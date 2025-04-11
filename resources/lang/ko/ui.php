@@ -123,4 +123,5 @@
   'become_revisor_button' => '리뷰어가 되십시오',
   'login_button' => '요청에 로그인하십시오',
   'russian' => '러시아인',
+  'btn_back' => '이전 페이지',
 );

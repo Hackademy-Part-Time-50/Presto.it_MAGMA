@@ -1,4 +1,12 @@
 <x-layouts.layout>
+
+    <div class="col-lg-4 m-5">
+        <a href="{{route ('articles.index')}}" class="btn btn_custom">{{ __('ui.btn_back') }}</a>
+    </div>
+
+
+
+
     <div class="text-center">
 
         <h1>{{ $article->title }}</h1>
@@ -50,8 +58,8 @@
                                     <span class="price">€{{ $article->price }}</span>
                                 </div>
 
-                                <a href="{{route ('articles.index')}}" class="btn btn_custom">Indietro</a>
-                            </div>
+{{--                                 <a href="{{route ('articles.index')}}" class="btn btn_custom">Indietro</a>
+ --}}                            </div>
                         </div>
 
 

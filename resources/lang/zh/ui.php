@@ -123,4 +123,5 @@
   'become_revisor_button' => '成为审稿人',
   'login_button' => '登录请求',
   'russian' => '俄语',
+  'btn_back' => '上一页',
 );

@@ -123,4 +123,5 @@
   'become_revisor_button' => 'レビュアーになります',
   'login_button' => 'リクエストにログインします',
   'russian' => 'ロシア',
+  'btn_back' => '前のページ',
 );

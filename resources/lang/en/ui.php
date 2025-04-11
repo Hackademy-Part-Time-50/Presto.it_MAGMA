@@ -128,4 +128,5 @@
     'become_revisor_text' => 'Becoming a reviewer is a unique opportunity to actively contribute to our community. You can also help others find what they need in a safe and reliable way. Your experience and critical eye will be essential to maintain the quality of published ads.',
     'become_revisor_button' => 'Become a reviewer',
     'login_button' => 'Login to request',
+    'btn_back'  => 'Previous page',
 );

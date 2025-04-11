@@ -123,4 +123,5 @@
   'become_revisor_button' => 'Devenir réviseur',
   'login_button' => 'Connectez-vous pour demander',
   'russian' => 'russe',
+  'btn_back' => 'Page précédente',
 );

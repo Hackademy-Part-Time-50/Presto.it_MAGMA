@@ -123,4 +123,5 @@
   'become_revisor_button' => 'كن مراجعا',
   'login_button' => 'تسجيل الدخول لطلب',
   'russian' => 'الروسية',
+  'btn_back' => 'الصفحة السابقة',
 );

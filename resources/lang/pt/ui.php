@@ -123,4 +123,5 @@
   'become_revisor_button' => 'Torne -se um revisor',
   'login_button' => 'Login para solicitar',
   'russian' => 'russo',
+  'btn_back' => 'Página anterior',
 );
