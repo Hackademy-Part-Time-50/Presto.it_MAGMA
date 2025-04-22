@@ -1,20 +1,35 @@
 <x-layouts.layout>
 
 
-    <header class="container-fluid">
-    
-        <div class="row">
-               
+    <header class="container-fluid custom-header">
+        
+        <div class="row h-100">
 
+            
 
-                <div class="col-12 align-content-center text-center custom-header ">
+            <div class="col-12 header_text_container" data-aos="flip-left">
 
-                    <!-- Contenuto sopra l'immagine -->
+            <div class="distance"> </div>
+
+                <!-- Contenuto sopra l'immagine -->
+                <div class="text-custom mt-3">
+                    <p class="fs-3 text m-0">{{__('ui.slogan_1')}}</p>
+                    <p class="fs-3 text my-1">{{__('ui.slogan_2')}},</p>
+                    <p class="fs-1 text fw-bold m-0">{{ config('app.name') }}!</p>
                     
-                        
+                        @auth
+                            <a href="{{ route('create.article') }}" class="btn btn-custom-other">
+                                {{__('ui.create_announce')}}
+                            </a>
+                        {{-- @else
+                            <a href="{{ route('login') }}" class="btn btn-custom-other">
+                                {{__('ui.login')}}
+                            </a> --}}
+                        @endauth
                     
-
                 </div>
+
+            </div>
 
 
         </div>
@@ -23,27 +38,6 @@
 <div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5">
     <x-success/>
 </div>
-   
-
-
-    <div class="container-fluid d-flex flex-column align-items-center justify-content-center text-center mt-5 " data-aos="flip-left">
-        <div class="text-custom">
-            <p class="fs-3 text">{{__('ui.slogan_1')}}</p>
-            <p class="fs-3 text">{{__('ui.slogan_2')}},</p>
-            <p class="fs-1 text fw-bold">{{ config('app.name') }}!</p>
-            
-                @auth
-                    <a href="{{ route('create.article') }}" class="btn btn-custom-other">
-                        {{__('ui.create_announce')}}
-                    </a>
-                {{-- @else
-                    <a href="{{ route('login') }}" class="btn btn-custom-other">
-                        {{__('ui.login')}}
-                    </a> --}}
-                @endauth
-            
-        </div>
-    </div>
 
 
     <div class="container mt-5">
