@@ -18,11 +18,11 @@
                     <p class="fs-1 text fw-bold m-0">{{ config('app.name') }}!</p>
                     
                         @auth
-                            <a href="{{ route('create.article') }}" class="btn btn-custom-other">
+                            <a href="{{ route('create.article') }}" class="btn btn-custom-other mt-2">
                                 {{__('ui.create_announce')}}
                             </a>
                         {{-- @else
-                            <a href="{{ route('login') }}" class="btn btn-custom-other">
+                            <a href="{{ route('login') }}" class="btn btn-custom-other mt-2">
                                 {{__('ui.login')}}
                             </a> --}}
                         @endauth

@@ -13,7 +13,7 @@
   'become_revisor' => 'Diventa Revisor!',
   'slogan_1' => 'Non lo usi?',
   'slogan_2' => 'Mettilo in vendita',
-  'featured_announces' => 'Annunti in primo piano',
+  'featured_announces' => 'Annunci in primo piano',
   'retrive_password' => 'Recupera la password',
   'else_login' => 'O accedi con:',
   'else_signin' => 'O accedere a:',

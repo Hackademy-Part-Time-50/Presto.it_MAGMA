@@ -1,23 +1,23 @@
 <x-layouts.layout>
-    <div class="container mt-5">
+    <div class="container">
         {{-- titolo --}}
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 mb-5">
                 <h1 class="text-center fs-1">{{ __('ui.become_revisor_title') }}</h1>
             </div>
         </div>
 
         {{-- prima row con immagine --}}
-        <div class="row justify-content-center align-items-center g-2 m-5">
+        <div class="row justify-content-between align-items-center g-2">
             <div class="col-12 col-md-6 img-lavoraconnoi" data-aos="fade-right" data-aos-duration="1000">
             </div>
 
-            <div class="col-12 col-md-6" data-aos="fade-left" data-aos-duration="1000">
-                <p class="fs-4 text-muted text-center">
+            <div class="col-12 col-md-5" data-aos="fade-left" data-aos-duration="1000">
+                <p class="fs-4 text-muted text-start">
                     {{ __('ui.become_revisor_text') }}
                 </p>
 
-                <div class="d-flex justify-content-center mt-4">
+                <div class="d-flex justify-content-end mt-4">
                     @auth
                         <form action="{{ route('revisore.richiesta') }}" method="POST" class="w-50">
                             @csrf

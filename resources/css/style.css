@@ -166,6 +166,32 @@ header {
     /* Colore di errore per campo non valido */
 }
 
+/* animated underline */
+.custom_hover_nav {
+    display: inline-block;
+    position: relative;
+}
+  
+.custom_hover_nav::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transform-origin: bottom right;
+    background-color: #000000;
+    transition: transform 0.25s ease-out;
+}
+  
+.custom_hover_nav:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+/* animated underline */
+
+
 /* Menu */
 .menu {
     list-style: none;
@@ -265,6 +291,10 @@ header {
 
 .icon.active::after {
     transform: rotate(45deg) translate(-0.21rem, -0.21rem);
+}
+
+.pointer_logout {
+    cursor: pointer !important;
 }
 
 /* Media Query per mobile */

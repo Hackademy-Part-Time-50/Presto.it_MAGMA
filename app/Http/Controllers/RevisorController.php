@@ -103,7 +103,7 @@ class RevisorController extends Controller
      */
     public function info()
     {
-        return view('revisore.info');
+        return view('revisor.info');
     }
 
     /**
